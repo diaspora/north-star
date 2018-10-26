@@ -3,4 +3,6 @@
 require_relative "./config/environment"
 require_relative "./server"
 
-run Server
+require "sinatra/asset_pipeline/task"
+
+Sinatra::AssetPipeline::Task.define! Server
