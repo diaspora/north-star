@@ -1,0 +1,25 @@
+# frozen_string_literal: true
+
+source "https://rubygems.org"
+
+# Make sure to load ActiveSupport before sinatra to allow it's IndifferentHash
+# to be loaded if needed.
+gem "activesupport", "5.2.1", require: "active_support/all"
+
+# Framework
+gem "sinatra", "2.0.4"
+gem "sinatra-contrib", "2.0.4"
+
+# Extensions
+gem "rack-protection", "2.0.4"
+
+group :development do
+  # Linters
+  gem "pronto", "0.9.5", require: false
+  gem "pronto-rubocop", "0.9.1", require: false
+  gem "pronto-scss", "0.9.1", require: false
+  gem "rubocop", "0.59.2", require: false
+end
+
+# Deployment
+gem "puma", "3.12.0"
