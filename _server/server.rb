@@ -38,8 +38,13 @@ class Server < Sinatra::Base
   use Rack::Protection::PathTraversal
   helpers Sinatra::MderbRenderer
 
+  not_found do
+    document = settings.storage.load("meta", "404")
+    mderb(document)
+  end
+
   get "/" do
-    document = settings.storage.load("", "index")
+    document = settings.storage.load("meta", "dev_index")
     mderb(document)
   end
 end
