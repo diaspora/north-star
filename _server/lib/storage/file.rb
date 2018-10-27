@@ -24,7 +24,7 @@ module Storage
     def split_contents(contents)
       matches = YAML_FRONT_MATTER_REGEXP.match(contents)
       {
-        frontmatter: matches[1],
+        frontmatter: YAML.safe_load(matches[1]).symbolize_keys,
         contents:    matches.post_match
       }
     end
