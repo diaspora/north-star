@@ -11,7 +11,7 @@ class Server < Sinatra::Base
     set :assets_js_compressor, :uglifier
     set :static, false
 
-    set :public_folder, (proc { File.join(root, "..", "statics") })
+    set :public_folder, ::Helpers.parent_dir(root, "statics")
     set :storage_paths,
         contents:     ::Helpers.parent_dir(root, "contents"),
         data:         ::Helpers.parent_dir(root, "data"),
