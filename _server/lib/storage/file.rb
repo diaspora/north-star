@@ -23,10 +23,18 @@ module Storage
 
     def split_contents(contents)
       matches = YAML_FRONT_MATTER_REGEXP.match(contents)
-      {
-        frontmatter: YAML.safe_load(matches[1]).symbolize_keys,
-        contents:    matches.post_match
-      }
+      if matches
+        frontmatter = YAML.safe_load(matches[1]) || {}
+        {
+          frontmatter: frontmatter.symbolize_keys,
+          contents:    matches.post_match
+        }
+      else
+        {
+          frontmatter: {},
+          contents:    contents
+        }
+      end
     end
   end
 end
