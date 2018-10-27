@@ -43,6 +43,12 @@ class Server < Sinatra::Base
     mderb(document)
   end
 
+  get "/*/*" do |section, document_path|
+    document = settings.storage.load(section, document_path)
+    halt 404 unless document
+    mderb(document)
+  end
+
   get "/" do
     document = settings.storage.load("meta", "dev_index")
     mderb(document)

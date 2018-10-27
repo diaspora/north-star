@@ -12,13 +12,24 @@ module Storage
 
     def load(section, path)
       document = read_file(section, path)
+      return false unless document
+
       split_contents(document)
     end
 
     private
 
     def read_file(section, path)
-      ::File.read(::Helpers.path_expand_join(@paths[:contents], section, "#{path}.md"))
+      root_path = ::Helpers.path_expand_join(@paths[:contents], section, path)
+      file_path = "#{root_path}.md"
+
+      unless ::File.exist?(file_path)
+        return false unless ::Dir.exist?(root_path)
+
+        return read_file(section, "#{path}/index")
+      end
+
+      ::File.read(file_path)
     end
 
     def split_contents(contents)
