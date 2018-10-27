@@ -10,7 +10,12 @@ class Server < Sinatra::Base
     set :assets_css_compressor, :sass
     set :assets_js_compressor, :uglifier
 
-    set :public_folder, (proc { File.join(root, "..", "statics") })
+    set :contents_folder, ::Helpers.parent_dir_proc(root, "statics")
+    set :data_folder, ::Helpers.parent_dir_proc(root, "data")
+    set :public_folder, ::Helpers.parent_dir_proc(root, "statics")
+    set :strings_folder, ::Helpers.parent_dir_proc(root, "strings")
+    set :translations_folder, ::Helpers.parent_dir_proc(root, "translations")
+
     set :static, false
 
     set :markdown_renderer, ::MarkdownRenderer.get
@@ -26,8 +31,8 @@ class Server < Sinatra::Base
     register Sinatra::Reloader
     also_reload "lib/**/*.rb"
 
-    set :storage, ::Storage::File.new
     set :static, true
+    set :storage, ::Storage::File.new
   end
 
   use Rack::Protection::PathTraversal
