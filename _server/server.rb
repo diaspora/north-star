@@ -9,17 +9,17 @@ class Server < Sinatra::Base
 
     set :assets_css_compressor, :sass
     set :assets_js_compressor, :uglifier
-
-    set :contents_folder, ::Helpers.parent_dir_proc(root, "statics")
-    set :data_folder, ::Helpers.parent_dir_proc(root, "data")
-    set :public_folder, ::Helpers.parent_dir_proc(root, "statics")
-    set :strings_folder, ::Helpers.parent_dir_proc(root, "strings")
-    set :translations_folder, ::Helpers.parent_dir_proc(root, "translations")
-
     set :static, false
 
+    set :public_folder, (proc { File.join(root, "..", "statics") })
+    set :storage_paths,
+        contents:     ::Helpers.parent_dir(root, "contents"),
+        data:         ::Helpers.parent_dir(root, "data"),
+        strings:      ::Helpers.parent_dir(root, "strings"),
+        translations: ::Helpers.parent_dir(root, "translations")
+
     set :markdown_renderer, ::MarkdownRenderer.get
-    set :storage, ::Storage::Redis.new
+    set :storage, ::Storage::Redis.new(settings.storage_paths)
 
     register Sinatra::AssetPipeline
     RailsAssets.load_paths.each do |path|
@@ -29,16 +29,16 @@ class Server < Sinatra::Base
 
   configure :development do
     register Sinatra::Reloader
-    also_reload "lib/**/*.rb"
+    also_reload("lib/**/*.rb")
 
     set :static, true
-    set :storage, ::Storage::File.new
+    set :storage, ::Storage::File.new(settings.storage_paths)
   end
 
   use Rack::Protection::PathTraversal
   helpers Sinatra::MderbRenderer
 
   get "/" do
-    mderb "index"
+    mderb("", "index")
   end
 end

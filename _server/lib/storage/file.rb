@@ -2,10 +2,30 @@
 
 module Storage
   class File < Dummy
-    def load(path)
+    # From https://github.com/jekyll/jekyll/blob/587111ec9f3e5a2d6d2dc60ce8b0ec651ded27b7/lib/jekyll/document.rb#L13
+    # MIT license, see link for details.
+    YAML_FRONT_MATTER_REGEXP = /\A(---\s*\n.*?\n?)^((---|\.\.\.)\s*$\n?)/m
+
+    def initialize(paths)
+      @paths = paths
+    end
+
+    def load(section, path)
+      document = read_file(section, path)
+      split_contents(document)
+    end
+
+    private
+
+    def read_file(section, path)
+      ::File.read(::Helpers.path_expand_join(@paths[:contents], section, "#{path}.md"))
+    end
+
+    def split_contents(contents)
+      matches = YAML_FRONT_MATTER_REGEXP.match(contents)
       {
-        frontmatter: {},
-        contents:    "**This** is *just* a _test_ doing some `Markdown`."
+        frontmatter: matches[1],
+        contents:    matches.post_match
       }
     end
   end

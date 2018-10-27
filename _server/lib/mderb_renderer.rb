@@ -2,8 +2,8 @@
 
 module Sinatra
   module MderbRenderer
-    def mderb(path)
-      document = settings.storage.load(path)
+    def mderb(section, path)
+      document = settings.storage.load(section, path)
       render_mderb(document[:contents])
     end
 
