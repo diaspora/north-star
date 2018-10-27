@@ -2,8 +2,7 @@
 
 module Sinatra
   module MderbRenderer
-    def mderb(section, path)
-      document = settings.storage.load(section, path)
+    def mderb(document)
       contents = render_markdown(document[:contents])
 
       erb(

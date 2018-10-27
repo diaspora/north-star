@@ -39,6 +39,7 @@ class Server < Sinatra::Base
   helpers Sinatra::MderbRenderer
 
   get "/" do
-    mderb("", "index")
+    document = settings.storage.load("", "index")
+    mderb(document)
   end
 end
