@@ -10,6 +10,15 @@
     <title>diaspora*</title>
   </head>
   <body>
-    <%= yield %>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">diaspora*</a>
+      </div>
+    </nav>
+
+    <main role="main" class="container">
+      <h1><%= page[:title] %></h1>
+      <%= yield %>
+    </main>
   </body>
 </html>
