@@ -9,7 +9,7 @@ gem "activesupport", "5.2.1", require: "active_support/all"
 gem "rake", "12.3.1"
 
 # Framework
-gem "sinatra", "2.0.4"
+gem "sinatra", "2.0.4", require: "sinatra/base"
 gem "sinatra-contrib", "2.0.4"
 
 # Extensions
