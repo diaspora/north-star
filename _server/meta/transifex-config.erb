@@ -1,0 +1,11 @@
+[main]
+host = https://www.transifex.com
+
+<% files.each do |file| %>
+[north-star.<%= file[:slug] %>]
+file_filter = translations/<lang>/<%= file[:path] %>
+minimum_perc = 0
+source_file = <%= file[:path] %>
+source_lang = en
+type = <%= file[:type] %>
+<% end %>

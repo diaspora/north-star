@@ -4,5 +4,6 @@ require_relative "./config/environment"
 require_relative "./server"
 
 require "sinatra/asset_pipeline/task"
-
 Sinatra::AssetPipeline::Task.define! Server
+
+Dir[File.join(__dir__, "lib", "tasks", "*.rake")].each {|file| import file }

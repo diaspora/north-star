@@ -1,0 +1,46 @@
+[main]
+host = https://www.transifex.com
+
+
+[north-star.contents_guides_index]
+file_filter = translations/<lang>/contents/guides/index.md
+minimum_perc = 0
+source_file = contents/guides/index.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[north-star.contents_meta_404]
+file_filter = translations/<lang>/contents/meta/404.md
+minimum_perc = 0
+source_file = contents/meta/404.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[north-star.contents_site_index]
+file_filter = translations/<lang>/contents/site/index.md
+minimum_perc = 0
+source_file = contents/site/index.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[north-star.contents_site_test_foo]
+file_filter = translations/<lang>/contents/site/test/foo.md
+minimum_perc = 0
+source_file = contents/site/test/foo.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[north-star.contents_site_test_index]
+file_filter = translations/<lang>/contents/site/test/index.md
+minimum_perc = 0
+source_file = contents/site/test/index.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[north-star.strings_general]
+file_filter = translations/<lang>/strings/general.yml
+minimum_perc = 0
+source_file = strings/general.yml
+source_lang = en
+type = YML
+
