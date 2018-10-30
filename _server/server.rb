@@ -13,11 +13,6 @@ class Server < Sinatra::Base
     set :markdown_renderer, ::MarkdownRenderer.get
   end
 
-  configure :development do
-    register Sinatra::Reloader
-    also_reload("lib/**/*.rb")
-  end
-
   not_found do
     document = settings.storage.load("meta", "404")
     mderb(document)
