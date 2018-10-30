@@ -1,12 +1,13 @@
 # frozen_string_literal: true
 
 class Server < Sinatra::Base
+  helpers Sinatra::Cookies
+  helpers Sinatra::MderbRenderer
   register Sinatra::Configs::Assets
   register Sinatra::Configs::I18n
   register Sinatra::Configs::Storage
-
+  register Sinatra::SiteModules::LocaleSelect
   use Rack::Protection::PathTraversal
-  helpers Sinatra::MderbRenderer
 
   configure do
     set :markdown_renderer, ::MarkdownRenderer.get

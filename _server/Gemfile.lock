@@ -23,6 +23,7 @@ GEM
     gitlab (4.6.1)
       httparty (>= 0.14.0)
       terminal-table (>= 1.5.1)
+    http_accept_language (2.1.1)
     httparty (0.16.2)
       multi_xml (>= 0.5.2)
     i18n (1.1.1)
@@ -128,6 +129,7 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport (= 5.2.1)
+  http_accept_language (= 2.1.1)
   i18n (= 1.1.1)
   pronto (= 0.9.5)
   pronto-rubocop (= 0.9.1)

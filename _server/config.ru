@@ -3,4 +3,6 @@
 require_relative "./environment"
 require_relative "./server"
 
+use HttpAcceptLanguage::Middleware
+
 run Server

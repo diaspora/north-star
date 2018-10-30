@@ -23,6 +23,7 @@ gem "uglifier", "4.1.19"
 gem "redcarpet", "3.4.0"
 
 # I18n fun
+gem "http_accept_language", "2.1.1"
 gem "i18n", "1.1.1"
 
 group :development do
