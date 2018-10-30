@@ -42,7 +42,7 @@ module Storage
       if matches
         frontmatter = YAML.safe_load(matches[1]) || {}
         {
-          frontmatter: frontmatter.symbolize_keys,
+          frontmatter: frontmatter.deep_symbolize_keys,
           contents:    matches.post_match
         }
       else
