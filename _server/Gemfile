@@ -22,6 +22,9 @@ gem "uglifier", "4.1.19"
 # Content parsing
 gem "redcarpet", "3.4.0"
 
+# I18n fun
+gem "i18n", "1.1.1"
+
 group :development do
   # Linters
   gem "pronto", "0.9.5", require: false
