@@ -2,6 +2,7 @@
 
 class Server < Sinatra::Base
   register Sinatra::Configs::Assets
+  register Sinatra::Configs::I18n
   register Sinatra::Configs::Storage
 
   use Rack::Protection::PathTraversal
