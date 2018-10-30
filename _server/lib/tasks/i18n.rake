@@ -77,7 +77,7 @@ namespace :i18n do
   end
 
   desc "Pulls all available, reviewed translations"
-  task :pull => :clean do
+  task pull: :clean do
     puts "Pulling translations..."
 
     Dir.chdir(ROOT_DIR) do
