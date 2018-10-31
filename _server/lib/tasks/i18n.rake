@@ -42,7 +42,7 @@ end
 namespace :i18n do
   desc "Generates the Transifex config file"
   task :generate_config do
-    Puts "Generating Transifex config file..."
+    puts "Generating Transifex config file..."
 
     files = NorthStarI18n
             .translateable_files
