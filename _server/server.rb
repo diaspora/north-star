@@ -14,18 +14,18 @@ class Server < Sinatra::Base
   end
 
   not_found do
-    document = settings.storage.load("meta", "404")
+    document = settings.storage.load_document("meta", "404")
     mderb(document)
   end
 
   get "/*/*" do |section, document_path|
-    document = settings.storage.load(section, document_path)
+    document = settings.storage.load_document(section, document_path)
     halt 404 unless document
     mderb(document)
   end
 
   get "/" do
-    document = settings.storage.load("meta", "dev_index")
+    document = settings.storage.load_document("meta", "dev_index")
     mderb(document)
   end
 end

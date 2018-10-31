@@ -10,9 +10,9 @@ module Storage
       @paths = paths
     end
 
-    def load(section, path)
-      document = read_file(section, path, ::I18n.locale) unless ::I18n.locale == ::I18n.default_locale
-      document ||= read_file(section, path)
+    def load_document(section, path)
+      document = read_document_file(section, path, ::I18n.locale) unless ::I18n.locale == ::I18n.default_locale
+      document ||= read_document_file(section, path)
       return false unless document
 
       split_contents(document)
@@ -20,7 +20,7 @@ module Storage
 
     private
 
-    def read_file(section, path, translation=false)
+    def read_document_file(section, path, translation=false)
       root_path = if translation
                     ::Helpers.path_expand_join(@paths[:translations], translation.to_s, "contents", section, path)
                   else
@@ -31,7 +31,7 @@ module Storage
       unless ::File.exist?(file_path)
         return false unless ::Dir.exist?(root_path)
 
-        return read_file(section, "#{path}/index", translation)
+        return read_document_file(section, "#{path}/index", translation)
       end
 
       ::File.read(file_path)
