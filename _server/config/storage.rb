@@ -11,11 +11,11 @@ module Sinatra
                   strings:      ::Helpers.parent_dir(app.root, "strings"),
                   translations: ::Helpers.parent_dir(app.root, "translations")
 
-          app.set :storage, ::Storage::Redis.new(app.settings.storage_paths)
+          app.set :storage, ::Storage::File.new(app.settings.storage_paths)
         end
 
-        app.configure :development do
-          app.set :storage, ::Storage::File.new(app.settings.storage_paths)
+        app.configure :production do
+          app.set :storage, ::Storage::Redis.new(app.settings.storage_paths)
         end
       end
     end
