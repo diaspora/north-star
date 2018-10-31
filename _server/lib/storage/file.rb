@@ -10,31 +10,26 @@ module Storage
       @paths = paths
     end
 
-    def load_document(section, path)
-      document = read_document_file(section, path, ::I18n.locale) unless ::I18n.locale == ::I18n.default_locale
-      document ||= read_document_file(section, path)
-      return false unless document
+    def receive_document(path)
+      contents = ::File.read(path)
+      split_contents(contents)
+    end
 
-      split_contents(document)
+    def list_documents
+      [].concat(
+        Dir[::Helpers.path_expand_join(@paths[:contents], "**", "*.md")],
+        Dir[::Helpers.path_expand_join(@paths[:translations], "*", "contents", "**", "*.md")]
+      )
     end
 
     private
 
-    def read_document_file(section, path, translation=false)
-      root_path = if translation
-                    ::Helpers.path_expand_join(@paths[:translations], translation.to_s, "contents", section, path)
-                  else
-                    ::Helpers.path_expand_join(@paths[:contents], section, path)
-                  end
-      file_path = "#{root_path}.md"
+    def file_exist?(path)
+      ::File.exist?(path)
+    end
 
-      unless ::File.exist?(file_path)
-        return false unless ::Dir.exist?(root_path)
-
-        return read_document_file(section, "#{path}/index", translation)
-      end
-
-      ::File.read(file_path)
+    def dir_exist?(path)
+      ::Dir.exist?(path)
     end
 
     def split_contents(contents)

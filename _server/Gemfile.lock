@@ -67,6 +67,7 @@ GEM
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     redcarpet (3.4.0)
+    redis (4.0.2)
     rubocop (0.59.2)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
@@ -140,6 +141,7 @@ DEPENDENCIES
   rails-assets-jquery (= 3.3.1)!
   rake (= 12.3.1)
   redcarpet (= 3.4.0)
+  redis (= 4.0.2)
   rubocop (= 0.59.2)
   sinatra (= 2.0.4)
   sinatra-asset-pipeline (= 2.2.0)
