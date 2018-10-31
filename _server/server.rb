@@ -10,7 +10,7 @@ class Server < Sinatra::Base
   use Rack::Protection::PathTraversal
 
   configure do
-    set :markdown_renderer, ::MarkdownRenderer.get
+    set :markdown_renderer, ::MarkdownRenderer.new
   end
 
   not_found do
