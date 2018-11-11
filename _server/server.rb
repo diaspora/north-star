@@ -7,6 +7,15 @@ class Server < Sinatra::Base
     set :config, settings.storage.load_data("config")
   end
 
+  before do
+    @config = settings.config
+
+    @section = (request.path_info.split("/")[1] || "meta").to_sym
+    @section = :meta unless @config[:sections].include?(@section)
+
+    @section_config = @config[:sections][@section]
+  end
+
   helpers Sinatra::ContentHelpers
   helpers Sinatra::Cookies
   helpers Sinatra::MderbRenderer
@@ -22,13 +31,6 @@ class Server < Sinatra::Base
   not_found do
     document = settings.storage.load_document("meta", "404")
     mderb(document)
-  end
-
-  before do
-    @config = settings.config
-
-    @section = (request.path_info.split("/")[1] || "meta").to_sym
-    @section = :meta unless @config[:sections].include?(@section)
   end
 
   get "/*/*" do |section, document_path|
