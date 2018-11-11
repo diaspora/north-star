@@ -19,7 +19,7 @@ subtitle: The online social world where you are in control
 
 Instead of everyone’s data being held on huge central servers owned by a large organization, diaspora\* exists on independently run servers (“pods”) all over the world. You choose which pod to register with, and you can then connect seamlessly with the diaspora\* community worldwide.
 
-[Find out more](/){: class="btn btn-primary"}
+[Find out more](<%= url_to("site", "get_involved") %>){: class="btn btn-primary"}
 
 </div><div class="col-lg" markdown="1">
 
@@ -29,7 +29,7 @@ Instead of everyone’s data being held on huge central servers owned by a large
 
 You can be whoever you want to be in diaspora\*. Unlike some networks, you don’t have to use your real identity. You can interact with people in whatever way you choose. The only limit is your imagination. diaspora\* is also Free Software, giving you liberty over how you use it.
 
-[Find out more](/){: class="btn btn-primary"}
+[Find out more](<%= url_to("site", "get_involved") %>){: class="btn btn-primary"}
 
 </div><div class="col-lg" markdown="1">
 
@@ -39,7 +39,7 @@ You can be whoever you want to be in diaspora\*. Unlike some networks, you don�
 
 In diaspora\* you own your data. You don’t sign over rights to a corporation or other interest who could use it. In addition, you choose who sees what you share, using Aspects. With diaspora\*, your friends, your habits, and your content is your business ... not ours!
 
-[Find out more](/){: class="btn btn-primary"}
+[Find out more](<%= url_to("site", "get_involved") %>){: class="btn btn-primary"}
 
 </div></div>
 
