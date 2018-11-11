@@ -81,7 +81,7 @@ namespace :i18n do
     puts "Pulling translations..."
 
     Dir.chdir(ROOT_DIR) do
-      system("tx pull --no-interactive --parallel -a --mode reviewed --minimum-perc 1")
+      system("tx pull --no-interactive --parallel -a --mode onlyreviewed --minimum-perc 1")
     end
   end
 end
