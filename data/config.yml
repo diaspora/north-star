@@ -1,24 +1,29 @@
 sections:
   blog:
     description: The project's blog.
-    domain: blog.diaspora.software
     directory: blog
+    domain: blog.diaspora.software
+    translateable: false
   guides:
     description: Guides for users, podmins, and developers.
-    domain: guides.diaspora.software
     directory: guides
+    domain: guides.diaspora.software
+    translateable: true
   install:
     description: Installation guides for both production and development installs.
-    domain: install.diaspora.software
     directory: install
+    domain: install.diaspora.software
+    translateable: false
   meta:
     description: Error pages, this development index, ...
     directory: meta
+    translateable: false
   site:
     description: Official project site.
-    domain: diaspora.software
     directory: site
+    domain: diaspora.software
+    translateable: true
 statics:
-  domain: statics.diaspora.software
   directory: statics
+  domain: statics.diaspora.software
 use_https: false
