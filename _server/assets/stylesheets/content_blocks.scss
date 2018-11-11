@@ -25,3 +25,24 @@
     margin-top: 5px;
   }
 }
+
+footer {
+  background-color: #eee;
+  border-top: 1px solid #ddd;
+  margin-top: 70px;
+  padding: 1rem 0;
+
+  .content-license {
+    font-size: 200%;
+    text-align: center;
+
+    a {
+      color: #999;
+
+      &:hover, &:focus {
+        color: #666;
+        text-decoration: none;
+      }
+    }
+  }
+}

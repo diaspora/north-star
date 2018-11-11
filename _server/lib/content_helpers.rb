@@ -16,7 +16,7 @@ module Sinatra
     end
 
     def partial(partial, locals)
-      erb partial.to_sym, {locals: locals}
+      erb partial.to_sym, locals: locals
     end
   end
 

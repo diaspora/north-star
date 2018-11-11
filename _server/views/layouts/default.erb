@@ -16,17 +16,28 @@
       </div>
     </nav>
 
-    <div id="masthead" class="hero">
+    <header id="masthead" class="hero">
       <div class="container">
         <h1><%= page[:title] %></h1>
         <% if page[:subtitle] %>
           <h2 class="lead"><%= page[:subtitle] %></h2>
         <% end %>
       </div>
-    </div>
+    </header>
 
     <main role="main" class="container">
       <%= yield %>
     </main>
+
+    <footer>
+      <div class="container">
+        <p class="content-license">
+          <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
+            <i class="fab fa-creative-commons"></i>
+            <i class="fab fa-creative-commons-by"></i>
+          </a>
+        </p>
+      </div>
+    </footer>
   </body>
 </html>
