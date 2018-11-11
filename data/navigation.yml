@@ -1,0 +1,27 @@
+site: &site
+  header:
+    - title: navigation.get_involved
+      target:
+        section: site
+        path: "get_involved"
+    - title: navigation.blog
+      target:
+        section: blog
+        path: ""
+    - title: navigation.guides
+      target:
+        section: guides
+        path: ""
+    - title: navigation.support
+      target: https://discourse.diasporafoundation.org
+  header_buttons:
+    - title: navigation.host_a_pod
+      target:
+        section: install
+        path: ""
+    - title: navigation.join_diaspora
+      target:
+        section: guides
+        path: "users/find_a_pod"
+blog: *site
+meta: *site

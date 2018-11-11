@@ -9,5 +9,10 @@ en:
     blog: blog
     guides: guides
     install: install
-  general:
-    home: "Home"
+  navigation:
+    blog: Blog
+    get_involved: Get involved
+    guides: Guides
+    host_a_pod: Host a pod
+    join_diaspora: Join diaspora*
+    support: Support

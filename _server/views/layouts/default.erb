@@ -13,6 +13,12 @@
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <div class="container">
         <a class="navbar-brand" href="/">diaspora*<%= section_title %></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".collapse-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <%= partial "components/nav_header_main" %>
+        <%= partial "components/nav_header_buttons" %>
       </div>
     </nav>
 

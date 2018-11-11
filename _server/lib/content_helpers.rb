@@ -9,7 +9,7 @@ module Sinatra
 
     def section_title
       section_header_title = I18n.t("section_header_titles.#{@section}", default: "")
-      ['<span class="section">', section_header_title, "</span>"].join() unless section_header_title.empty?
+      ['<span class="section">', section_header_title, "</span>"].join unless section_header_title.empty?
     end
 
     def static_url(asset)

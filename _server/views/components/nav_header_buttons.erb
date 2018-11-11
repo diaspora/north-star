@@ -1,0 +1,13 @@
+<% if data("navigation")[@section] && data("navigation")[@section][:header_buttons] %>
+  <div class="navbar-collapse collapse order-3 collapse-nav">
+    <ul class="navbar-nav ml-auto">
+      <% data("navigation")[@section][:header_buttons].each do |nav_item| %>
+        <li class="nav-item">
+          <a class="btn btn-outline-success ml-md-2" href="#">
+            <%= I18n.t(nav_item[:title]) %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
