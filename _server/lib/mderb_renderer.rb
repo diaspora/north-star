@@ -3,13 +3,16 @@
 module Sinatra
   module MderbRenderer
     def mderb(document)
-      contents = render_markdown(document[:contents])
+      erb_locals = {
+        page: document[:frontmatter]
+      }
+
+      in_content_erb = erb(document[:contents], layout: false)
+      rendered_markdown = render_markdown(in_content_erb)
 
       erb(
-        contents,
-        locals: {
-          page: document[:frontmatter]
-        }
+        rendered_markdown,
+        locals: erb_locals
       )
     end
 
