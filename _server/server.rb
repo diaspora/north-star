@@ -1,12 +1,17 @@
 # frozen_string_literal: true
 
 class Server < Sinatra::Base
+  # Load storage and config early so we can access it in other modules
+  register Sinatra::Configs::Storage
+  configure do
+    set :config, settings.storage.load_data("config")
+  end
+
   helpers Sinatra::ContentHelpers
   helpers Sinatra::Cookies
   helpers Sinatra::MderbRenderer
   register Sinatra::Configs::Assets
   register Sinatra::Configs::I18n
-  register Sinatra::Configs::Storage
   register Sinatra::SiteModules::LocaleSelect
   use Rack::Protection::PathTraversal
 
@@ -20,7 +25,7 @@ class Server < Sinatra::Base
   end
 
   before do
-    @config = settings.storage.load_data("config")
+    @config = settings.config
 
     @section = (request.path_info.split("/")[1] || "meta").to_sym
     unless @config[:sections].include?(@section)

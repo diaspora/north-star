@@ -20,4 +20,5 @@ sections:
     directory: site
 statics:
   domain: statics.diaspora.software
+  use_https: false
   directory: statics

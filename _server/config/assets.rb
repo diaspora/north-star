@@ -10,6 +10,11 @@ module Sinatra
             assets/stylesheets
           ]
 
+          if app.production?
+            app.set :assets_host, app.settings.config[:statics][:domain]
+            app.set :assets_protocol, :https if app.settings.config[:statics][:use_https]
+          end
+
           app.set :assets_css_compressor, :sass
           app.set :assets_js_compressor, :uglifier
 
