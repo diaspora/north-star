@@ -24,4 +24,3 @@ site: &site
         section: guides
         path: "users/find_a_pod"
 blog: *site
-meta: *site
