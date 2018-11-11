@@ -2,9 +2,17 @@
 
 module Sinatra
   module ContentHelpers
-    def page_title(title = false)
+    def page_title(title=false)
       section_title = I18n.t("section_titles.#{@section}")
-      [title, section_title].select { |c| c.present? }.join(" - ")
+      [title, section_title].select(&:present?).join(" - ")
+    end
+
+    def static_url(asset)
+      return "/#{asset}" unless Sinatra::Application.production?
+
+      asset_protocol = settings.config[:statics][:use_https] ? "https" : "http"
+      asset_host = settings.config[:statics][:domain]
+      "#{asset_protocol}://#{asset_host}/#{asset}"
     end
   end
 

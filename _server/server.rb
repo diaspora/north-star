@@ -28,9 +28,7 @@ class Server < Sinatra::Base
     @config = settings.config
 
     @section = (request.path_info.split("/")[1] || "meta").to_sym
-    unless @config[:sections].include?(@section)
-      @section = :meta
-    end
+    @section = :meta unless @config[:sections].include?(@section)
   end
 
   get "/*/*" do |section, document_path|
