@@ -12,7 +12,7 @@ module Sinatra
 
           if app.production?
             app.set :assets_host, app.settings.config[:statics][:domain]
-            app.set :assets_protocol, :https if app.settings.config[:statics][:use_https]
+            app.set :assets_protocol, :https if app.settings.config[:use_https]
           end
 
           app.set :assets_css_compressor, :sass

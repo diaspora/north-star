@@ -15,9 +15,24 @@ module Sinatra
     def static_url(asset)
       return "/#{asset}" unless Sinatra::Application.production?
 
-      asset_protocol = settings.config[:statics][:use_https] ? "https" : "http"
+      asset_protocol = settings.config[:use_https] ? "https" : "http"
       asset_host = settings.config[:statics][:domain]
       "#{asset_protocol}://#{asset_host}/#{asset}"
+    end
+
+    def url_to(section, path)
+      return "/#{section}/#{path}" unless Sinatra::Application.production?
+
+      protocol = settings.config[:use_https] ? "https" : "http"
+      domain = settings.config[:sections][section.to_sym][:domain]
+
+      "#{protocol}://#{domain}/#{path}"
+    end
+
+    def url_for_nav_item(target)
+      return target.to_str if target.is_a?(String)
+
+      url_to(target[:section], target[:path])
     end
 
     def partial(partial, locals={})

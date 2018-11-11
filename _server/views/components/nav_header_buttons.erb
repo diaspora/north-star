@@ -3,7 +3,7 @@
     <ul class="navbar-nav ml-auto">
       <% data("navigation")[@section][:header_buttons].each do |nav_item| %>
         <li class="nav-item">
-          <a class="btn btn-outline-success ml-md-2" href="#">
+          <a class="btn btn-outline-success ml-md-2" href="<%= url_for_nav_item(nav_item[:target]) %>">
             <%= I18n.t(nav_item[:title]) %>
           </a>
         </li>
