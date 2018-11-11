@@ -5,6 +5,8 @@ module Sinatra
     module LocaleSelect
       def self.registered(app) # rubocop:disable Metrics/AbcSize
         app.before do
+          return unless @section_config[:translateable]
+
           user_locale = false
 
           if cookies[:force_locale] && ::I18n.available_locales.include?(cookies[:force_locale].to_sym)
