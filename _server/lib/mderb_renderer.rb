@@ -12,7 +12,8 @@ module Sinatra
 
       erb(
         rendered_markdown,
-        locals: erb_locals
+        locals: erb_locals,
+        layout: :"layouts/default"
       )
     end
 
