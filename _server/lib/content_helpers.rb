@@ -14,6 +14,10 @@ module Sinatra
       asset_host = settings.config[:statics][:domain]
       "#{asset_protocol}://#{asset_host}/#{asset}"
     end
+
+    def partial(partial, locals)
+      erb partial.to_sym, {locals: locals}
+    end
   end
 
   helpers ContentHelpers
