@@ -7,7 +7,7 @@
     <%= stylesheet_tag "app" %>
     <%= javascript_tag "app" %>
 
-    <title>diaspora*</title>
+    <title><%= page_title(page[:title_tag] || page[:title]) %></title>
   </head>
   <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">

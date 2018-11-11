@@ -1,3 +1,9 @@
 en:
+  section_titles:
+    blog: The diaspora* Blog
+    guides: diaspora* Guides
+    install: Install diaspora*
+    meta: The diaspora* Project
+    site: The diaspora* Project
   general:
     home: "Home"

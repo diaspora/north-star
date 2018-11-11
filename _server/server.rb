@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Server < Sinatra::Base
+  helpers Sinatra::ContentHelpers
   helpers Sinatra::Cookies
   helpers Sinatra::MderbRenderer
   register Sinatra::Configs::Assets
@@ -20,6 +21,11 @@ class Server < Sinatra::Base
 
   before do
     @config = settings.storage.load_data("config")
+
+    @section = (request.path_info.split("/")[1] || "meta").to_sym
+    unless @config[:sections].include?(@section)
+      @section = :meta
+    end
   end
 
   get "/*/*" do |section, document_path|
