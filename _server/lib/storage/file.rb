@@ -24,7 +24,7 @@ module Storage
 
     def receive_data(path)
       contents = ::File.read(path)
-      YAML.safe_load(contents).deep_symbolize_keys
+      YAML.safe_load(contents, [], [], true).deep_symbolize_keys
     end
 
     def list_data
