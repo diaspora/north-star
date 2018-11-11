@@ -1,0 +1,23 @@
+sections:
+  blog:
+    description: The project's blog.
+    domain: blog.diaspora.software
+    directory: blog
+  guides:
+    description: Guides for users, podmins, and developers.
+    domain: guides.diaspora.software
+    directory: guides
+  install:
+    description: Installation guides for both production and development installs.
+    domain: install.diaspora.software
+    directory: install
+  meta:
+    description: Error pages, this development index, ...
+    directory: meta
+  site:
+    description: Official project site.
+    domain: diaspora.software
+    directory: site
+statics:
+  domain: statics.diaspora.software
+  directory: statics

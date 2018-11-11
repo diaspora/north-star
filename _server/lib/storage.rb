@@ -26,6 +26,13 @@ module Storage
 
       file_path
     end
+
+    def load_data(path)
+      data_path = ::Helpers.path_expand_join(@paths[:data], "#{path}.yml")
+      return false unless file_exist?(data_path)
+
+      receive_data(data_path)
+    end
   end
 
   require_relative "storage/file"

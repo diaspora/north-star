@@ -18,6 +18,10 @@ class Server < Sinatra::Base
     mderb(document)
   end
 
+  before do
+    @config = settings.storage.load_data("config")
+  end
+
   get "/*/*" do |section, document_path|
     document = settings.storage.load_document(section, document_path)
     halt 404 unless document

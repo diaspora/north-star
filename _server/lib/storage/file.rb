@@ -22,6 +22,15 @@ module Storage
       )
     end
 
+    def receive_data(path)
+      contents = ::File.read(path)
+      YAML.safe_load(contents).deep_symbolize_keys
+    end
+
+    def list_data
+      Dir[::Helpers.path_expand_join(@paths[:data], "**", "*.yml")]
+    end
+
     private
 
     def file_exist?(path)
