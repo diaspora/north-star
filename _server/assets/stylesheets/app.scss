@@ -7,6 +7,18 @@ main {
   margin-top: 50px;
 }
 
-nav.bg-dark {
-  background-color: #222222 !important;
+nav {
+  &.bg-dark {
+    background-color: #222222 !important;
+  }
+
+  .navbar-brand {
+    font-size: 180%;
+    padding: 0;
+
+    .section {
+      color: #999999;
+    }
+  }
 }
+
