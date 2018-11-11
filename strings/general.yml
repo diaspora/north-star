@@ -1,14 +1,15 @@
 en:
-  section_titles:
-    blog: The diaspora* Blog
-    guides: diaspora* Guides
-    install: Install diaspora*
-    meta: The diaspora* Project
-    site: The diaspora* Project
-  section_header_titles:
-    blog: blog
-    guides: guides
-    install: install
+  sections:
+    titles:
+      blog: The diaspora* Blog
+      guides: diaspora* Guides
+      install: Install diaspora*
+      meta: The diaspora* Project
+      site: The diaspora* Project
+    header_titles:
+      blog: blog
+      guides: guides
+      install: install
   navigation:
     blog: Blog
     get_involved: Get involved

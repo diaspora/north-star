@@ -3,12 +3,12 @@
 module Sinatra
   module ContentHelpers
     def page_title(title=false)
-      section_title = I18n.t("section_titles.#{@section}")
+      section_title = I18n.t("sections.titles.#{@section}")
       [title, section_title].select(&:present?).join(" - ")
     end
 
     def section_title
-      section_header_title = I18n.t("section_header_titles.#{@section}", default: "")
+      section_header_title = I18n.t("sections.header_titles.#{@section}", default: "")
       ['<span class="section">', section_header_title, "</span>"].join unless section_header_title.empty?
     end
 
