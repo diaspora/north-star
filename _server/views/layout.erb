@@ -10,14 +10,22 @@
     <title>diaspora*</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <div class="container">
         <a class="navbar-brand" href="/">diaspora*</a>
       </div>
     </nav>
 
+    <div id="masthead" class="hero">
+      <div class="container">
+        <h1><%= page[:title] %></h1>
+        <% if page[:subtitle] %>
+          <h2 class="lead"><%= page[:subtitle] %></h2>
+        <% end %>
+      </div>
+    </div>
+
     <main role="main" class="container">
-      <h1><%= page[:title] %></h1>
       <%= yield %>
     </main>
   </body>

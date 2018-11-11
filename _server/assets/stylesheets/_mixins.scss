@@ -1,0 +1,7 @@
+@mixin radial-gradient-background($position, $shape, $from, $to) {
+  background-image: -moz-radial-gradient($position, $shape, $from, $to);
+  background-image: -webkit-radial-gradient($position, $shape, $from, $to);
+  background-image: -o-radial-gradient($position, $shape, $from, $to);
+  background-image: -ms-radial-gradient($position, $shape, $from, $to);
+  background-image: radial-gradient($position, $shape, $from, $to);
+}

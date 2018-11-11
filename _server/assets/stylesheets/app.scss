@@ -1,5 +1,8 @@
-@import "bootstrap";
+/**
+ *= require "bootstrap"
+ *= require_tree "."
+ */
 
 main {
-  margin-top: 70px;
+  margin-top: 50px;
 }
