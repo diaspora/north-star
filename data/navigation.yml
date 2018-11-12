@@ -34,11 +34,7 @@ site: &site
     - title: navigation.support
       target: https://discourse.diasporafoundation.org
   header_buttons:
-    - title: navigation.host_a_pod
-      target:
-        section: install
-        path: ""
     - title: navigation.join_diaspora
       target:
-        section: guides
-        path: "users/find_a_pod"
+        section: site
+        path: join
