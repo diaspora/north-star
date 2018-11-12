@@ -1,4 +1,8 @@
 en:
+  time:
+    formats:
+      blog_headline_date: "%B %-d, %Y"
+      blog_short_date: "%Y-%m-%d"
   sections:
     titles:
       blog: The diaspora* Blog

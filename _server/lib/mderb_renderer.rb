@@ -2,7 +2,7 @@
 
 module Sinatra
   module MderbRenderer
-    def mderb(document)
+    def mderb(document, layout=:"layouts/default")
       erb_locals = {
         page: document[:frontmatter]
       }
@@ -13,8 +13,12 @@ module Sinatra
       erb(
         rendered_markdown,
         locals: erb_locals,
-        layout: :"layouts/default"
+        layout: layout
       )
+    end
+
+    def mderb_inline(document)
+      mderb(document, false)
     end
 
     private

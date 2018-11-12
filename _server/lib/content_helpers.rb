@@ -38,10 +38,6 @@ module Sinatra
     def partial(partial, locals={})
       erb partial.to_sym, locals: locals
     end
-
-    def data(path)
-      settings.storage.load_data(path)
-    end
   end
 
   helpers ContentHelpers

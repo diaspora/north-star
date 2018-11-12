@@ -1,0 +1,6 @@
+<div class="pb-2 mt-5 mb-4 border-bottom">
+  <h1>
+    <a href="<%= blog_url(article) %>"><%= article[:frontmatter][:title] %></a>
+    <small class="text-muted"><%= format_date(article[:frontmatter][:date]) %></small>
+  </h1>
+</div>
