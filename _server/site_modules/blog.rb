@@ -17,7 +17,7 @@ module Sinatra
             end
           end
 
-          before do
+          before "/(index)?" do
             articles_list = sort_blog(list_documents("blog", "articles"))
             releases_list = sort_blog(list_documents("blog", "releases"))
             last_article = sort_blog([].concat(articles_list, releases_list))[0]
