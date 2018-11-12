@@ -1,28 +1,7 @@
 # The _templates section will never be used by the frontend, but we needed a
 # simple way to store some generic, reusable snippets. :)
 _templates:
-  project_info_link:
-    - &project_info_link
-      title: navigation.get_project_information
-      target:
-        section: site
-        path: ""
-
-blog:
-  header_buttons:
-    - *project_info_link
-guides:
-  header_buttons:
-    - *project_info_link
-install:
-  header_buttons:
-    - *project_info_link
-site: &site
-  header:
-    - title: navigation.get_involved
-      target:
-        section: site
-        path: "get_involved"
+  site_crosslinks: &site_crosslinks
     - title: navigation.blog
       target:
         section: blog
@@ -33,6 +12,32 @@ site: &site
         path: ""
     - title: navigation.support
       target: https://discourse.diasporafoundation.org
+  project_info_link:
+    - &project_info_link
+      title: navigation.get_project_information
+      target:
+        section: site
+        path: ""
+
+blog:
+  header_crosslinks: *site_crosslinks
+  header_buttons:
+    - *project_info_link
+guides:
+  header_crosslinks: *site_crosslinks
+  header_buttons:
+    - *project_info_link
+install:
+  header_crosslinks: *site_crosslinks
+  header_buttons:
+    - *project_info_link
+site:
+  header:
+    - title: navigation.get_involved
+      target:
+        section: site
+        path: "get_involved"
+  header_crosslinks: *site_crosslinks
   header_buttons:
     - title: navigation.join_diaspora
       target:
