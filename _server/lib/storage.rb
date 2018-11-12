@@ -27,6 +27,14 @@ module Storage
       file_path
     end
 
+    def document_path_info(path)
+      parts = path.gsub(@paths[:contents], "").split("/").reject(&:empty?)
+      {
+        section: parts[0],
+        path:    parts[1..-1].join("/").gsub(".md", "")
+      }
+    end
+
     def load_data(path)
       data_path = ::Helpers.path_expand_join(@paths[:data], "#{path}.yml")
       return false unless file_exist?(data_path)

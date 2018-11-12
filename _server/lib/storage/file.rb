@@ -12,12 +12,16 @@ module Storage
 
     def receive_document(path)
       contents = ::File.read(path)
-      split_contents(contents)
+      split_contents(contents, path)
     end
 
-    def list_documents
+    def list_documents(path="")
+      Dir[::Helpers.path_expand_join(@paths[:contents], path, "**", "*.md")]
+    end
+
+    def list_documents_and_translations
       [].concat(
-        Dir[::Helpers.path_expand_join(@paths[:contents], "**", "*.md")],
+        list_documents,
         Dir[::Helpers.path_expand_join(@paths[:translations], "*", "contents", "**", "*.md")]
       )
     end
@@ -27,8 +31,8 @@ module Storage
       YAML.load(contents).deep_symbolize_keys
     end
 
-    def list_data
-      Dir[::Helpers.path_expand_join(@paths[:data], "**", "*.yml")]
+    def list_data(path="")
+      Dir[::Helpers.path_expand_join(@paths[:data], path, "**", "*.yml")]
     end
 
     private
@@ -41,13 +45,14 @@ module Storage
       ::Dir.exist?(path)
     end
 
-    def split_contents(contents)
+    def split_contents(contents, path)
       matches = YAML_FRONT_MATTER_REGEXP.match(contents)
       if matches
         frontmatter = YAML.load(matches[1]) || {}
         {
+          contents:    matches.post_match,
           frontmatter: frontmatter.deep_symbolize_keys,
-          contents:    matches.post_match
+          path:        document_path_info(path)
         }
       else
         {

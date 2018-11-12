@@ -11,7 +11,12 @@ module Storage
 
     def receive_document(path)
       contents = @redis.get(path)
-      JSON.parse(contents).deep_symbolize_keys
+      unserialize(contents)
+    end
+
+    def list_documents(path="")
+      target = [@paths[:contents], path].join("/") + "*"
+      @redis.keys(target)
     end
 
     def receive_data(path)
@@ -25,17 +30,17 @@ module Storage
 
       file_storage = Storage::File.new(@paths)
 
-      file_storage.list_documents.each do |document_path|
+      file_storage.list_documents_and_translations.each do |document_path|
         @redis.set(
           document_path,
-          file_storage.receive_document(document_path).to_json
+          serialize(file_storage.receive_document(document_path))
         )
       end
 
-      file_storage.list_data.each do |data|
+      file_storage.list_data.each do |data_path|
         @redis.set(
-          data,
-          file_storage.receive_data(data).to_json
+          data_path,
+          serialize(file_storage.receive_data(data_path))
         )
       end
     end
@@ -47,6 +52,16 @@ module Storage
     def dir_exist?(path)
       path += "/" unless path[-1] == "/"
       @redis.keys("#{path}*").present?
+    end
+
+    private
+
+    def serialize(obj)
+      Marshal.dump(obj).force_encoding('utf-8')
+    end
+
+    def unserialize(obj)
+      Marshal.load(obj.force_encoding("ascii"))
     end
   end
 end
