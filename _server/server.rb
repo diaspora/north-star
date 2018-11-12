@@ -17,6 +17,7 @@ class Server < Sinatra::Base
   end
 
   helpers Sinatra::ContentHelpers
+  helpers Sinatra::LayoutHelpers
   helpers Sinatra::Cookies
   helpers Sinatra::MderbRenderer
   helpers Sinatra::StorageHelpers

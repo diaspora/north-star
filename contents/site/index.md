@@ -11,7 +11,7 @@ subtitle: The online social world where you are in control
   headline: "diaspora* is based on three key principles"
 %>
 
-<div class="row"><div class="col-lg" markdown="1">
+<%= row_start("col-lg") %>
 
 <%= partial "components/feature_fa_icon", icon: "far fa-globe" %>
 
@@ -21,7 +21,7 @@ Instead of everyone’s data being held on huge central servers owned by a large
 
 [Find out more](<%= url_to("site", "get_involved") %>){: class="btn btn-primary"}
 
-</div><div class="col-lg" markdown="1">
+<%= col_new("col-lg") %>
 
 <%= partial "components/feature_fa_icon", icon: "far fa-lock-open" %>
 
@@ -31,7 +31,7 @@ You can be whoever you want to be in diaspora\*. Unlike some networks, you don�
 
 [Find out more](<%= url_to("site", "get_involved") %>){: class="btn btn-primary"}
 
-</div><div class="col-lg" markdown="1">
+<%= col_new("col-lg") %>
 
 <%= partial "components/feature_fa_icon", icon: "far fa-eye-slash" %>
 
@@ -41,7 +41,7 @@ In diaspora\* you own your data. You don’t sign over rights to a corporation o
 
 [Find out more](<%= url_to("site", "get_involved") %>){: class="btn btn-primary"}
 
-</div></div>
+<%= row_end %>
 
 <%= partial "components/headline_divider",
   id: "get_started",
