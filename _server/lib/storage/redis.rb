@@ -6,7 +6,7 @@ module Storage
       @paths = paths
       @redis = ::Redis.new
 
-      import_contents
+      import_file_storage
     end
 
     def receive_document(path)
@@ -20,7 +20,7 @@ module Storage
 
     private
 
-    def import_contents
+    def import_file_storage
       @redis.flushall
 
       file_storage = Storage::File.new(@paths)
