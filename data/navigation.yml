@@ -10,6 +10,10 @@ _templates:
       target:
         section: guides
         path: ""
+    - title: navigation.installation
+      target:
+        section: install
+        path: ""
     - title: navigation.support
       target: https://discourse.diasporafoundation.org
   project_info_link:
