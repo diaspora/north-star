@@ -4,7 +4,7 @@ module Storage
   class Redis < Dummy
     def initialize(paths)
       @paths = paths
-      @redis = ::Redis.new
+      @redis = ::Redis.new(url: ENV["REDIS_URL"] || "redis://localhost:6379/11")
 
       import_file_storage
     end
