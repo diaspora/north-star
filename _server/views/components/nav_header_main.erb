@@ -4,7 +4,7 @@
       <% data("navigation")[@section][:header].each do |nav_item| %>
         <li class="nav-item">
           <a class="nav-link" href="<%= url_for_nav_item(nav_item[:target]) %>">
-            <%= I18n.t(nav_item[:title]) %>
+            <%= link_title(nav_item) %>
           </a>
         </li>
       <% end %>

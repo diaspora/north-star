@@ -2,16 +2,13 @@
 # simple way to store some generic, reusable snippets. :)
 _templates:
   site_crosslinks: &site_crosslinks
-    - title: navigation.blog
-      target:
+    - target:
         section: blog
         path: ""
-    - title: navigation.guides
-      target:
+    - target:
         section: guides
         path: ""
-    - title: navigation.installation
-      target:
+    - target:
         section: install
         path: ""
     - title: navigation.support
@@ -24,6 +21,10 @@ _templates:
         path: ""
 
 blog:
+  header:
+    - target:
+        section: blog
+        path: "releases"
   header_crosslinks: *site_crosslinks
   header_buttons:
     - *project_info_link
@@ -37,13 +38,11 @@ install:
     - *project_info_link
 site:
   header:
-    - title: navigation.get_involved
-      target:
+    - target:
         section: site
         path: "get_involved"
   header_crosslinks: *site_crosslinks
   header_buttons:
-    - title: navigation.join_diaspora
-      target:
+    - target:
         section: site
         path: join

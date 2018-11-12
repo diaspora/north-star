@@ -35,6 +35,13 @@ module Sinatra
       url_to(target[:section], target[:path])
     end
 
+    def link_title(item)
+      return I18n.t(item[:title]) if item[:title]
+
+      document = load_document(item[:target][:section], item[:target][:path])
+      document[:frontmatter][:nav_title] || document[:frontmatter][:title]
+    end
+
     def partial(partial, locals={})
       erb partial.to_sym, locals: locals
     end

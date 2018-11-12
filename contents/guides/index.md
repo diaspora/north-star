@@ -1,5 +1,6 @@
 ---
 title: Guides
+nav_title: Guides
 title_tag: ""
 ---
 
