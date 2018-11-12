@@ -18,18 +18,18 @@ Metrics/LineLength:
 
 # Too short methods lead to extraction of single-use methods, which can make
 # the code easier to read (by naming things), but can also clutter the class
-Metrics/MethodLength: 
-  Max: 20
+Metrics/MethodLength:
+  Enabled: false
 
 # The guiding principle of classes is SRP, SRP can't be accurately measured by LoC
 Metrics/ClassLength:
   Max: 1500
 Metrics/ModuleLength:
   Max: 1500
-  
+
 # Raise AbcSize from 15 to 20
 Metrics/AbcSize:
-  Max: 20
+  Enabled: false
 
 # Some blocks are longer.
 Metrics/BlockLength:
@@ -169,3 +169,11 @@ Style/NumericPredicate:
 # Reset some HoundCI changes back to Rubocop defaults
 Layout/DotPosition:
   EnforcedStyle: leading
+
+# Don't bother about unsafe YAML loading
+Security/YAMLLoad:
+  Enabled: false
+
+# Sinatra sometimes requires method nesting (i.e. for helpers in namespaces)
+Lint/NestedMethodDefinition:
+  Enabled: false 

@@ -3,7 +3,7 @@
 module Sinatra
   module Configs
     module Assets
-      def self.registered(app) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
+      def self.registered(app)
         app.configure do
           app.set :assets_paths, %w[
             assets/javascripts

@@ -3,7 +3,7 @@
 module Sinatra
   module SiteModules
     module LocaleSelect
-      def self.registered(app) # rubocop:disable Metrics/AbcSize
+      def self.registered(app)
         app.before do
           return unless @section_config[:translateable]
 
