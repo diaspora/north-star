@@ -24,7 +24,7 @@ module Storage
 
     def receive_data(path)
       contents = ::File.read(path)
-      YAML.safe_load(contents, [], [], true).deep_symbolize_keys
+      YAML.load(contents).deep_symbolize_keys
     end
 
     def list_data
@@ -44,7 +44,7 @@ module Storage
     def split_contents(contents)
       matches = YAML_FRONT_MATTER_REGEXP.match(contents)
       if matches
-        frontmatter = YAML.safe_load(matches[1]) || {}
+        frontmatter = YAML.load(matches[1]) || {}
         {
           frontmatter: frontmatter.deep_symbolize_keys,
           contents:    matches.post_match
