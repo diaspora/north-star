@@ -17,11 +17,11 @@ module Sinatra
             end
 
             def format_date(date)
-              ::I18n.l(date, format: :blog_headline_date)
+              date.strftime("#{date.day.ordinalize} %B, %Y")
             end
 
             def format_short_date(date)
-              ::I18n.l(date, format: :blog_short_date)
+              date.strftime("%Y-%m-%d")
             end
           end
 
