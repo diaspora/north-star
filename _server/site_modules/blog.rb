@@ -6,10 +6,11 @@ module Sinatra
       def self.registered(app)
         app.namespace "/blog" do
           helpers do
-            def sort_blog(documents)
-              documents
+            def list(path)
+              list_documents("blog", path)
                 .sort_by {|document| document[:path] }
                 .reverse
+                .map {|item| load_document("blog", item[:path]) }
             end
 
             def blog_url(article)
@@ -17,14 +18,22 @@ module Sinatra
             end
           end
 
-          before "/(index)?" do
-            articles_list = sort_blog(list_documents("blog", "articles"))
-            releases_list = sort_blog(list_documents("blog", "releases"))
-            last_article = sort_blog([].concat(articles_list, releases_list))[0]
+          get "/(index)?" do
+            @latest_articles = list("articles").take(3)
+            @latest_releases = list("releases").take(3)
+            @latest_blog  = [].concat(@latest_articles, @latest_releases).max_by {|page| page[:path][:path] }
 
-            @latest_articles = articles_list.map {|file| load_document("blog", file[:path]) }
-            @latest_releases = releases_list.map {|file| load_document("blog", file[:path]) }
-            @latest_blog = load_document("blog", last_article[:path])
+            mderb(settings.storage.load_document("blog", "index"))
+          end
+
+          get "/releases" do
+            @items = list("releases")
+            mderb(settings.storage.load_document("blog", "releases"))
+          end
+
+          get "/articles" do
+            @items = list("articles")
+            mderb(settings.storage.load_document("blog", "articles"))
           end
         end
       end

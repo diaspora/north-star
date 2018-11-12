@@ -25,6 +25,9 @@ blog:
     - target:
         section: blog
         path: "releases"
+    - target:
+        section: blog
+        path: "articles"
   header_crosslinks: *site_crosslinks
   header_buttons:
     - *project_info_link
