@@ -4,6 +4,7 @@ AllCops:
   TargetRubyVersion: 2.3
   Exclude:
     - "bin/**/*"
+    - "vendor/bundle/**/*"
 
 Rails:
   Enabled: true
@@ -174,6 +175,11 @@ Layout/DotPosition:
 Security/YAMLLoad:
   Enabled: false
 
+# We use Marshal for persisting parsed documents into redis. As we only ever
+# store our own documents, there is no risk here.
+Security/MarshalLoad:
+  Enabled: false
+
 # Sinatra sometimes requires method nesting (i.e. for helpers in namespaces)
 Lint/NestedMethodDefinition:
-  Enabled: false 
+  Enabled: false

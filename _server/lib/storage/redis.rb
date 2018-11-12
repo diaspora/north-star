@@ -54,10 +54,8 @@ module Storage
       @redis.keys("#{path}*").present?
     end
 
-    private
-
     def serialize(obj)
-      Marshal.dump(obj).force_encoding('utf-8')
+      Marshal.dump(obj).force_encoding("utf-8")
     end
 
     def unserialize(obj)
