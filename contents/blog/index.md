@@ -2,7 +2,7 @@
 title: The diaspora* blog
 title_tag: ""
 nav_title: Blog
-subtitle: "Official announcements and news"
+subtitle: Official announcements and news
 ---
 
 <%= partial "components/blog_header", item: @latest_blog %>
