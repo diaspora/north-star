@@ -1,3 +1,22 @@
+# The _templates section will never be used by the frontend, but we needed a
+# simple way to store some generic, reusable snippets. :)
+_templates:
+  project_info_link:
+    - &project_info_link
+      title: navigation.get_project_information
+      target:
+        section: site
+        path: ""
+
+blog:
+  header_buttons:
+    - *project_info_link
+guides:
+  header_buttons:
+    - *project_info_link
+install:
+  header_buttons:
+    - *project_info_link
 site: &site
   header:
     - title: navigation.get_involved
@@ -23,4 +42,3 @@ site: &site
       target:
         section: guides
         path: "users/find_a_pod"
-blog: *site
