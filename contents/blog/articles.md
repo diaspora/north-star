@@ -5,5 +5,5 @@ subtitle: "Tales from the engine room"
 ---
 
 <% @items.each do |item| %>
-<%= partial "components/blog_header", article: item %>
+<%= partial "components/blog_header", item: item %>
 <% end %>

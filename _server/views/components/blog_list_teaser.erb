@@ -1,3 +1,3 @@
-<% articles.each do |article| %>
-  * <%= format_short_date(article[:frontmatter][:date]) %>: [<%= article[:frontmatter][:title] %>](<%= blog_url(article) %>)
+<% items.each do |item| %>
+  * <%= format_short_date(item[:frontmatter][:date]) %>: [<%= item[:frontmatter][:title] %>](<%= blog_url(item) %>)
 <% end %>

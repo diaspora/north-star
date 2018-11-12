@@ -5,5 +5,5 @@ subtitle: "New diaspora* software releases"
 ---
 
 <% @items.each do |item| %>
-<%= partial "components/blog_header", article: item %>
+<%= partial "components/blog_header", item: item %>
 <% end %>
