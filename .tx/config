@@ -9,13 +9,6 @@ source_file = contents/guides/index.md
 source_lang = en
 type = GITHUBMARKDOWN
 
-[north-star.contents_install_index]
-file_filter = translations/<lang>/contents/install/index.md
-minimum_perc = 0
-source_file = contents/install/index.md
-source_lang = en
-type = GITHUBMARKDOWN
-
 [north-star.contents_meta_404]
 file_filter = translations/<lang>/contents/meta/404.md
 minimum_perc = 0
@@ -34,6 +27,13 @@ type = GITHUBMARKDOWN
 file_filter = translations/<lang>/contents/site/index.md
 minimum_perc = 0
 source_file = contents/site/index.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[north-star.contents_site_join]
+file_filter = translations/<lang>/contents/site/join.md
+minimum_perc = 0
+source_file = contents/site/join.md
 source_lang = en
 type = GITHUBMARKDOWN
 

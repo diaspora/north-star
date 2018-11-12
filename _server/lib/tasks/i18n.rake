@@ -9,7 +9,8 @@ class NorthStarI18n
       "contents/**/*.md",
       "strings/*.yml"
     ) do |list|
-      list.exclude("contents/blog/**")
+      list.exclude("contents/install/**/*")
+      list.exclude("contents/blog/**/*")
       list.exclude("contents/meta/dev_index.md")
     end
   end
