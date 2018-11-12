@@ -15,7 +15,7 @@ module Storage
     end
 
     def list_documents(path="")
-      target = [@paths[:contents], path].join("/") + "*"
+      target = [@paths[:contents], path, "*"].join("/")
       @redis.keys(target)
     end
 
