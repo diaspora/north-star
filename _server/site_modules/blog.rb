@@ -15,14 +15,6 @@ module Sinatra
             def blog_url(article)
               url_to("blog", article[:path][:path])
             end
-
-            def format_date(date)
-              date.strftime("#{date.day.ordinalize} %B, %Y")
-            end
-
-            def format_short_date(date)
-              date.strftime("%Y-%m-%d")
-            end
           end
 
           before do

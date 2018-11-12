@@ -38,6 +38,14 @@ module Sinatra
     def partial(partial, locals={})
       erb partial.to_sym, locals: locals
     end
+
+    def format_date(date)
+      date.strftime("#{date.day.ordinalize} %B %Y")
+    end
+
+    def format_short_date(date)
+      date.strftime("%Y-%m-%d")
+    end
   end
 
   helpers ContentHelpers
