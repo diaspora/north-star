@@ -55,11 +55,11 @@ module Storage
     end
 
     def serialize(obj)
-      Marshal.dump(obj).force_encoding("utf-8")
+      Marshal.dump(obj)
     end
 
     def unserialize(obj)
-      Marshal.load(obj.force_encoding("ascii"))
+      Marshal.load(obj)
     end
   end
 end
