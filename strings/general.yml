@@ -1,4 +1,9 @@
 en:
+  blog:
+    feeds:
+      all: All blog entries
+      articles: Project news
+      releases: Releases
   sections:
     titles:
       blog: The diaspora* Blog

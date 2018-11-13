@@ -2,7 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
+
     <link rel="shortcut icon" type="image/x-icon" href="<%= static_url("favicon.png") %>">
+    <link rel="alternate" type="application/atom+xml" title="<%= I18n.t("blog.feeds.all") %> (Atom)" href="<%= url_to "blog", "feeds/all.xml" %>">
+    <link rel="alternate" type="application/atom+xml" title="<%= I18n.t("blog.feeds.articles") %> (Atom)" href="<%= url_to "blog", "feeds/articles.xml" %>">
+    <link rel="alternate" type="application/atom+xml" title="<%= I18n.t("blog.feeds.releases") %> (Atom)" href="<%= url_to "blog", "feeds/releases.xml" %>">
 
     <%= stylesheet_tag "app" %>
     <%= javascript_tag "app" %>

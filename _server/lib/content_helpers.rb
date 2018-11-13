@@ -53,6 +53,10 @@ module Sinatra
     def format_short_date(date)
       date.strftime("%Y-%m-%d")
     end
+
+    def html_escape(text)
+      Rack::Utils.escape_html(text)
+    end
   end
 
   helpers ContentHelpers
