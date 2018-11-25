@@ -1,0 +1,65 @@
+linux:
+  title: Linux
+  supports:
+    development:
+      docker: true
+      manual: true
+    production:
+      manual: true
+  distributions:
+    arch:
+      title: Arch Linux
+      versions:
+        rolling:
+          title: Rolling release
+
+    centos:
+      title: CentOS
+      versions:
+        v7:
+          title: CentOS 7
+        v6:
+          title: CentOS 6
+
+    debian:
+      title: Debian
+      versions:
+        stretch:
+          title: Debian 9 (Stretch)
+        jessie:
+          title: Debian 8 (Jessie)
+
+    fedora:
+      title: Fedora
+      versions:
+        v29:
+          title: Fedora 29
+        v28:
+          title: Fedora 28
+
+    ubuntu:
+      title: Ubuntu
+      versions:
+        cosmic:
+          title: Ubuntu 18.10 (Cosmic Cuttlefish)
+        bionic:
+          title: Ubuntu 18.04 (Bionic Beaver)
+        xenial:
+          title: Ubuntu 16.04 (Xenial Xerus)
+
+mac:
+  title: macOS
+  supports:
+    development:
+      docker: true
+      manual: false
+    production:
+      manual: false
+  distributions:
+    main:
+      title: macOS
+      versions:
+        mojave:
+          title: 10.14 (Mojave)
+        high_sierra:
+          title: 10.13 (High Sierra)
