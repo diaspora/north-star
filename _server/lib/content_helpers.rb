@@ -20,8 +20,9 @@ module Sinatra
       "#{asset_protocol}://#{asset_host}/#{asset}"
     end
 
-    def url_to(section, path)
-      return "/#{section}/#{path}" unless Sinatra::Application.production?
+    def url_to(section, path, args={})
+      query = args.empty? ? "" : "?#{args.to_query}"
+      return "/#{section}/#{path}#{query}" unless Sinatra::Application.production?
 
       protocol = settings.config[:use_https] ? "https" : "http"
       domain = settings.config[:sections][section.to_sym][:domain]
