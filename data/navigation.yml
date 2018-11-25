@@ -24,10 +24,10 @@ blog:
   header:
     - target:
         section: blog
-        path: "releases"
+        path: releases
     - target:
         section: blog
-        path: "articles"
+        path: articles
   header_crosslinks: *site_crosslinks
   header_buttons:
     - *project_info_link
@@ -43,7 +43,7 @@ site:
   header:
     - target:
         section: site
-        path: "get_involved"
+        path: get_involved
   header_crosslinks: *site_crosslinks
   header_buttons:
     - target:
