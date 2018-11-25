@@ -18,4 +18,5 @@ en:
   navigation:
     get_project_information: More about diaspora*
     support: Support
+  noscript: This site requires JavaScript, which you have disabled in your browser. Go ahead and enable it.
   select_language: Select language
