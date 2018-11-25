@@ -25,6 +25,14 @@ module Sinatra
     def row_new(col_classes)
       row_end + row_start(col_classes)
     end
+
+    def center_start
+      '<p class="text-center" markdown="1">'
+    end
+
+    def center_end
+      "</p>"
+    end
   end
 
   helpers LayoutHelpers
