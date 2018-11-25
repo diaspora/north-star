@@ -4,6 +4,7 @@ date: 2017-07-31 00:00:00
 ---
 
 ## The second major version of diaspora’s federation protocol has been released
+
 ### Let’s first take a step back and look at why this is huge news.
 
 *tl;dr: The next major version of diaspora\* (0.7.0.0) will include a new major version (0.2.0) of diaspora\*’s federation protocol. The release of this version demonstrates that the ‘cleaning’ phase has been finished and that the community is now able to develop this protocol further. Under an [AGPL 3.0](https://github.com/diaspora/diaspora_federation/blob/develop/LICENSE) licence and proven by many years of production, the protocol and its implementation are both reliable and robust. We encourage projects seeking to create the federated social web to take an interest in this protocol, and we will push its wider adoption by providing support and an automatic tool to test its implementation in other languages. Apart from the reference implementation in Ruby, there are currently two implementations in PHP, one in Python and one in Go, which are at various stages of development.*
