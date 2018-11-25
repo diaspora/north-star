@@ -11,8 +11,9 @@ _templates:
     - target:
         section: install
         path: ""
-    - title: navigation.support
-      target: https://discourse.diasporafoundation.org
+    - target:
+        section: site
+        path: get_help
   project_info_link:
     - &project_info_link
       title: navigation.get_project_information
