@@ -1,0 +1,22 @@
+#install_selector {
+  margin-top: 3rem;
+
+  i {
+    font-size: 250%;
+  }
+
+  .row {
+    margin: 2rem 0;
+  }
+
+  .list-group-item-success.list-group-item-action {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: #fff;
+
+    &:hover, &:focus {
+      background-color: #218838;
+      border-color: #1e7e34;
+    }
+  }
+}
