@@ -58,53 +58,44 @@ window.DiasporaInstallSelector = (() => {
         this._elements[el].innerHTML = "";
       });
 
-      this.drawSystemSelector();
-
       switch (changedItem) {
         case "system": {
+          this._state.distribution = null;
+          this._state.version = null;
+          this._state.env = null;
+
           if (!this._hasDistributions(this._state.system)) {
             this.setState("distribution", "main");
           }
-
-          this.drawDistributionSelector();
           break;
         }
 
         case "distribution": {
-          this.drawDistributionSelector();
-          this.drawVersionSelector();
+          this._state.version = null;
+          this._state.env = null;
           break;
         }
 
         case "version": {
-          this.drawDistributionSelector();
-          this.drawVersionSelector();
-          this.drawEnvSelector();
+          this._state.env = null;
           break;
         }
+      }
 
-        case "env": {
-          this.drawDistributionSelector();
-          this.drawVersionSelector();
-          this.drawEnvSelector();
+      this.drawSystemSelector();
 
-          if (["development_docker"].includes(this._state.env)) {
-            this.drawDockerGuideLinks();
-          } else {
-            this.drawDbAndProxySelector();
-            this.drawManualGuideLinks();
-          }
-          break;
-        }
+      let state = this._state;
 
-        case "database":
-        case "proxy": {
-          this.drawDistributionSelector();
-          this.drawVersionSelector();
-          this.drawEnvSelector();
+      state.system && this.drawDistributionSelector();
+      state.distribution && this.drawVersionSelector();
+      state.version && this.drawEnvSelector();
+
+      if (state.env) {
+        if (["development_docker"].includes(state.env)) {
+          this.drawDockerGuideLinks();
+        } else {
           this.drawDbAndProxySelector();
           this.drawManualGuideLinks();
-          break;
         }
       }
     },
