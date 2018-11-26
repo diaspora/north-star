@@ -9,14 +9,28 @@
     margin: 2rem 0;
   }
 
-  .list-group-item-success.list-group-item-action {
-    background-color: #28a745;
-    border-color: #28a745;
+  .list-group-item-primary.list-group-item-action {
+    background-color: #007bff;
+    border-color: #007bff;
     color: #fff;
 
     &:hover, &:focus {
-      background-color: #218838;
-      border-color: #1e7e34;
+      background-color: #0069d9;
+      border-color: #0062cc;
+    }
+  }
+
+  #guides {
+    div {
+      margin-top: 4rem;
+    }
+
+    button {
+      font-size: 180%;
+    }
+
+    p {
+      margin-top: 1rem;
     }
   }
 }

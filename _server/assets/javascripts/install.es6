@@ -42,10 +42,10 @@ window.DiasporaInstallSelector = (() => {
 
     resetState() {
       this._state = {
-        database: null,
+        database: "postgres",
         distribution: null,
         env: null,
-        reverseProxy: null,
+        proxy: "nginx",
         system: null,
         version: null
       };
@@ -82,6 +82,30 @@ window.DiasporaInstallSelector = (() => {
           this.drawEnvSelector();
           break;
         }
+
+        case "env": {
+          this.drawDistributionSelector();
+          this.drawVersionSelector();
+          this.drawEnvSelector();
+
+          if (["development_docker"].includes(this._state.env)) {
+            this.drawDockerGuideLinks();
+          } else {
+            this.drawDbAndProxySelector();
+            this.drawManualGuideLinks();
+          }
+          break;
+        }
+
+        case "database":
+        case "proxy": {
+          this.drawDistributionSelector();
+          this.drawVersionSelector();
+          this.drawEnvSelector();
+          this.drawDbAndProxySelector();
+          this.drawManualGuideLinks();
+          break;
+        }
       }
     },
 
@@ -98,7 +122,7 @@ window.DiasporaInstallSelector = (() => {
         entryMap: (system) => {
           return {
             key: system,
-            color: system == this._state.system ? "success" : "light",
+            color: system == this._state.system ? "primary" : "light",
             icon: this._available[system].icon,
             title: this._available[system].title
           };
@@ -127,7 +151,7 @@ window.DiasporaInstallSelector = (() => {
         entryMap: (distribution) => {
           return {
             key: distribution,
-            activeClass: distribution == this._state.distribution ? "list-group-item-success" : "",
+            activeClass: distribution == this._state.distribution ? "list-group-item-primary" : "",
             icon: distributions[distribution].icon,
             title: distributions[distribution].title
           };
@@ -145,6 +169,7 @@ window.DiasporaInstallSelector = (() => {
       let versions = this._available[this._state.system]
         .distributions[this._state.distribution]
         .versions;
+
       this._renderList({
         innerTpl: "versionsEntry",
         outerTpl: "versions",
@@ -152,7 +177,7 @@ window.DiasporaInstallSelector = (() => {
         entryMap: (version) => {
           return {
             key: version,
-            activeClass: version == this._state.version ? "list-group-item-success" : "",
+            activeClass: version == this._state.version ? "list-group-item-primary" : "",
             icon: versions[version].icon,
             title: versions[version].title
           };
@@ -201,7 +226,7 @@ window.DiasporaInstallSelector = (() => {
         entryMap: (env) => {
           return {
             key: env,
-            activeClass: env == this._state.env ? "list-group-item-success" : "",
+            color: env == this._state.env ? "primary" : "light",
             icon: envs[env].icon,
             title: envs[env].title
           };
@@ -213,6 +238,66 @@ window.DiasporaInstallSelector = (() => {
           };
         }
       });
+    },
+
+    drawDbAndProxySelector() {
+      let databases = {
+        postgres: { title: "PostgreSQL" },
+        mariadb: { title: "MariaDB" }
+      };
+
+      this._renderList({
+        innerTpl: "databaseEntry",
+        outerTpl: "databases",
+        listEntries: databases,
+        entryMap: (database) => {
+          return {
+            key: database,
+            color: database == this._state.database ? "primary" : "light",
+            icon: databases[database].icon,
+            title: databases[database].title
+          };
+        },
+        elementKey: "database",
+        clickHandler: (button) => {
+          return () => {
+            this.setState("database", button.dataset.database);
+          };
+        }
+      });
+
+      let proxies = {
+        nginx: { title: "Nginx" },
+        apache: { title: "Apache" }
+      };
+
+      this._renderList({
+        innerTpl: "proxyEntry",
+        outerTpl: "proxies",
+        listEntries: proxies,
+        entryMap: (proxy) => {
+          return {
+            key: proxy,
+            color: proxy == this._state.proxy ? "primary" : "light",
+            icon: proxies[proxy].icon,
+            title: proxies[proxy].title
+          };
+        },
+        elementKey: "proxy",
+        clickHandler: (button) => {
+          return () => {
+            this.setState("proxy", button.dataset.proxy);
+          };
+        }
+      });
+    },
+
+    drawDockerGuideLinks() {
+      this._elements.guides.innerHTML = this._templates.dockerGuide();
+    },
+
+    drawManualGuideLinks() {
+      this._elements.guides.innerHTML = this._templates.manualGuide();
     }
   };
 

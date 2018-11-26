@@ -15,7 +15,8 @@ Welcome to the world of diaspora\*! Follow these guides to get a pod set up and 
   <div id="version"></div>
   <div id="env"></div>
   <div id="database"></div>
-  <div id="reverse_proxy"></div>
+  <div id="proxy"></div>
+  <div id="guides"></div>
 </div>
 
 <script id="tpl-systems" type="text/x-handlebars-template">
@@ -81,7 +82,7 @@ Welcome to the world of diaspora\*! Follow these guides to get a pod set up and 
 </script>
 
 <script id="tpl-envs" type="text/x-handlebars-template">
-  <h2>Select the target environment</h2>
+  <h2>Select your goal</h2>
   <div class="row">
     {{{items}}}
   </div>
@@ -100,6 +101,62 @@ Welcome to the world of diaspora\*! Follow these guides to get a pod set up and 
   </div>
 </script>
 
+<script id="tpl-databases" type="text/x-handlebars-template">
+  <h2>Select your database system</h2>
+  <div class="row">
+    {{{items}}}
+  </div>
+</script>
+
+<script id="tpl-database-entry" type="text/x-handlebars-template">
+  <div class="col-md">
+    <button
+      class="install-button btn btn-{{color}} btn-lg btn-block"
+      data-database="{{key}}"
+      type="button"
+    >
+      {{title}}
+    </button>
+  </div>
+</script>
+
+<script id="tpl-proxies" type="text/x-handlebars-template">
+  <h2>Select your reverse proxy</h2>
+  <div class="row">
+    {{{items}}}
+  </div>
+</script>
+
+<script id="tpl-proxy-entry" type="text/x-handlebars-template">
+  <div class="col-md">
+    <button
+      class="install-button btn btn-{{color}} btn-lg btn-block"
+      data-proxy="{{key}}"
+      type="button"
+    >
+      {{title}}
+    </button>
+  </div>
+</script>
+
+<script id="tpl-docker-guide" type="text/x-handlebars-template">
+  <div class="col-md">
+    <button class="install-button btn btn-success btn-lg btn-block" type="button">
+      Install diaspora*
+    </button>
+  </div>
+</script>
+
+<script id="tpl-manual-guide" type="text/x-handlebars-template">
+  <div class="col-md">
+    <button class="install-button btn btn-success btn-lg btn-block" type="button">
+      Install diaspora*
+    </button>
+    <p class="text-center">
+      <a href="">Show all steps on a single page instead of using the interactive, multi-step install guide</a>.
+    </p>
+  </div>
+</script>
 
 <script>
   function compileTemplate(id) {
@@ -112,15 +169,22 @@ Welcome to the world of diaspora\*! Follow these guides to get a pod set up and 
       database: document.getElementById("database"),
       distribution: document.getElementById("distribution"),
       env: document.getElementById("env"),
-      reverseProxy: document.getElementById("reverse_proxy"),
+      guides: document.getElementById("guides"),
+      proxy: document.getElementById("proxy"),
       system: document.getElementById("system"),
       version: document.getElementById("version")
     },
     templates: {
+      databaseEntry: compileTemplate("database-entry"),
+      databases: compileTemplate("databases"),
       distributions: compileTemplate("distributions"),
       distributionsEntry: compileTemplate("distribution-entry"),
+      dockerGuide: compileTemplate("docker-guide"),
       envEntry: compileTemplate("env-entry"),
       envs: compileTemplate("envs"),
+      manualGuide: compileTemplate("manual-guide"),
+      proxies: compileTemplate("proxies"),
+      proxyEntry: compileTemplate("proxy-entry"),
       systemEntry: compileTemplate("system-entry"),
       systems: compileTemplate("systems"),
       versions: compileTemplate("versions"),
