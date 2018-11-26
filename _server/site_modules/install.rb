@@ -10,7 +10,7 @@ module Sinatra
               hash.select {|key, _| keys.include? key }
             end
 
-            def available_versions
+            def available_environments
               environments = settings.storage.load_data("installation_environments")
 
               # This isn't the nicest piece of code, but I somehow need to filter the keys set in the resulting hash,
@@ -21,7 +21,7 @@ module Sinatra
               environments.each {|env, env_data|
                 env_data[:distributions].each {|dist, dist_data|
                   dist_data[:versions].each {|ver, ver_data|
-                    version_list[env] ||= get_keys_from_hash(env_data, %i[title supports distributions])
+                    version_list[env] ||= get_keys_from_hash(env_data, %i[title icon supports distributions])
                     version_list[env][:distributions][dist] ||= get_keys_from_hash(dist_data, %i[title versions])
                     version_list[env][:distributions][dist][:versions][ver] = get_keys_from_hash(ver_data, %i[title])
                   }
@@ -33,7 +33,7 @@ module Sinatra
           end
 
           get "/(index)?" do
-            @available_versions = available_versions
+            @available_environments = available_environments
             mderb(settings.storage.load_document("install", "index"))
           end
         end
