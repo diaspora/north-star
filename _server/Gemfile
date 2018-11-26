@@ -17,6 +17,7 @@ gem "rack-protection", "2.0.4"
 
 # Asset pipeline
 gem "sinatra-asset-pipeline", "2.2.0", require: "sinatra/asset_pipeline"
+gem "sprockets-es6", "0.9.2", require: "sprockets/es6"
 gem "uglifier", "4.1.19"
 
 # Content parsing
