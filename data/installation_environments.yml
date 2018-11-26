@@ -1,5 +1,6 @@
 linux:
   title: Linux
+  icon: linux
   supports:
     development:
       docker: true
@@ -49,6 +50,7 @@ linux:
 
 mac:
   title: macOS
+  icon: apple
   supports:
     development:
       docker: true
