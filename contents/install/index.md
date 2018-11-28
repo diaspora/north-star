@@ -141,19 +141,25 @@ Welcome to the world of diaspora\*! Follow these guides to get a pod set up and 
 
 <script id="tpl-docker-guide" type="text/x-handlebars-template">
   <div class="col-md">
-    <button class="install-button btn btn-success btn-lg btn-block" type="button">
+    <a
+      class="install-button btn btn-success btn-lg btn-block"
+      href="<%= url_to "install", "docker" %>{{params}}"
+    >
       Install diaspora*
-    </button>
+    </a>
   </div>
 </script>
 
 <script id="tpl-manual-guide" type="text/x-handlebars-template">
   <div class="col-md">
-    <button class="install-button btn btn-success btn-lg btn-block" type="button">
+    <a
+      class="install-button btn btn-success btn-lg btn-block"
+      href="<%= url_to "install", "manual/guided/system_preparation" %>{{params}}"
+    >
       Install diaspora*
-    </button>
+    </a>
     <p class="text-center">
-      <a href="">Show all steps on a single page instead of using the interactive, multi-step install guide</a>.
+      <a href="<%= url_to "install", "manual/full" %>{{params}}">Show all instructions on a single page</a>.
     </p>
   </div>
 </script>

@@ -36,6 +36,13 @@ window.DiasporaInstallSelector = (() => {
       });
     },
 
+    _queryParameters(object) {
+      return "?" + Object
+        .keys(object)
+        .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(object[key])}`)
+        .join("&");
+    },
+
     init() {
       this.redraw("");
     },
@@ -284,11 +291,19 @@ window.DiasporaInstallSelector = (() => {
     },
 
     drawDockerGuideLinks() {
-      this._elements.guides.innerHTML = this._templates.dockerGuide();
+      this._elements.guides.innerHTML = this._templates.dockerGuide({
+        params: this._queryParameters({
+          distribution: this._state.distribution,
+          system: this._state.system,
+          version: this._state.version
+        })
+      });
     },
 
     drawManualGuideLinks() {
-      this._elements.guides.innerHTML = this._templates.manualGuide();
+      this._elements.guides.innerHTML = this._templates.manualGuide({
+        params: this._queryParameters(this._state)
+      });
     }
   };
 
