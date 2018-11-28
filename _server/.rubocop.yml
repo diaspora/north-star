@@ -35,8 +35,9 @@ Metrics/AbcSize:
 # Some blocks are longer.
 Metrics/BlockLength:
   ExcludedMethods:
-    - "namespace"
     - "create_table"
+    - "helpers"
+    - "namespace"
   Exclude:
     - "config/**/*.rb"
     - "spec/**/*.rb"
