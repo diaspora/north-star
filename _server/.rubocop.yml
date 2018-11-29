@@ -184,3 +184,8 @@ Security/MarshalLoad:
 # Sinatra sometimes requires method nesting (i.e. for helpers in namespaces)
 Lint/NestedMethodDefinition:
   Enabled: false
+
+# Because Sintra defines routes and helpers inside modules inside functions inside
+# modules, the level can be quite deep, so let's increase the max level by 3.
+Metrics/CyclomaticComplexity:
+  Max: 10

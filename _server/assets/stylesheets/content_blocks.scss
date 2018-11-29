@@ -26,6 +26,22 @@
   }
 }
 
+.markdown-warning-box {
+  p {
+    margin-bottom: 0;
+  }
+}
+
+h2, h3 {
+  margin-top: 2rem;
+}
+
+pre {
+  background-color: #eeeeee;
+  border-radius: 0.25rem;
+  padding: 0.75rem 1.25rem;
+}
+
 footer {
   background-color: #eee;
   border-top: 1px solid #ddd;

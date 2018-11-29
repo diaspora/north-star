@@ -33,11 +33,19 @@ module Sinatra
 
             def filtered_install_parameters(params)
               symbolized_params = params.deep_symbolize_keys
-              Hash[VALID_ENV_PARAMS.map {|key|
+              hash = Hash[VALID_ENV_PARAMS.map {|key|
                 next unless symbolized_params[key]
 
                 [key, symbolized_params[key].to_sym]
               }.compact!]
+
+              if hash[:env]
+                env, method = hash[:env].split("_")
+                hash[:env] = env
+                hash[:method] = method
+              end
+
+              hash
             end
 
             def valid_env?(params)
@@ -50,8 +58,45 @@ module Sinatra
               ).present?
             end
 
-            def supports?(params, env, method)
-              @install_environments[params[:system]][:supports][env][method]
+            def supported?(params)
+              @install_environments.dig(
+                params[:system],
+                :supports,
+                params[:env],
+                params[:method]
+              )
+            end
+
+            def guide_data(params)
+              system_data = @install_environments[params[:system]]
+              distribution_data = system_data[:distributions][params[:distribution]]
+              version_data = distribution_data[:versions][params[:version]]
+
+              guide_data = distribution_data[:guide]
+
+              if version_data[:overrides]
+                # We allow the YML to contain overrides for specific versions of a
+                # given distribution, so we need to deep_merge here.
+                guide_data.deep_merge!(version_data[:overrides][:guide]) if version_data[:overrides][:guide]
+              end
+
+              {
+                env_title: "#{distribution_data[:title]} #{version_data[:title]}",
+                guide:     guide_data,
+                supports:  system_data[:supports]
+              }
+            end
+
+            def package_install_command(lists)
+              packages = []
+              lists.map do |list|
+                packages += @guide_data[:guide][:packaging][:lists][list]
+              end
+
+              [
+                @guide_data[:guide][:packaging][:install_command],
+                packages.sort.join(" ")
+              ].join(" ") + "\n"
             end
           end
 
@@ -67,7 +112,13 @@ module Sinatra
 
           get "/docker" do
             halt 404 unless valid_env?(@install_params)
-            halt 404 unless supports?(@install_params, :development, :docker)
+
+            @install_params[:env] = :development
+            @install_params[:method] = :docker
+            halt 404 unless supported?(@install_params)
+
+            @guide_data = guide_data(@install_params, :development, :docker)
+            pp @guide_data
 
             mderb(settings.storage.load_document("install", "docker"))
           end

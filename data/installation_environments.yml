@@ -60,6 +60,16 @@ mac:
   distributions:
     main:
       title: macOS
+      guide:
+        packaging:
+          manual_setup: |
+            You need to set up Homebrew to install additional dependencies needed to run
+            diaspora\*. Please check [the homebrew website](https://brew.sh/) for instructions
+            before proceeding with this guide.
+          install_command: brew install
+          lists:
+            git:
+              - git
       versions:
         mojave:
           title: 10.14 (Mojave)

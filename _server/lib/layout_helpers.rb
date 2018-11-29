@@ -7,7 +7,7 @@ module Sinatra
     end
 
     def col_end
-      "</div>"
+      "</div>\n"
     end
 
     def col_new(col_classes)
@@ -19,7 +19,7 @@ module Sinatra
     end
 
     def row_end
-      col_end + "</div>"
+      col_end + "</div>\n"
     end
 
     def row_new(col_classes)
@@ -31,7 +31,15 @@ module Sinatra
     end
 
     def center_end
-      "</p>"
+      "</p>\n"
+    end
+
+    def warning_box_start(alert_class="primary")
+      '<div class="markdown-warning-box alert alert-' + alert_class + '" markdown="1">'
+    end
+
+    def warning_box_end
+      "</div>\n"
     end
   end
 
