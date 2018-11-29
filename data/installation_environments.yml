@@ -61,6 +61,8 @@ mac:
     main:
       title: macOS
       guide:
+        docker:
+          install_url: https://docs.docker.com/docker-for-mac/install/
         packaging:
           manual_setup: |
             You need to set up Homebrew to install additional dependencies needed to run

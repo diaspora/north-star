@@ -26,7 +26,7 @@ Install `git` on your system by running the following command in a terminal
 
 ### Install Docker
 
-The best way to set up Docker on your machine depends on your system. Please check [the official Docker website][docker-install] for instructions on how to get Docker set up, which usually involves installing a package on your machine.
+Please check [this documentation][docker-install] for detailed instructions on how to get Docker set up on your machine.
 
 ## Obtain the source code
 
@@ -60,5 +60,5 @@ to start the diaspora\* server. If you open your webbrowser and point it to `htt
 Happy developing! If you want to learn more, please check out guides for [Podmins][podmin-guides] and [Developers][developer-guides], which contain additional information on what you can do with this setup.
 
 [developer-guides]: <%= url_to("guides", "developers") %>
-[docker-install]: https://docs.docker.com/engine/installation/
+[docker-install]: <%= @guide_data[:guide][:docker][:install_url] %>
 [podmin-guides]: <%= url_to("guides", "podmins") %>
