@@ -19,7 +19,7 @@ linux:
               Please check [the Arch Linux wiki](https://wiki.archlinux.org/index.php/PostgreSQL#Initial_configuration)
               for information on how to set up PostgreSQL.
         packaging:
-          install_command: pacman -S
+          install_command: sudo pacman -S
           lists:
             git:
               - git
@@ -52,7 +52,7 @@ linux:
     #    docker:
     #      install_url: https://docs.docker.com/install/linux/docker-ce/centos/
     #    packaging:
-    #      install_command: yum install
+    #      install_command: sudo yum install
     #      lists:
     #        git:
     #          - git
@@ -68,7 +68,7 @@ linux:
     #    docker:
     #      install_url: https://docs.docker.com/install/linux/docker-ce/debian/
     #    packaging:
-    #      install_command: apt-get install
+    #      install_command: sudo apt-get install
     #      lists:
     #        git:
     #          - git
@@ -84,7 +84,7 @@ linux:
     #    docker:
     #      install_url: https://docs.docker.com/install/linux/docker-ce/fedora/
     #    packaging:
-    #      install_command: dnf install
+    #      install_command: sudo dnf install
     #      lists:
     #        git:
     #          - git
@@ -100,7 +100,7 @@ linux:
     #    docker:
     #      install_url: https://docs.docker.com/install/linux/docker-ce/ubuntu/
     #    packaging:
-    #      install_command: apt-get install
+    #      install_command: sudo apt-get install
     #      lists:
     #        git:
     #          - git
