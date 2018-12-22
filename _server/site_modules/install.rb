@@ -121,6 +121,18 @@ module Sinatra
 
             mderb(settings.storage.load_document("install", "docker"))
           end
+
+          get "/*" do |document_path|
+            document = settings.storage.load_document("install", document_path)
+
+            halt 404 unless document
+            halt 404 unless valid_env?(@install_params)
+            halt 404 unless supported?(@install_params)
+
+            @guide_data = guide_data(@install_params)
+
+            mderb(document)
+          end
         end
       end
     end
