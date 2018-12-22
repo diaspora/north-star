@@ -4,6 +4,7 @@ module Sinatra
   module SiteModules
     module Install
       VALID_ENV_PARAMS = %i[database distribution env proxy system version].freeze
+      VALID_DATABASE_ENGINES = %i[mariadb postgres].freeze
 
       def self.registered(app)
         app.namespace "/install" do
@@ -49,13 +50,18 @@ module Sinatra
             end
 
             def valid_env?(params)
-              @install_environments.dig(
+              valid_env = @install_environments.dig(
                 params[:system],
                 :distributions,
                 params[:distribution],
                 :versions,
                 params[:version]
               ).present?
+
+              valid_db = true
+              valid_db = VALID_DATABASE_ENGINES.include?(params[:database]) if params[:database]
+
+              valid_env && valid_db
             end
 
             def supported?(params)
