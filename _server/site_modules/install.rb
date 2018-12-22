@@ -106,8 +106,12 @@ module Sinatra
           end
 
           get "/(index)?" do
-            @available_environments = available_environments
             mderb(settings.storage.load_document("install", "index"))
+          end
+
+          get "/version_select" do
+            @available_environments = available_environments
+            mderb(settings.storage.load_document("install", "version_select"))
           end
 
           get "/docker" do
