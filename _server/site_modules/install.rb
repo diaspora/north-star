@@ -83,6 +83,7 @@ module Sinatra
               {
                 env_title: "#{distribution_data[:title]} #{version_data[:title]}",
                 guide:     guide_data,
+                params:    params,
                 supports:  system_data[:supports]
               }
             end
