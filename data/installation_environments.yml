@@ -13,11 +13,30 @@ linux:
       guide:
         docker:
           install_url: https://wiki.archlinux.org/index.php/Docker#Installation
+        manual_notes:
+          database:
+            postgres: |
+              Please check [the Arch Linux wiki](https://wiki.archlinux.org/index.php/PostgreSQL#Initial_configuration)
+              for information on how to set up PostgreSQL.
         packaging:
           install_command: pacman -S
           lists:
             git:
               - git
+            base:
+              - base-devel
+              - gsfonts
+              - imagemagick
+              - libxslt
+              - net-tools
+              - nodejs
+              - redis
+            mariadb:
+              - libmariadbclient
+              - mariadb
+            postgres:
+              - postgresql
+              - postgresql-libs
       versions:
         rolling:
           title: Rolling release
@@ -103,11 +122,12 @@ mac:
       guide:
         docker:
           install_url: https://docs.docker.com/docker-for-mac/install/
-        packaging:
-          manual_setup: |
+        manual_notes:
+          packaging: |
             You need to set up Homebrew to install additional dependencies needed to run
             diaspora\*. Please check [the homebrew website](https://brew.sh/) for instructions
             before proceeding with this guide.
+        packaging:
           install_command: brew install
           lists:
             git:

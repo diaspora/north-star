@@ -105,6 +105,14 @@ module Sinatra
                 packages.sort.join(" ")
               ].join(" ") + "\n"
             end
+
+            def install_url_params
+              params = @guide_data[:params]
+              params[:env] = [params[:env], params[:method]].join("_")
+              params.delete(:method)
+
+              "?" + params.to_query
+            end
           end
 
           before do
