@@ -1,6 +1,6 @@
 ---
 title: Docker
-subtitle: "Get a local development instance up and running easily"
+subtitle: Get a local development instance up and running easily
 ---
 
 Docker allows you to set up diaspora\* and get it running with some relatively simple steps. Instead of installing all dependencies like Ruby and services like the database on your own machine, we provide a setup that runs them within something closely related to a virtual machine. This makes the setup simple for developers and people who just want to have a look at diaspora\*, and it leaves almost no traces on your system.
@@ -14,8 +14,8 @@ Please note that **this setup is intended for development purposes**, or for peo
 
 Before we can do anything, we need to make sure `Git` is installed on your system to obtain a version of the current source code.
 
-<% if @guide_data[:guide][:packaging][:manual_setup] %>
-<%= warning_box_start %><%= @guide_data[:guide][:packaging][:manual_setup] %><%= warning_box_end %>
+<% if @guide_data.dig(:guide, :manual_notes, :packaging) %>
+<%= warning_box_start %><%= @guide_data[:guide][:manual_notes][:packaging] %><%= warning_box_end %>
 <% end %>
 
 Install `git` on your system by running the following command in a terminal
