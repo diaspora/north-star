@@ -37,12 +37,12 @@ module Sinatra
                 next unless symbolized_params[key]
 
                 [key, symbolized_params[key].to_sym]
-              }.compact!]
+              }.compact]
 
               if hash[:env]
-                env, method = hash[:env].split("_")
-                hash[:env] = env
-                hash[:method] = method
+                env, method = hash[:env].to_s.split("_")
+                hash[:env] = env.to_sym
+                hash[:method] = method.to_sym
               end
 
               hash
@@ -117,8 +117,7 @@ module Sinatra
             @install_params[:method] = :docker
             halt 404 unless supported?(@install_params)
 
-            @guide_data = guide_data(@install_params, :development, :docker)
-            pp @guide_data
+            @guide_data = guide_data(@install_params)
 
             mderb(settings.storage.load_document("install", "docker"))
           end
