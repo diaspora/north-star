@@ -8,7 +8,7 @@ linux:
     production:
       manual: true
   distributions:
-    arch:
+    arch: &arch
       title: Arch Linux
       guide:
         docker:
@@ -41,71 +41,76 @@ linux:
         rolling:
           title: Rolling release
 
-    centos:
-      title: CentOS
-      guide:
-        docker:
-          install_url: https://docs.docker.com/install/linux/docker-ce/centos/
-        packaging:
-          install_command: yum install
-          lists:
-            git:
-              - git
-      versions:
-        v7:
-          title: CentOS 7
-        v6:
-          title: CentOS 6
+    # NOTE: This is just a hack for the initial proposal to have 2 distributions in the list
+    # and will be removed later. When removing this, make sure to also remove the reference
+    # above.
+    arch_dummy: *arch
 
-    debian:
-      title: Debian
-      guide:
-        docker:
-          install_url: https://docs.docker.com/install/linux/docker-ce/debian/
-        packaging:
-          install_command: apt-get install
-          lists:
-            git:
-              - git
-      versions:
-        stretch:
-          title: Debian 9 (Stretch)
-        jessie:
-          title: Debian 8 (Jessie)
+    #centos:
+    #  title: CentOS
+    #  guide:
+    #    docker:
+    #      install_url: https://docs.docker.com/install/linux/docker-ce/centos/
+    #    packaging:
+    #      install_command: yum install
+    #      lists:
+    #        git:
+    #          - git
+    #  versions:
+    #    v7:
+    #      title: CentOS 7
+    #    v6:
+    #      title: CentOS 6
 
-    fedora:
-      title: Fedora
-      guide:
-        docker:
-          install_url: https://docs.docker.com/install/linux/docker-ce/fedora/
-        packaging:
-          install_command: dnf install
-          lists:
-            git:
-              - git
-      versions:
-        v29:
-          title: Fedora 29
-        v28:
-          title: Fedora 28
+    #debian:
+    #  title: Debian
+    #  guide:
+    #    docker:
+    #      install_url: https://docs.docker.com/install/linux/docker-ce/debian/
+    #    packaging:
+    #      install_command: apt-get install
+    #      lists:
+    #        git:
+    #          - git
+    #  versions:
+    #    stretch:
+    #      title: Debian 9 (Stretch)
+    #    jessie:
+    #      title: Debian 8 (Jessie)
 
-    ubuntu:
-      title: Ubuntu
-      guide:
-        docker:
-          install_url: https://docs.docker.com/install/linux/docker-ce/ubuntu/
-        packaging:
-          install_command: apt-get install
-          lists:
-            git:
-              - git
-      versions:
-        cosmic:
-          title: Ubuntu 18.10 (Cosmic Cuttlefish)
-        bionic:
-          title: Ubuntu 18.04 (Bionic Beaver)
-        xenial:
-          title: Ubuntu 16.04 (Xenial Xerus)
+    #fedora:
+    #  title: Fedora
+    #  guide:
+    #    docker:
+    #      install_url: https://docs.docker.com/install/linux/docker-ce/fedora/
+    #    packaging:
+    #      install_command: dnf install
+    #      lists:
+    #        git:
+    #          - git
+    #  versions:
+    #    v29:
+    #      title: Fedora 29
+    #    v28:
+    #      title: Fedora 28
+
+    #ubuntu:
+    #  title: Ubuntu
+    #  guide:
+    #    docker:
+    #      install_url: https://docs.docker.com/install/linux/docker-ce/ubuntu/
+    #    packaging:
+    #      install_command: apt-get install
+    #      lists:
+    #        git:
+    #          - git
+    #  versions:
+    #    cosmic:
+    #      title: Ubuntu 18.10 (Cosmic Cuttlefish)
+    #    bionic:
+    #      title: Ubuntu 18.04 (Bionic Beaver)
+    #    xenial:
+    #      title: Ubuntu 16.04 (Xenial Xerus)
 
 mac:
   title: macOS
