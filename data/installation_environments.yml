@@ -10,12 +10,28 @@ linux:
   distributions:
     arch:
       title: Arch Linux
+      guide:
+        docker:
+          install_url: https://wiki.archlinux.org/index.php/Docker#Installation
+        packaging:
+          install_command: pacman -S
+          lists:
+            git:
+              - git
       versions:
         rolling:
           title: Rolling release
 
     centos:
       title: CentOS
+      guide:
+        docker:
+          install_url: https://docs.docker.com/install/linux/docker-ce/centos/
+        packaging:
+          install_command: yum install
+          lists:
+            git:
+              - git
       versions:
         v7:
           title: CentOS 7
@@ -24,6 +40,14 @@ linux:
 
     debian:
       title: Debian
+      guide:
+        docker:
+          install_url: https://docs.docker.com/install/linux/docker-ce/debian/
+        packaging:
+          install_command: apt-get install
+          lists:
+            git:
+              - git
       versions:
         stretch:
           title: Debian 9 (Stretch)
@@ -32,6 +56,14 @@ linux:
 
     fedora:
       title: Fedora
+      guide:
+        docker:
+          install_url: https://docs.docker.com/install/linux/docker-ce/fedora/
+        packaging:
+          install_command: dnf install
+          lists:
+            git:
+              - git
       versions:
         v29:
           title: Fedora 29
@@ -40,6 +72,14 @@ linux:
 
     ubuntu:
       title: Ubuntu
+      guide:
+        docker:
+          install_url: https://docs.docker.com/install/linux/docker-ce/ubuntu/
+        packaging:
+          install_command: apt-get install
+          lists:
+            git:
+              - git
       versions:
         cosmic:
           title: Ubuntu 18.10 (Cosmic Cuttlefish)
