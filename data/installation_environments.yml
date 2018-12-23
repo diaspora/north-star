@@ -11,6 +11,7 @@ linux:
     arch: &arch
       title: Arch Linux
       guide:
+        ca_bundle: /etc/ssl/certs/ca-certificates.crt
         docker:
           install_url: https://wiki.archlinux.org/index.php/Docker#Installation
         manual_notes:
