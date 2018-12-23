@@ -1,5 +1,5 @@
 ---
-title: Example 1
+title: Example 3
 category: Example
 ---
 

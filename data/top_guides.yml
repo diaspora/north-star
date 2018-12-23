@@ -1,0 +1,15 @@
+developers:
+  - required_tools
+  - reset_database
+  - update_source
+  - example_1
+podmins:
+  - open_ports
+  - ssl_setup
+  - system_requirements
+  - example_2
+users:
+  - are_aspects_groups
+  - pod_list
+  - posting_to_aspects
+  - example_3

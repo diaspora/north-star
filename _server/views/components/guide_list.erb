@@ -1,0 +1,5 @@
+<% items.each do |item| %>
+  <a href="<%= guide_url(item) %>" class="btn btn-light btn-block text-left guide-button">
+    <%= item[:frontmatter][:title] %>
+  </a>
+<% end %>

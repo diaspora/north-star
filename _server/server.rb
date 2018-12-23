@@ -25,6 +25,7 @@ class Server < Sinatra::Base
   register Sinatra::Configs::I18n
   register Sinatra::Namespace
   register Sinatra::SiteModules::Blog
+  register Sinatra::SiteModules::Guides
   register Sinatra::SiteModules::Install
   register Sinatra::SiteModules::LocaleSelect
   use Rack::Protection::PathTraversal
