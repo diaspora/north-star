@@ -107,11 +107,19 @@ module Sinatra
             end
 
             def install_url_params
-              params = @guide_data[:params]
+              params = @guide_data[:params].dup
               params[:env] = [params[:env], params[:method]].join("_")
               params.delete(:method)
 
               "?" + params.to_query
+            end
+
+            def guided_only_content_start
+              '<div class="guided-only-content">'
+            end
+
+            def guided_only_content_end
+              "</div>"
             end
           end
 
@@ -139,6 +147,21 @@ module Sinatra
             @guide_data = guide_data(@install_params)
 
             mderb(settings.storage.load_document("install", "docker"))
+          end
+
+          get "/manual/full" do
+            document = settings.storage.load_document("install", "manual/full")
+
+            halt 404 unless valid_env?(@install_params)
+            halt 404 unless supported?(@install_params)
+
+            @guide_data = guide_data(@install_params)
+
+            steps = %w[system_preparation install_ruby get_diaspora initialize_diaspora]
+            steps.push("finalize_server") if @guide_data[:params][:env] == :production
+            @step_contents = steps.map {|step| load_document("install", "manual/guided/#{step}") }
+
+            mderb(document)
           end
 
           get "/*" do |document_path|
