@@ -101,7 +101,10 @@ window.DiasporaInstallSelector = (() => {
         if (["development_docker"].includes(state.env)) {
           this.drawDockerGuideLinks();
         } else {
-          this.drawDbAndProxySelector();
+          this.drawDbSelector();
+          if (["production_manual"].includes(state.env)) {
+            this.drawProxySelector();
+          }
           this.drawManualGuideLinks();
         }
       }
@@ -238,7 +241,7 @@ window.DiasporaInstallSelector = (() => {
       });
     },
 
-    drawDbAndProxySelector() {
+    drawDbSelector() {
       let databases = {
         postgres: { title: "PostgreSQL" },
         mariadb: { title: "MariaDB" }
@@ -263,7 +266,9 @@ window.DiasporaInstallSelector = (() => {
           };
         }
       });
+    },
 
+    drawProxySelector() {
       let proxies = {
         nginx: { title: "Nginx" },
         apache: { title: "Apache" }
