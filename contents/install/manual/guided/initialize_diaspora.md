@@ -52,6 +52,7 @@ It is time to spin up your pod for the first time to see if everything works! To
 
 When the command does not show any errors, you are fine. Since you are setting up a production pod, you are not able to test diaspora\* right now in your browser, as we listen to a UNIX socket per default. You can quit the script by pressing `Ctrl-C`.
 
+<%= guided_only_content_start %>
 ## Next steps
 
 In the final steps, we will be looking at setting up the reverse proxy, as well as making sure diaspora\* automatically starts with your system.
@@ -59,6 +60,7 @@ In the final steps, we will be looking at setting up the reverse proxy, as well 
 [Continue installation][next-step]{:class="install-button btn btn-success btn-lg btn-block"}
 
 [next-step]: <%= url_to "install", "manual/guided/finalize_server" %><%= install_url_params %>
+<%= guided_only_content_end %>
 
 <% when :development %>
 

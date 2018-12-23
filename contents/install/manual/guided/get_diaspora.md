@@ -40,6 +40,7 @@ This file sets up the database connection, so be sure to provide the correct cre
 * `environment.certificate_authorities`: In your case, this should be `<%= @guide_data[:guide][:ca_bundle] %>`. If this file does not exist, you probably are missing a package, named `ca-certificates` in most cases. Feel free to get in touch with us if you need help with that!
 * `server.rails_environment`: Set this to `<%= @guide_data[:params][:env] %>`.
 
+<%= guided_only_content_start %>
 ## Next steps
 
 In the next steps, we will install diaspora\*'s internal dependencies, set up the database, and prepare some other components.
@@ -47,3 +48,4 @@ In the next steps, we will install diaspora\*'s internal dependencies, set up th
 [Continue installation][next-step]{:class="install-button btn btn-success btn-lg btn-block"}
 
 [next-step]: <%= url_to "install", "manual/guided/initialize_diaspora" %><%= install_url_params %>
+<%= guided_only_content_end %>

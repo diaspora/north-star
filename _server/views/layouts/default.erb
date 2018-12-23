@@ -13,7 +13,7 @@
 
     <title><%= page_title(page[:title_tag] || page[:title]) %></title>
   </head>
-  <body>
+  <body <% if page[:bodyclass] %>class="<%= page[:bodyclass] %>"<%end%>>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <div class="container">
         <a class="navbar-brand" href="<%= url_to(@section, "") %>">diaspora*<%= section_title %></a>

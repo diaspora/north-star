@@ -1,6 +1,7 @@
 ---
 title: The diaspora* installation guide
 subtitle: From A to 🐈
+bodyclass: no-guided-only-content
 ---
 
 Welcome to the full diaspora\* install guide, with everything on a single page, as you requested!

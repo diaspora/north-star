@@ -69,6 +69,7 @@ Unless otherwise noted, you should **use this user for the rest of this guide**,
 sudo -iu diaspora
 ~~~
 
+<%= guided_only_content_start %>
 ## Next steps
 
 In the next steps, we will take care of setting up RVM and Ruby...
@@ -76,3 +77,4 @@ In the next steps, we will take care of setting up RVM and Ruby...
 [Continue installation][next-step]{:class="install-button btn btn-success btn-lg btn-block"}
 
 [next-step]: <%= url_to "install", "manual/guided/install_ruby" %><%= install_url_params %>
+<%= guided_only_content_end %>

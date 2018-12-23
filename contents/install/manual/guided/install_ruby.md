@@ -47,6 +47,7 @@ rvm autolibs read-fail
 
 to check all dependencies first. If anything is missing, the tool will print you a list of missing packages. After you have installed those, re-run the `rvm install` command from above again.
 
+<%= guided_only_content_start %>
 ## Next steps
 
 In the next steps, we will take care downloading the diaspora\* source, and setting up required configuration files!
@@ -54,4 +55,6 @@ In the next steps, we will take care downloading the diaspora\* source, and sett
 [Continue installation][next-step]{:class="install-button btn btn-success btn-lg btn-block"}
 
 [next-step]: <%= url_to "install", "manual/guided/get_diaspora" %><%= install_url_params %>
+<%= guided_only_content_end %>
+
 [rvm]: https://rvm.io

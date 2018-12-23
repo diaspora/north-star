@@ -115,7 +115,7 @@ module Sinatra
             end
 
             def guided_only_content_start
-              '<div class="guided-only-content">'
+              '<div class="guided-only-content" markdown="1">'
             end
 
             def guided_only_content_end
