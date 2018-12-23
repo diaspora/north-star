@@ -3,7 +3,7 @@ title: System preparation
 subtitle: Get your system ready for diaspora*
 ---
 
-These steps get your system ready for diaspora\* by installing required packages, setting up the database server, and setting up Ruby.
+These steps get your system ready for diaspora\* by installing required packages, setting up the database server, and required permissions.
 
 ## Install dependencies
 
@@ -75,4 +75,4 @@ In the next steps, we will take care of setting up RVM and Ruby...
 
 [Continue installation][next-step]{:class="install-button btn btn-success btn-lg btn-block"}
 
-[next-step]: <%= url_to "install", "manual/install_ruby" %><%= install_url_params %>
+[next-step]: <%= url_to "install", "manual/guided/install_ruby" %><%= install_url_params %>
