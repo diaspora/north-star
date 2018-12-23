@@ -1,5 +1,6 @@
 ---
-title: System requirmenets
+title: What are diaspora*'s system requirements?
+category: Dummy
 ---
 
 We currently support production and development installations of diaspora\* on some Linux distributions, as well as development setups on macOS. Setting up a pod on Windows is not supported at the moment.
