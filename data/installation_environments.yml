@@ -60,8 +60,6 @@ linux:
     #  versions:
     #    v7:
     #      title: CentOS 7
-    #    v6:
-    #      title: CentOS 6
 
     #debian:
     #  title: Debian
