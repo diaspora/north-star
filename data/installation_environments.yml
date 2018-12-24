@@ -8,7 +8,7 @@ linux:
     production:
       manual: true
   distributions:
-    arch: &arch
+    arch:
       title: Arch Linux
       guide:
         ca_bundle: /etc/ssl/certs/ca-certificates.crt
@@ -42,74 +42,160 @@ linux:
         rolling:
           title: Rolling release
 
-    # NOTE: This is just a hack for the initial proposal to have 2 distributions in the list
-    # and will be removed later. When removing this, make sure to also remove the reference
-    # above.
-    arch_dummy: *arch
+    centos:
+      title: CentOS
+      guide:
+        ca_bundle: /etc/ssl/certs/ca-certificates.crt
+        docker:
+          install_url: https://docs.docker.com/install/linux/docker-ce/centos/
+        packaging:
+          install_command: sudo yum install
+          lists:
+            git:
+              - git
+            base:
+              - epel-release
+              - automake
+              - cmake
+              - gcc
+              - gcc-c++
+              - ImageMagick
+              - libcurl-devel
+              - libffi-devel
+              - libxml2-devel
+              - libxslt-devel
+              - make
+              - net-tools
+              - nodejs
+              - redis
+              - tar
+              - wget
+            mariadb:
+              - mariadb-devel
+              - mariadb-server
+            postgres:
+              - postgresql-devel
+              - postgresql-server
+      versions:
+        v7:
+          title: CentOS 7
 
-    #centos:
-    #  title: CentOS
-    #  guide:
-    #    docker:
-    #      install_url: https://docs.docker.com/install/linux/docker-ce/centos/
-    #    packaging:
-    #      install_command: sudo yum install
-    #      lists:
-    #        git:
-    #          - git
-    #  versions:
-    #    v7:
-    #      title: CentOS 7
+    debian:
+      title: Debian
+      guide:
+        ca_bundle: /etc/ssl/certs/ca-certificates.crt
+        docker:
+          install_url: https://docs.docker.com/install/linux/docker-ce/debian/
+        manual_notes:
+          database:
+            postgres: |
+              Please check [the Arch Linux wiki](https://wiki.archlinux.org/index.php/PostgreSQL#Initial_configuration)
+              for information on how to set up PostgreSQL.
+        packaging:
+          install_command: sudo apt-get install
+          lists:
+            git:
+              - git
+            base:
+              - build-essential
+              - cmake
+              - curl
+              - ghostscript
+              - imagemagick
+              - libcurl4-openssl-dev
+              - libmagickwand-dev
+              - libssl-dev
+              - libxml2-dev
+              - libxslt-dev
+              - nodejs
+              - redis-server
+            mariadb:
+              - libmysqlclient-dev
+              - mariadb
+            postgres:
+              - libpq-dev
+              - postgresql
+      versions:
+        stretch:
+          title: Debian 9 (Stretch)
+        jessie:
+          title: Debian 8 (Jessie)
 
-    #debian:
-    #  title: Debian
-    #  guide:
-    #    docker:
-    #      install_url: https://docs.docker.com/install/linux/docker-ce/debian/
-    #    packaging:
-    #      install_command: sudo apt-get install
-    #      lists:
-    #        git:
-    #          - git
-    #  versions:
-    #    stretch:
-    #      title: Debian 9 (Stretch)
-    #    jessie:
-    #      title: Debian 8 (Jessie)
+    fedora:
+      title: Fedora
+      guide:
+        ca_bundle: /etc/ssl/certs/ca-certificates.crt
+        docker:
+          install_url: https://docs.docker.com/install/linux/docker-ce/fedora/
+        packaging:
+          install_command: sudo dnf install
+          lists:
+            git:
+              - git
+            base:
+              - ImageMagick
+              - automake
+              - gcc
+              - gcc-c++
+              - libcurl-devel
+              - libffi-devel
+              - libxml2-devel
+              - libxslt-devel
+              - make
+              - net-tools
+              - nodejs
+              - redis
+              - tar
+              - wget
+            mariadb:
+              - mariadb-devel
+              - mariadb-server
+            postgres:
+              - postgresql-devel
+              - postgresql-server
+      versions:
+        v29:
+          title: Fedora 29
+        v28:
+          title: Fedora 28
 
-    #fedora:
-    #  title: Fedora
-    #  guide:
-    #    docker:
-    #      install_url: https://docs.docker.com/install/linux/docker-ce/fedora/
-    #    packaging:
-    #      install_command: sudo dnf install
-    #      lists:
-    #        git:
-    #          - git
-    #  versions:
-    #    v29:
-    #      title: Fedora 29
-    #    v28:
-    #      title: Fedora 28
-
-    #ubuntu:
-    #  title: Ubuntu
-    #  guide:
-    #    docker:
-    #      install_url: https://docs.docker.com/install/linux/docker-ce/ubuntu/
-    #    packaging:
-    #      install_command: sudo apt-get install
-    #      lists:
-    #        git:
-    #          - git
-    #  versions:
-    #    cosmic:
-    #      title: Ubuntu 18.10 (Cosmic Cuttlefish)
-    #    bionic:
-    #      title: Ubuntu 18.04 (Bionic Beaver)
-    #    xenial:
-    #      title: Ubuntu 16.04 (Xenial Xerus)
+    ubuntu:
+      title: Ubuntu
+      guide:
+        ca_bundle: /etc/ssl/certs/ca-certificates.crt
+        docker:
+          install_url: https://docs.docker.com/install/linux/docker-ce/ubuntu/
+        packaging:
+          install_command: sudo apt-get install
+          lists:
+            git:
+              - git
+            base:
+              - build-essential
+              - cmake
+              - curl
+              - imagemagick
+              - libcurl4-openssl-dev
+              - libgmp-dev
+              - libmagickwand-dev
+              - libssl-dev
+              - libxml2-dev
+              - libxslt1-dev
+              - nodejs
+              - redis-server
+            mariadb:
+              - libmysqlclient-dev
+              - mariadb
+            postgres:
+              - libpq-dev
+              - postgresql
+      versions:
+        cosmic:
+          title: Ubuntu 18.10 (Cosmic Cuttlefish)
+        bionic:
+          title: Ubuntu 18.04 (Bionic Beaver)
+        xenial:
+          title: Ubuntu 16.04 (Xenial Xerus)
 
 mac:
   title: macOS
