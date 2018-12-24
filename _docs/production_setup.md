@@ -12,3 +12,7 @@ TODO: This should be clearer.
 6. `./bin/puma -e production`
 
 Note: north-star will try to connect to redis on `redis://localhost:6379/11` per default, which can be changed using the `REDIS_URL` environment variable.
+
+## Nginx setup
+
+`_docs/configs/nginx-example.com` holds an example of the production nginx configuration. This needs to be extended for SSL, asset compression, etc, but gives a starting point for mapping the subdomains.
