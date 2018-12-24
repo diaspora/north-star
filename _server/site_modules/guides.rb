@@ -14,7 +14,7 @@ module Sinatra
               list_documents("guides", section)
                 .sort_by {|document| document[:path] }
                 .reverse
-                .map {|item| load_document("blog", item[:path]) }
+                .map {|item| load_document("guides", item[:path]) }
             end
 
             def guide_url(guide)
@@ -31,8 +31,12 @@ module Sinatra
             mderb(settings.storage.load_document("guides", "index"))
           end
 
-          get "/(developers|podmins|users)" do |section|
-            @items = list(section)
+          get %r{/(developers|podmins|users)} do |section|
+            @guides = list(section)
+                      .sort_by {|guide| guide[:frontmatter][:title] }
+                      .group_by {|guide| guide[:frontmatter][:category] }
+                      .sort
+
             mderb(settings.storage.load_document("guides", section))
           end
         end

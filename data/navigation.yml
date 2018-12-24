@@ -33,6 +33,16 @@ blog:
   header_buttons:
     - *project_info_link
 guides:
+  header:
+    - target:
+        section: guides
+        path: users
+    - target:
+        section: guides
+        path: podmins
+    - target:
+        section: guides
+        path: developers
   header_crosslinks: *site_crosslinks
   header_buttons:
     - *project_info_link
