@@ -2,6 +2,55 @@
 host = https://www.transifex.com
 
 
+[north-star.contents_guides_developers]
+file_filter = translations/<lang>/contents/guides/developers.md
+minimum_perc = 0
+source_file = contents/guides/developers.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[north-star.contents_guides_developers_example_1]
+file_filter = translations/<lang>/contents/guides/developers/example_1.md
+minimum_perc = 0
+source_file = contents/guides/developers/example_1.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[north-star.contents_guides_developers_example_2]
+file_filter = translations/<lang>/contents/guides/developers/example_2.md
+minimum_perc = 0
+source_file = contents/guides/developers/example_2.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[north-star.contents_guides_developers_example_3]
+file_filter = translations/<lang>/contents/guides/developers/example_3.md
+minimum_perc = 0
+source_file = contents/guides/developers/example_3.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[north-star.contents_guides_developers_required_tools]
+file_filter = translations/<lang>/contents/guides/developers/required_tools.md
+minimum_perc = 0
+source_file = contents/guides/developers/required_tools.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[north-star.contents_guides_developers_reset_database]
+file_filter = translations/<lang>/contents/guides/developers/reset_database.md
+minimum_perc = 0
+source_file = contents/guides/developers/reset_database.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[north-star.contents_guides_developers_update_source]
+file_filter = translations/<lang>/contents/guides/developers/update_source.md
+minimum_perc = 0
+source_file = contents/guides/developers/update_source.md
+source_lang = en
+type = GITHUBMARKDOWN
+
 [north-star.contents_guides_index]
 file_filter = translations/<lang>/contents/guides/index.md
 minimum_perc = 0
@@ -9,10 +58,115 @@ source_file = contents/guides/index.md
 source_lang = en
 type = GITHUBMARKDOWN
 
+[north-star.contents_guides_podmins]
+file_filter = translations/<lang>/contents/guides/podmins.md
+minimum_perc = 0
+source_file = contents/guides/podmins.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[north-star.contents_guides_podmins_example_1]
+file_filter = translations/<lang>/contents/guides/podmins/example_1.md
+minimum_perc = 0
+source_file = contents/guides/podmins/example_1.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[north-star.contents_guides_podmins_example_2]
+file_filter = translations/<lang>/contents/guides/podmins/example_2.md
+minimum_perc = 0
+source_file = contents/guides/podmins/example_2.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[north-star.contents_guides_podmins_example_3]
+file_filter = translations/<lang>/contents/guides/podmins/example_3.md
+minimum_perc = 0
+source_file = contents/guides/podmins/example_3.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[north-star.contents_guides_podmins_open_ports]
+file_filter = translations/<lang>/contents/guides/podmins/open_ports.md
+minimum_perc = 0
+source_file = contents/guides/podmins/open_ports.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[north-star.contents_guides_podmins_ssl_setup]
+file_filter = translations/<lang>/contents/guides/podmins/ssl_setup.md
+minimum_perc = 0
+source_file = contents/guides/podmins/ssl_setup.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[north-star.contents_guides_podmins_system_requirements]
+file_filter = translations/<lang>/contents/guides/podmins/system_requirements.md
+minimum_perc = 0
+source_file = contents/guides/podmins/system_requirements.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[north-star.contents_guides_users]
+file_filter = translations/<lang>/contents/guides/users.md
+minimum_perc = 0
+source_file = contents/guides/users.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[north-star.contents_guides_users_are_aspects_groups]
+file_filter = translations/<lang>/contents/guides/users/are_aspects_groups.md
+minimum_perc = 0
+source_file = contents/guides/users/are_aspects_groups.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[north-star.contents_guides_users_example_1]
+file_filter = translations/<lang>/contents/guides/users/example_1.md
+minimum_perc = 0
+source_file = contents/guides/users/example_1.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[north-star.contents_guides_users_example_2]
+file_filter = translations/<lang>/contents/guides/users/example_2.md
+minimum_perc = 0
+source_file = contents/guides/users/example_2.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[north-star.contents_guides_users_example_3]
+file_filter = translations/<lang>/contents/guides/users/example_3.md
+minimum_perc = 0
+source_file = contents/guides/users/example_3.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[north-star.contents_guides_users_pod_list]
+file_filter = translations/<lang>/contents/guides/users/pod_list.md
+minimum_perc = 0
+source_file = contents/guides/users/pod_list.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[north-star.contents_guides_users_posting_to_aspects]
+file_filter = translations/<lang>/contents/guides/users/posting_to_aspects.md
+minimum_perc = 0
+source_file = contents/guides/users/posting_to_aspects.md
+source_lang = en
+type = GITHUBMARKDOWN
+
 [north-star.contents_meta_404]
 file_filter = translations/<lang>/contents/meta/404.md
 minimum_perc = 0
 source_file = contents/meta/404.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[north-star.contents_site_get_help]
+file_filter = translations/<lang>/contents/site/get_help.md
+minimum_perc = 0
+source_file = contents/site/get_help.md
 source_lang = en
 type = GITHUBMARKDOWN
 
