@@ -20,3 +20,6 @@ en:
     support: Support
   noscript: This site requires JavaScript, which you have disabled in your browser. Go ahead and enable it.
   select_language: Select language
+  community_edit:
+    edit: Edit this page on GitHub
+    translate: Translate this page

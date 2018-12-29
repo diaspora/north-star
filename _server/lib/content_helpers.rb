@@ -21,6 +21,11 @@ module Sinatra
       document[:frontmatter][:nav_title] || document[:frontmatter][:title]
     end
 
+    def page_edit_url(path)
+      file_name = settings.storage.get_relative_document_file_name(path[:section], path[:path])
+      "#{settings.config[:github_repo_root]}/blob/master#{file_name}"
+    end
+
     def page_title(title=false)
       section_title = I18n.t("sections.titles.#{@section}")
       [title, section_title].select(&:present?).join(" - ")
@@ -41,6 +46,10 @@ module Sinatra
       asset_protocol = settings.config[:use_https] ? "https" : "http"
       asset_host = settings.config[:statics][:domain]
       "#{asset_protocol}://#{asset_host}/#{asset}"
+    end
+
+    def translation_docs_url
+      "#{settings.config[:github_repo_root]}/blob/master/_docs/contributing_translations.md"
     end
 
     def url_for_nav_item(target)

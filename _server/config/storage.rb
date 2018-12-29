@@ -6,6 +6,7 @@ module Sinatra
       def self.registered(app)
         app.configure do
           app.set :storage_paths,
+                  root:         ::Helpers.parent_dir(app.root),
                   contents:     ::Helpers.parent_dir(app.root, "contents"),
                   data:         ::Helpers.parent_dir(app.root, "data"),
                   strings:      ::Helpers.parent_dir(app.root, "strings"),

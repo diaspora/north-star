@@ -27,6 +27,10 @@ module Storage
       file_path
     end
 
+    def get_relative_document_file_name(section, path, translation=false)
+      get_document_file_name(section, path, translation).gsub(@paths[:root], "")
+    end
+
     def document_path_info(path)
       parts = path.gsub(@paths[:contents], "").split("/").reject(&:empty?)
       {

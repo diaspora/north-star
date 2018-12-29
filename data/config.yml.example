@@ -1,24 +1,30 @@
+github_repo_root: https://github.com/diaspora/north-star
 sections:
   blog:
+    community_editable: false
     description: The project's blog.
     directory: blog
     domain: blog.diaspora.software
     translateable: false
   guides:
+    community_editable: true
     description: Guides for users, podmins, and developers.
     directory: guides
     domain: guides.diaspora.software
     translateable: true
   install:
+    community_editable: true
     description: Installation guides for both production and development installs.
     directory: install
     domain: install.diaspora.software
     translateable: false
   meta:
+    community_editable: false
     description: Error pages, this development index, ...
     directory: meta
     translateable: false
   site:
+    community_editable: true
     description: Official project site.
     directory: site
     domain: diaspora.software

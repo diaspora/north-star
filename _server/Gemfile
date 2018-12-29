@@ -43,6 +43,7 @@ source "https://rails-assets.org" do
   gem "rails-assets-bootstrap", "4.1.3"
   gem "rails-assets-handlebars", "4.0.12"
   gem "rails-assets-jquery", "3.3.1"
+  gem "rails-assets-popper.js", "1.14.5"
 end
 
 # Deployment

@@ -1,0 +1,8 @@
+<% if @section_config[:community_editable] %>
+  <a href="<%= page_edit_url(path) %>" data-toggle="tooltip" title="<%= I18n.t("community_edit.edit") %>">
+    <i class="fas fa-pen-square"></i>
+  </a>
+  <a href="<%= translation_docs_url %>" data-toggle="tooltip" title="<%= I18n.t("community_edit.translate") %>">
+    <i class="fas fa-language"></i>
+  </a>
+<% end %>
