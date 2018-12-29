@@ -2,6 +2,14 @@
 
 module Sinatra
   module LayoutHelpers
+    def center_start
+      '<p class="text-center" markdown="1">'
+    end
+
+    def center_end
+      "</p>\n"
+    end
+
     def col_start(col_classes)
       '<div class="' + col_classes + '" markdown="1">'
     end
@@ -24,14 +32,6 @@ module Sinatra
 
     def row_new(col_classes)
       row_end + row_start(col_classes)
-    end
-
-    def center_start
-      '<p class="text-center" markdown="1">'
-    end
-
-    def center_end
-      "</p>\n"
     end
 
     def warning_box_start(alert_class="primary")
