@@ -56,8 +56,9 @@ module Storage
         }
       else
         {
+          contents:    contents,
           frontmatter: {},
-          contents:    contents
+          path:        document_path_info(path)
         }
       end
     end

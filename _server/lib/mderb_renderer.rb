@@ -4,7 +4,7 @@ module Sinatra
   module MderbRenderer
     def mderb(document, layout=:"layouts/default")
       erb_locals = {
-        current_path: document[:path],
+        current_path: document[:request_path],
         page:         document[:frontmatter]
       }
 

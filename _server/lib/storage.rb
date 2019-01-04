@@ -7,7 +7,13 @@ module Storage
       file_path ||= get_document_file_name(section, path)
       return false unless file_path
 
-      receive_document(file_path)
+      doc = receive_document(file_path)
+      doc[:request_path] = {
+        path:    path,
+        section: section
+      }
+
+      doc
     end
 
     def get_document_file_name(section, path, translation=false)
