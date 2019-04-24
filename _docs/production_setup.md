@@ -8,8 +8,9 @@ TODO: This should be clearer.
 2. Clone the repository
 3. `cp data/config.yml.example data/config.yml`
 4. `cd _server`
-5. `bundle install`
-6. `./bin/puma -e production`
+5. `gem install bundler`
+6. `bin/bundle install --full-index`
+7. `bin/puma -e production`
 
 Note: north-star will try to connect to redis on `redis://localhost:6379/11` per default, which can be changed using the `REDIS_URL` environment variable.
 
