@@ -6,7 +6,7 @@ TODO: This should be a Docker container, and the instructions should be clearer.
 
 ## Setup
 
-1. Make sure Ruby 2.4 or newer is installed on your system
+1. Make sure Ruby 2.4 or newer is installed on your system. Also, install `cmake`, `pkg-config`, and `nodejs`.
 2. Clone the repository
 3. `cp data/config.yml.example data/config.yml`
 4. `cd _server`
