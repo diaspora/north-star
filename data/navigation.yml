@@ -1,6 +1,25 @@
 # The _templates section will never be used by the frontend, but we needed a
 # simple way to store some generic, reusable snippets. :)
 _templates:
+  footer: &footer
+    - target:
+        section: site
+        path: get_involved
+    - target:
+        section: site
+        path: get_involved
+    - target:
+        section: site
+        path: get_help
+    - target:
+        section: site
+        path: get_help
+    - target:
+        section: guides
+        path: users
+    - target:
+        section: guides
+        path: users
   site_crosslinks: &site_crosslinks
     - target:
         section: blog
@@ -32,6 +51,7 @@ blog:
   header_crosslinks: *site_crosslinks
   header_buttons:
     - *project_info_link
+  footer: *footer
 guides:
   header:
     - target:
@@ -46,10 +66,12 @@ guides:
   header_crosslinks: *site_crosslinks
   header_buttons:
     - *project_info_link
+  footer: *footer
 install:
   header_crosslinks: *site_crosslinks
   header_buttons:
     - *project_info_link
+  footer: *footer
 site:
   header:
     - target:
@@ -60,3 +82,4 @@ site:
     - target:
         section: site
         path: join
+  footer: *footer

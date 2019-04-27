@@ -42,6 +42,7 @@
 
     <footer>
       <div class="container">
+        <%= partial "components/nav_footer" %>
         <div class="row">
           <div class="col">
             <%= partial "components/language_select" %>
@@ -50,7 +51,6 @@
             <%= partial "components/edit_site_link", path: current_path %>
           </div>
         </div>
-
         <p class="content-license">
           <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
             <i class="fab fa-creative-commons"></i>
