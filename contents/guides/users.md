@@ -6,8 +6,6 @@ subtitle: Get to know diaspora*
 
 <% @guides.each do |section, items| %>
 
-## <%= section %>
-
 <%= partial "components/guide_list", items: items %>
 
 <% end %>
