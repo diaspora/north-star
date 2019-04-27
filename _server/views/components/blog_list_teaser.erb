@@ -1,3 +1,7 @@
 <% items.each do |item| %>
   * <%= format_short_date(item[:frontmatter][:date]) %>: [<%= item[:frontmatter][:title] %>](<%= blog_url(item) %>)
 <% end %>
+
+<div class="blog_more_link">
+  <a href="<%= all %>">See more...</a>
+</div>

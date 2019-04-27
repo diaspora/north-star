@@ -11,11 +11,11 @@ subtitle: Official announcements and news
 <div class="row"><div class="col-lg" markdown="1">
 
 <%= partial "components/headline_divider", headline: "Latest releases" %>
-<%= partial "components/blog_list_teaser", items: @latest_releases %>
+<%= partial "components/blog_list_teaser", items: @latest_releases, all: url_to("blog", "releases") %>
 
 </div><div class="col-lg" markdown="1">
 
-<%= partial "components/headline_divider", headline: "More articles" %>
-<%= partial "components/blog_list_teaser", items: @latest_articles %>
+<%= partial "components/headline_divider", headline: "Articles" %>
+<%= partial "components/blog_list_teaser", items: @latest_articles, all: url_to("blog", "articles") %>
 
 </div>
