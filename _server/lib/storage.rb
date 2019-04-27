@@ -45,6 +45,10 @@ module Storage
       }
     end
 
+    def document_absolute_path_info(path)
+      path.gsub(@paths[:contents], "")
+    end
+
     def load_data(path)
       data_path = ::Helpers.path_expand_join(@paths[:data], "#{path}.yml")
       return false unless file_exist?(data_path)
