@@ -48,12 +48,16 @@ module Storage
     def split_contents(contents, path)
       matches = YAML_FRONT_MATTER_REGEXP.match(contents)
       if matches
-        frontmatter = YAML.load(matches[1]) || {}
-        {
-          contents:    matches.post_match,
-          frontmatter: frontmatter.deep_symbolize_keys,
-          path:        document_path_info(path)
-        }
+        begin
+          frontmatter = YAML.load(matches[1]) || {}
+          {
+            contents:    matches.post_match,
+            frontmatter: frontmatter.deep_symbolize_keys,
+            path:        document_path_info(path)
+          }
+        rescue Psych::SyntaxError => exception
+          raise ::Errors::FrontmatterInvalid.new(document_absolute_path_info(path), exception)
+        end
       else
         {
           contents:    contents,
