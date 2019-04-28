@@ -15,7 +15,7 @@ Quickly spotting our table between the #FSFE and #ownCloud, we pushed up the dia
 
 [Fla](https://diaspora-fr.org/people/ccac722d863119dc) arrived quite soon to help answer the flood of questions relating to diaspora\* and, later on, we were joined by [Lukas @Zauberstuhl](https://sechat.org/people/18ad211f33c65726), [Steffen van Bergerem](https://pod.omgsrsly.net/people/6273149f1c8881f5), [Augier](https://diaspora-fr.org/people/6f48214497d8d2c1) and [dada](https://diaspote.org/people/7fcdd8d08c2d0132bba82d9862fed453). The whole day was spent at the diaspora\* table talking to people, giving interviews, meeting other projects and drinking beer. *What could be more awesome than this?* :)
 
-![The diaspora\* table at FOSDEM](<%= static_url("blog/2015-02-06/IMG_6755.JPG") %>){: class="mx-auto d-block"}
+![The diaspora\* table at FOSDEM](<%= static_url("blog/2015-02-06/IMG_6755.JPG") %>){: class="mx-auto d-block img-fluid"}
 
 I was really surprised by how many people wanted to talk about diaspora\*. Being here, talking to people, really pushed up my faith in the project. The #internet really needs projects like this! We are important! This was the message I heard over and over again.
 Also the team was beefed up by [Pavithran S](https://joindiaspora.com/people/4d1101262c17433a54000c03), [Benoît Majerus](https://framasphere.org/people/493d92501a7f013283702a0000053625) and [Pablo Cúbico](https://joindiaspora.com/people/da54700611117cc4) (who also gave a talk on [open UX design](https://fosdem.org/2015/schedule/event/session_6/)).

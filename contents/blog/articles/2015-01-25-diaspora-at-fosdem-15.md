@@ -3,7 +3,7 @@ title: diaspora* at FOSDEM ’15
 date: 2015-01-25 12:59:51
 ---
 
-![FOSDEM](<%= static_url("blog/2015-01-25/Selection_050.png") %>){: class="mx-auto d-block"}
+![FOSDEM](<%= static_url("blog/2015-01-25/Selection_050.png") %>){: class="mx-auto d-block img-fluid"}
 
 <%= row_start("col-lg") %>
 

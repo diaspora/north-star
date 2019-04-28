@@ -3,7 +3,7 @@ title: Support diaspora* development via Bountysource
 date: 2015-03-27 00:00:00
 ---
 
-![Bountysource explainer by Faldrian](<%= static_url("blog/2015-03-27/diaspora_bountysource.png") %>){: class="mx-auto d-block"}
+![Bountysource explainer by Faldrian](<%= static_url("blog/2015-03-27/diaspora_bountysource.png") %>){: class="mx-auto d-block img-fluid"}
 
 Every popular community powered open source software project has the same problem: to attract developers to keep providing new features and bug fixes at a pace which users of the software are happy with. Since becoming a community project in August 2012, every single line of  new diaspora* code has been contributed by a community member. These community members are not paid and don't expect to be paid. They do what they do for the love of contributing, and their efforts have kept diaspora* growing, enabling us to release many quality updates to the software.
 

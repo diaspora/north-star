@@ -5,7 +5,7 @@ date: 2016-08-26 22:16:32
 
 August 27th marks four years since diaspora\*, the open, privacy-oriented social network, was placed into the hands of its community by its founders. Four years of refactoring, fixing bugs, redesigning the interface and introducing new features. Since the last major release, 42 contributors have added 44221 lines of code and removed 38560 lines, which marks the release of **diaspora\* version 0.6** as the biggest version diaspora\*’s community has ever released.
 
-![diaspora* version 0.6.0.0 released](<%= static_url("blog/2016-08-26/v06_finished.jpg") %>){: class="mx-auto d-block"}
+![diaspora* version 0.6.0.0 released](<%= static_url("blog/2016-08-26/v06_finished.jpg") %>){: class="mx-auto d-block img-fluid"}
 
 Our latest release contains an enormous number of changes, making huge improvements in user experience and optimizing the ‘under-the-hood’ code.
 

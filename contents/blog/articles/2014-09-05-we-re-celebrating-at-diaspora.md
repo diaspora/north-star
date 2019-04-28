@@ -3,7 +3,7 @@ title: We’re celebrating at diaspora*
 date: 2014-09-05 14:00:54
 ---
 
-![diaspora* four years](<%= static_url("blog/2014-09-05/diaspora_four_years.jpg") %>){: class="mx-auto d-block"}
+![diaspora* four years](<%= static_url("blog/2014-09-05/diaspora_four_years.jpg") %>){: class="mx-auto d-block img-fluid"}
 
 This month, diaspora* celebrates two anniversaries: it's two years since the project was formally handed over from its founders to its community, and four years since the first developer preview of the code which runs the network was released.
 

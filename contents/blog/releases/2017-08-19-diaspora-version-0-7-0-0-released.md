@@ -5,7 +5,7 @@ date: 2017-08-19 15:37:26
 
 August 27th marks five years since diaspora\*, the open, privacy-oriented social network, was placed into the hands of its community by its founders. One year ago the community released diaspora\* version 0.6, the result of a huge effort of refactoring the old code to make it perform better, as well as redesigning diaspora\*'s interface and introducing new features. One year later, we are proud to announce the release of **diaspora\* version 0.7**. Since the last major release, 28 contributors have added 28675 lines of code and removed 20019 lines, which marks the release of diaspora\* version 0.7 as one of the biggest versions diaspora\*’s community has ever released.
 
-![diaspora* version 0.7.0.0 released](<%= static_url("blog/2017-08-19/diaspora-0700.png") %>){: class="mx-auto d-block"}
+![diaspora* version 0.7.0.0 released](<%= static_url("blog/2017-08-19/diaspora-0700.png") %>){: class="mx-auto d-block img-fluid"}
 
 Our latest release contains some important changes, particularly ‘under the hood’.
 
