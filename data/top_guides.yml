@@ -9,9 +9,4 @@ podmins:
   - system_requirements
   - example_2
 users:
-  - are_aspects_groups
-  - pod_list
-  - posting_to_aspects
-  - example_1
-  - example_2
-  - example_3
+  - getting_started

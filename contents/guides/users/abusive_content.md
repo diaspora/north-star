@@ -1,0 +1,20 @@
+---
+title: What can I do if I encounter abusive content or users?
+category: User guides
+---
+
+## Report someone’s post
+
+If you encounter an abusive post, you can click the alert triangle icon at the top right of the post to report it to your podmin. Enter a reason for reporting this post in the dialog box. Please only report posts that break our [community guidelines][community_guidelines] or your pod’s terms of service, for example posts containing illegal content, or which are abusive or spam.
+
+## Ignore a user
+
+If you are currently sharing with that person, removing them from your aspects will stop many of their posts from appearing in your stream. A more complete method is to “ignore” that account. This will prevent any of their posts from appearing in your stream, and they will no longer be able to like or comment on your posts. They will, however, still be able to reshare your posts, comment on reshares of your posts, and their comments on posts by other people which appear in your stream will still be visible to you.
+
+To ignore an account, click the ignore icon (a circle with a diagonal line through it) at the top right of one of their posts. Their posts will instantly disappear from your stream. Alternatively, go to their profile page and click the ignore icon there. You will still be able to see their posts on their profile page, or by using the single-post view.
+
+## Contact your podmin
+
+If you need to contact your podmin, you can find their contact email address on the left side of the stream at “Got a problem?”. You can then send dem an email - but make sure you include all relevant information, like the reason of your message, links to posts, or user IDs.
+
+[community_guidelines]: <%= url_to("site", "community_guidelines") %>
