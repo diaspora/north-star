@@ -1,3 +1,12 @@
-<% items.each do |item| %>
-  * <%= format_short_date(item[:frontmatter][:date]) %>: [<%= item[:frontmatter][:title] %>](<%= blog_url(item) %>)
-<% end %>
+<div class="blog-list-teaser">
+  <% items.each do |item| %>
+    <div class="blog-teaser-item d-flex flex-row">
+      <div class="date flex-shrink-0"><%= format_short_date(item[:frontmatter][:date]) %></div>
+      <div class="link"><a href="<%= blog_url(item) %>"><%= item[:frontmatter][:title] %></a></div>
+    </div>
+  <% end %>
+
+  <div class="blog_more_link">
+    <a href="<%= all %>"><%= I18n.t("see_more") %></a>
+  </div>
+</div>

@@ -42,3 +42,43 @@ footer {
     }
   }
 }
+
+.headline-container {
+  small {
+    white-space: nowrap;
+  }
+}
+
+.feature-icon {
+  font-size: 500%;
+  text-align: center;
+}
+
+.no-guided-only-content .guided-only-content {
+  display: none;
+}
+
+.guide-button {
+  white-space: normal;
+}
+
+.blog-list {
+  h2 {
+    font-size: 1.5em;
+  }
+}
+
+.blog-list-teaser {
+  .blog_more_link {
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  .blog-teaser-item {
+    margin-bottom: 0.2rem;
+  
+    .date {
+      width: 100px;
+    }
+  }
+}
