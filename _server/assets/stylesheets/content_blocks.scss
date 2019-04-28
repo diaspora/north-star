@@ -47,6 +47,24 @@ blockquote {
   padding-left: 1.5rem;
 }
 
+.inline-image {
+  max-width: 300px;
+
+  img {
+    width: 100%;
+  }
+
+  &.inline-image-left {
+    float: right;
+    margin: 0 0 1rem 1rem;
+  }
+
+  &.inline-image-right {
+    float: left;
+    margin: 0 1rem 1rem 0;
+  }
+}
+
 footer {
   background-color: #eee;
   border-top: 1px solid #ddd;
