@@ -22,7 +22,7 @@ Also the team was beefed up by [Pavithran S](https://joindiaspora.com/people/4d1
 
 ### The interest in diaspora\*
 
-What was interesting to me was what kind of interest people had for diaspora\*. I half-expected it to be mostly people walking by and the ones who do come to talk to be all “*didn't diaspora\* fail already?*” **This was not the case.** I guess the people who stopped at the table and that I talked to could be categorised roughly as follows:
+What was interesting to me was what kind of interest people had for diaspora\*. I half-expected it to be mostly people walking by and the ones who do come to talk to be all "*didn't diaspora\* fail already?*" **This was not the case.** I guess the people who stopped at the table and that I talked to could be categorised roughly as follows:
 
 - **diaspora\* users.** This group is obvious – they already use diaspora\* and came to say hi and pick up stickers. We love you ♥ 
 - **People who knew what diaspora\* is but don't use it.** Many of these people, some of whom had tried diaspora\* a long time ago, were surprised that the project still exists – which is *exactly* why we were there talking about diaspora\*. The mainstream media really did some huge damage to this project. On the other hand, diaspora\* would have never become such a big thing if it wasn't for the mainstream media attention. 

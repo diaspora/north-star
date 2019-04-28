@@ -17,7 +17,7 @@ subtitle: The online social world where you are in control
 
 ### Decentralization
 
-Instead of everyone’s data being held on huge central servers owned by a large organization, diaspora\* exists on independently run servers (“pods”) all over the world. You choose which pod to register with, and you can then connect seamlessly with the diaspora\* community worldwide.
+Instead of everyone’s data being held on huge central servers owned by a large organization, diaspora\* exists on independently run servers ("pods") all over the world. You choose which pod to register with, and you can then connect seamlessly with the diaspora\* community worldwide.
 
 [Find out more][get-involved]{: class="btn btn-primary"}
 

@@ -29,13 +29,13 @@ You can post bounties in either US dollars or Bitcoin. The same options are also
 
 ### Things to be aware of
 
-While Bountysource is a good solution, it is not free of charge. Users placing bounties or donating to the team on Bountysource need to be aware that Bountysource takes a 10% cut of any bounties paid out. Also, when you place a bounty on an issue, it is generally there until the issue is resolved – there is no “I changed my mind”, at least not yet. So before placing a bounty, make sure to note that the money is then placed permanently, until it is given to someone solving the issue. However, the Bountysource team will refund bounties if an issue is closed as a “won't fix” by the project team.
+While Bountysource is a good solution, it is not free of charge. Users placing bounties or donating to the team on Bountysource need to be aware that Bountysource takes a 10% cut of any bounties paid out. Also, when you place a bounty on an issue, it is generally there until the issue is resolved – there is no "I changed my mind", at least not yet. So before placing a bounty, make sure to note that the money is then placed permanently, until it is given to someone solving the issue. However, the Bountysource team will refund bounties if an issue is closed as a "won't fix" by the project team.
 
 ### Great, tell me where to go!
 
 [You can find the diaspora* team on Bountysource](https://www.bountysource.com/teams/diaspora). You can search for issues, view backers, existing bounties and of course post bounties here. As a developer this is where you will submit your claim once you start working on an issue.
 
-Any issues that have bounties are also labeled as “bounty” [in our issue tracker](https://github.com/diaspora/diaspora/issues?q=is%3Aopen+is%3Aissue+label%3Abounty). The highest bounty ($163) is currently for the API. There are currently 13 issues with a bounty, totalling to an amount of $523. Recently one developer got paid $70 for implementing contacts management in the mobile app, which will be part of the next release of diaspora*!
+Any issues that have bounties are also labeled as "bounty" [in our issue tracker](https://github.com/diaspora/diaspora/issues?q=is%3Aopen+is%3Aissue+label%3Abounty). The highest bounty ($163) is currently for the API. There are currently 13 issues with a bounty, totalling to an amount of $523. Recently one developer got paid $70 for implementing contacts management in the mobile app, which will be part of the next release of diaspora*!
 
 [![Bountysource Badge](https://www.bountysource.com/badge/team?team_id=23714&style=bounties_received)](https://www.bountysource.com/teams/diaspora/issues)
 

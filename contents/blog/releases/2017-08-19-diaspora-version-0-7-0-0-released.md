@@ -29,8 +29,8 @@ Additions and enhancements **since version 0.6.0.0**:
 * Add a user setting for default post visibility
 * Use `guid` instead of `id` in permalinks and in single-post view
 * Links to streams of posts I have liked or commented on
-* Access to “My aspects” and “Followed tags” pages on mobile
-* Improve color themes and add a “Dark” color theme
+* Access to "My aspects" and "Followed tags" pages on mobile
+* Improve color themes and add a "Dark" color theme
 * Enable collapsing of notification threads in your mail client
 * OpenGraph video support
 * Improve error handling on mobile
