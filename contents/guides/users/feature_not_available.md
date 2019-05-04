@@ -21,7 +21,6 @@ That said, many of the features you want are already on our wish-list. This incl
 
 For many of these features, the groundwork has been done, and all that is needed is for someone or a group of people to step forward, claim the feature and get working! So if you want to help improve diaspora* by adding any of these features, or anything else, please introduce yourself! If you’re new to diaspora* development, have a look at our [guide to starting to contribute][get_involved]. If you choose to work on one of the features above, our core team will give you as much support as they can; although, given the voluntary nature of all work on diaspora*, it can sometimes take a long time to properly review a complex PR.
 
-
 [github_issues]: https://github.com/diaspora/diaspora/issues
 [discourse_discussion]: https://discourse.diasporafoundation.org/c/features-and-ideas
 [get_involved]: <%= url_to("sites", "get_involved") %>
