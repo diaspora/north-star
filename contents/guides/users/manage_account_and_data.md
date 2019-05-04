@@ -48,7 +48,7 @@ On the account settings page you can also enable the “community spotlight,” 
 ### Privacy
 
 On this page, you can choose whether or not to strip EXIF data from photos you upload to your diaspora\* account.  
-You can also find a list of users you are ignoring. You can remove them from this list if you want to start seeing posts from them again. See  “[What can I do if I encounter abusive content or users?][abusive_content]” for more information on options to deal with abusive content or users.
+You can also find a list of users you are ignoring. You can remove them from this list if you want to start seeing posts from them again. See “[What can I do if I encounter abusive content or users?][abusive_content]” for more information on options to deal with abusive content or users.
 
 ### Services
 

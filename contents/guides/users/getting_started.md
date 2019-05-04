@@ -33,7 +33,7 @@ If you want, you can even host your own data by running your own diaspora\* pod.
 
 ## What should I do after I signed up?
 
-After registration you get to a site where you are asked to fill in fields for your name, upload a profile image, and some interesting hashtags you want to follow. If you're unsure what to enter, don't worry: you can also fill or change them later in your settings. But the more information you provide, the better people can find you and assess if they want to share with you. 
+After registration you get to a site where you are asked to fill in fields for your name, upload a profile image, and some interesting hashtags you want to follow. You don’t have to use your real name if you don’t want to. In diaspora\*, you can be who you want to be. If you're unsure what to enter, don't worry: you can also fill or change them later in your settings. But the more information you provide, the better people can find you and assess if they want to share with you. 
 
 Especially entering hashtags that you're interested in at *What are you into?* is an awesome first step to fill your *Stream* with interesting posts and people. It doesn't matter if you write them lower-case or upper-case, they all link to the same site.
 

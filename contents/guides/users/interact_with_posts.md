@@ -50,6 +50,5 @@ You can find more information about how to deal with abusive content or users at
 
 If you want to navigate through your stream very quickly, you might want to use keyboard shortcuts instead of scrolling and clicking with your mouse. All basic interactions work with your keyboard, such as jumping between posts, likes, comments, reshares, etc. You can find the full list of available keyboard shortcuts at “[What are the different streams and how do I use them?][different_streams]”.
 
-
 [abusive_content]: <%= url_to("guides", "users/abusive_content") %>
 [different_streams]: <%= url_to("guides", "users/different_streams") %>
