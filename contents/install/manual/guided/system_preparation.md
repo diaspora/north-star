@@ -50,7 +50,7 @@ sudo -u postgres psql
 Inside the PostgreSQL prompt, create a new user for diaspora\*:
 
 ~~~
-CREATE USER diaspora WITH CREATEDB PASSWORD '<password>';
+CREATE USER diaspora WITH CREATEDB<% if @guide_data[:params][:env] == :development %> SUPERUSER<% end %> PASSWORD '<password>';
 ~~~
 
 <% end %>
