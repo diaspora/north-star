@@ -49,7 +49,6 @@ window.DiasporaInstallSelector = (() => {
 
     resetState() {
       this._state = {
-        database: "postgres",
         distribution: null,
         env: null,
         proxy: "nginx",
@@ -101,7 +100,6 @@ window.DiasporaInstallSelector = (() => {
         if (["development_docker"].includes(state.env)) {
           this.drawDockerGuideLinks();
         } else {
-          this.drawDbSelector();
           if (["production_manual"].includes(state.env)) {
             this.drawProxySelector();
           }
@@ -236,33 +234,6 @@ window.DiasporaInstallSelector = (() => {
         clickHandler: (button) => {
           return () => {
             this.setState("env", button.dataset.env);
-          };
-        }
-      });
-    },
-
-    drawDbSelector() {
-      let databases = {
-        postgres: { title: "PostgreSQL" },
-        mariadb: { title: "MariaDB" }
-      };
-
-      this._renderList({
-        innerTpl: "databaseEntry",
-        outerTpl: "databases",
-        listEntries: databases,
-        entryMap: (database) => {
-          return {
-            key: database,
-            color: database == this._state.database ? "primary" : "light",
-            icon: databases[database].icon,
-            title: databases[database].title
-          };
-        },
-        elementKey: "database",
-        clickHandler: (button) => {
-          return () => {
-            this.setState("database", button.dataset.database);
           };
         }
       });

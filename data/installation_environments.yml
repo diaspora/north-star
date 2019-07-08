@@ -15,10 +15,9 @@ linux:
         docker:
           install_url: https://wiki.archlinux.org/index.php/Docker#Installation
         manual_notes:
-          database:
-            postgres: |
-              Please check [the Arch Linux wiki](https://wiki.archlinux.org/index.php/PostgreSQL#Initial_configuration)
-              for information on how to set up PostgreSQL.
+          database: |
+            Please check [the Arch Linux wiki](https://wiki.archlinux.org/index.php/PostgreSQL#Initial_configuration)
+            for information on how to set up PostgreSQL.
         packaging:
           install_command: sudo pacman -S
           lists:
@@ -31,13 +30,9 @@ linux:
               - libxslt
               - net-tools
               - nodejs
-              - redis
-            mariadb:
-              - libmariadbclient
-              - mariadb
-            postgres:
               - postgresql
               - postgresql-libs
+              - redis
       versions:
         rolling:
           title: Rolling release
@@ -54,9 +49,9 @@ linux:
             git:
               - git
             base:
-              - epel-release
               - automake
               - cmake
+              - epel-release
               - gcc
               - gcc-c++
               - ImageMagick
@@ -67,15 +62,11 @@ linux:
               - make
               - net-tools
               - nodejs
+              - postgresql-devel
+              - postgresql-server
               - redis
               - tar
               - wget
-            mariadb:
-              - mariadb-devel
-              - mariadb-server
-            postgres:
-              - postgresql-devel
-              - postgresql-server
       versions:
         v7:
           title: CentOS 7
@@ -87,10 +78,9 @@ linux:
         docker:
           install_url: https://docs.docker.com/install/linux/docker-ce/debian/
         manual_notes:
-          database:
-            postgres: |
-              Please check [the Arch Linux wiki](https://wiki.archlinux.org/index.php/PostgreSQL#Initial_configuration)
-              for information on how to set up PostgreSQL.
+          database: |
+            Please check [the Debian wiki](https://wiki.debian.org/PostgreSql#Installation)
+            for information on how to set up PostgreSQL.
         packaging:
           install_command: sudo apt-get install
           lists:
@@ -104,17 +94,13 @@ linux:
               - imagemagick
               - libcurl4-openssl-dev
               - libmagickwand-dev
+              - libpq-dev
               - libssl-dev
               - libxml2-dev
               - libxslt-dev
               - nodejs
-              - redis-server
-            mariadb:
-              - libmysqlclient-dev
-              - mariadb
-            postgres:
-              - libpq-dev
               - postgresql
+              - redis-server
       versions:
         stretch:
           title: Debian 9 (Stretch)
@@ -133,10 +119,10 @@ linux:
             git:
               - git
             base:
-              - ImageMagick
               - automake
               - gcc
               - gcc-c++
+              - ImageMagick
               - libcurl-devel
               - libffi-devel
               - libxml2-devel
@@ -144,15 +130,11 @@ linux:
               - make
               - net-tools
               - nodejs
+              - postgresql-devel
+              - postgresql-server
               - redis
               - tar
               - wget
-            mariadb:
-              - mariadb-devel
-              - mariadb-server
-            postgres:
-              - postgresql-devel
-              - postgresql-server
       versions:
         v29:
           title: Fedora 29
@@ -178,17 +160,13 @@ linux:
               - libcurl4-openssl-dev
               - libgmp-dev
               - libmagickwand-dev
+              - libpq-dev
               - libssl-dev
               - libxml2-dev
               - libxslt1-dev
               - nodejs
-              - redis-server
-            mariadb:
-              - libmysqlclient-dev
-              - mariadb
-            postgres:
-              - libpq-dev
               - postgresql
+              - redis-server
       versions:
         cosmic:
           title: Ubuntu 18.10 (Cosmic Cuttlefish)

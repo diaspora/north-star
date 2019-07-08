@@ -99,13 +99,6 @@ Glad to see you want to give installing diaspora\* a try! Follow these guides to
   </div>
 </script>
 
-<script id="tpl-databases" type="text/x-handlebars-template">
-  <h2>Select your database system</h2>
-  <div class="row">
-    {{{items}}}
-  </div>
-</script>
-
 <script id="tpl-database-entry" type="text/x-handlebars-template">
   <div class="col-md">
     <button
@@ -180,7 +173,6 @@ Glad to see you want to give installing diaspora\* a try! Follow these guides to
     },
     templates: {
       databaseEntry: compileTemplate("database-entry"),
-      databases: compileTemplate("databases"),
       distributions: compileTemplate("distributions"),
       distributionsEntry: compileTemplate("distribution-entry"),
       dockerGuide: compileTemplate("docker-guide"),
