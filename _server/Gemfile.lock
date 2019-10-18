@@ -73,7 +73,7 @@ GEM
     rails-assets-jquery (3.4.0)
     rails-assets-popper.js (1.15.0)
     rainbow (3.0.0)
-    rake (12.3.2)
+    rake (12.3.3)
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
@@ -156,7 +156,7 @@ DEPENDENCIES
   rails-assets-handlebars (= 4.1.2)!
   rails-assets-jquery (= 3.4.0)!
   rails-assets-popper.js (= 1.15.0)!
-  rake (= 12.3.2)
+  rake (= 12.3.3)
   redis (= 4.1.0)
   rubocop (= 0.67.2)
   sinatra (= 2.0.5)
