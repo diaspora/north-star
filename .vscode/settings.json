@@ -1,0 +1,7 @@
+{
+  "files.exclude": {
+    "_server/tmp": true,
+    "**/node_modules": true,
+    "**/vendor/bundle": true
+  }
+}
