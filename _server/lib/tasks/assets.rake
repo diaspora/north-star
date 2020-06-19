@@ -26,7 +26,7 @@ namespace :assets do
 
   desc "Installes Node.js packages"
   task prepare: %i[check_setup] do
-    sh "npm install"
+    sh "npm install --loglevel error"
   end
 
   desc "Precompiles assets for production"
