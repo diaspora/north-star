@@ -16,9 +16,10 @@ class Server < Sinatra::Base
     @section_config = @config[:sections][@section]
   end
 
+  helpers Sinatra::AssetHelpers
   helpers Sinatra::ContentHelpers
-  helpers Sinatra::LayoutHelpers
   helpers Sinatra::Cookies
+  helpers Sinatra::LayoutHelpers
   helpers Sinatra::MderbRenderer
   helpers Sinatra::StorageHelpers
   register Sinatra::Configs::Assets

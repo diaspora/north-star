@@ -156,35 +156,31 @@ Glad to see you want to give installing diaspora\* a try! Follow these guides to
 </script>
 
 <script>
-  function compileTemplate(id) {
-    return Handlebars.compile(document.getElementById("tpl-" + id).innerHTML);
-  }
-
   window.installSelector = new DiasporaInstallSelector({
     available: <%= @available_environments.to_json %>,
     elements: {
-      database: document.getElementById("database"),
-      distribution: document.getElementById("distribution"),
-      env: document.getElementById("env"),
-      guides: document.getElementById("guides"),
-      proxy: document.getElementById("proxy"),
-      system: document.getElementById("system"),
-      version: document.getElementById("version")
+      database: "database",
+      distribution: "distribution",
+      env: "env",
+      guides: "guides",
+      proxy: "proxy",
+      system: "system",
+      version: "version"
     },
     templates: {
-      databaseEntry: compileTemplate("database-entry"),
-      distributions: compileTemplate("distributions"),
-      distributionsEntry: compileTemplate("distribution-entry"),
-      dockerGuide: compileTemplate("docker-guide"),
-      envEntry: compileTemplate("env-entry"),
-      envs: compileTemplate("envs"),
-      manualGuide: compileTemplate("manual-guide"),
-      proxies: compileTemplate("proxies"),
-      proxyEntry: compileTemplate("proxy-entry"),
-      systemEntry: compileTemplate("system-entry"),
-      systems: compileTemplate("systems"),
-      versions: compileTemplate("versions"),
-      versionsEntry: compileTemplate("version-entry")
+      databaseEntry: "database-entry",
+      distributions: "distributions",
+      distributionsEntry: "distribution-entry",
+      dockerGuide: "docker-guide",
+      envEntry: "env-entry",
+      envs: "envs",
+      manualGuide: "manual-guide",
+      proxies: "proxies",
+      proxyEntry: "proxy-entry",
+      systemEntry: "system-entry",
+      systems: "systems",
+      versions: "versions",
+      versionsEntry: "version-entry"
     }
   });
 

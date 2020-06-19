@@ -5,30 +5,21 @@ module Sinatra
     module Assets
       def self.registered(app)
         app.configure do
-          app.set :assets_paths, %w[
-            assets/javascripts
-            assets/stylesheets
-          ]
-
           if app.production?
-            app.set :assets_host, app.settings.config[:statics][:domain]
-            app.set :assets_protocol, :https if app.settings.config[:use_https]
+            app.set :assets_root, [
+              app.settings.config[:use_https] ? "https" : "http",
+              "://",
+              app.settings.config[:statics][:domain],
+              "/assets"
+            ].join("")
           end
-
-          app.set :assets_css_compressor, :sass
-          app.set :assets_js_compressor, :uglifier
 
           app.set :public_folder, ::Helpers.parent_dir(app.root, "statics")
-
-          app.register Sinatra::AssetPipeline
-          RailsAssets.load_paths.each do |path|
-            app.settings.sprockets.append_path(path)
-          end
-
           app.set :static, false
         end
 
         app.configure :development do
+          app.set :assets_root, "http://localhost:9393"
           app.set :static, true
         end
       end

@@ -1,3 +1,5 @@
+import Handlebars from "handlebars";
+
 window.DiasporaInstallSelector = (() => {
   /**
    * So, here's a thing. I really thought about adding React or Vue.js or something,
@@ -10,8 +12,17 @@ window.DiasporaInstallSelector = (() => {
 
   let DiasporaInstallSelector = function(args) {
     this._available = args.available;
-    this._elements = args.elements;
-    this._templates = args.templates;
+
+    this._elements = {};
+    Object.keys(args.elements).forEach((key) => {
+      this._elements[key] = document.getElementById(args.elements[key]);
+    });
+
+    this._templates = {};
+    Object.keys(args.templates).forEach((key) => {
+      this._templates[key] = Handlebars.compile(document.getElementById("tpl-" + args.templates[key]).innerHTML);
+    });
+
     this.resetState();
   };
 

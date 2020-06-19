@@ -9,8 +9,8 @@
     <link rel="alternate" type="application/atom+xml" title="<%= I18n.t("blog.feeds.articles") %> (Atom)" href="<%= url_to "blog", "feeds/articles.xml" %>">
     <link rel="alternate" type="application/atom+xml" title="<%= I18n.t("blog.feeds.releases") %> (Atom)" href="<%= url_to "blog", "feeds/releases.xml" %>">
 
-    <%= stylesheet_tag "app" %>
-    <%= javascript_tag "app" %>
+    <link rel="stylesheet" href="<%= asset_url "app.css" %>">
+    <script src="<%= asset_url "app.js" %>"></script>
 
     <title><%= page_title(page[:title_tag] || page[:title]) %></title>
   </head>

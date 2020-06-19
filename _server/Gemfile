@@ -2,6 +2,8 @@
 
 source "https://rubygems.org"
 
+gem "bundler", "2.1.4"
+
 # Make sure to load ActiveSupport before sinatra to allow its IndifferentHash
 # to be loaded if needed.
 gem "activesupport", "6.0.0", require: "active_support/all"
@@ -15,11 +17,6 @@ gem "sinatra-contrib", "2.0.7"
 # Extensions
 gem "rack-protection", "2.0.7"
 
-# Asset pipeline
-gem "sinatra-asset-pipeline", "2.2.0", require: "sinatra/asset_pipeline"
-gem "sprockets-es6", "0.9.2", require: "sprockets/es6"
-gem "uglifier", "4.1.20"
-
 # Content parsing
 gem "kramdown", "2.1.0"
 
@@ -28,6 +25,9 @@ gem "http_accept_language", "2.1.1"
 gem "i18n", "1.6.0"
 
 group :development do
+  # To make running puma and the webpack dev server together easier
+  gem "foreman", "0.87.1"
+
   # Linters
   gem "pronto", "0.10.0", require: false
   gem "pronto-rubocop", "0.10.0", require: false
@@ -37,13 +37,6 @@ end
 
 group :production do
   gem "redis", "4.1.0"
-end
-
-source "https://rails-assets.org" do
-  gem "rails-assets-bootstrap", "4.3.1"
-  gem "rails-assets-handlebars", "4.1.2"
-  gem "rails-assets-jquery", "3.4.0"
-  gem "rails-assets-popper.js", "1.15.0"
 end
 
 # Deployment

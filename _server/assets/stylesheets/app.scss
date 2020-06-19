@@ -1,7 +1,10 @@
-/**
- *= require "bootstrap"
- *= require_tree "."
- */
+@import '~bootstrap';
+
+@import 'fonts';
+@import 'mixins';
+
+@import 'content_blocks';
+@import 'install_selector';
 
 main {
   margin-top: 50px;
