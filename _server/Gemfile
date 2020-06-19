@@ -22,7 +22,7 @@ gem "kramdown", "2.1.0"
 
 # I18n fun
 gem "http_accept_language", "2.1.1"
-gem "i18n", "1.6.0"
+gem "i18n", "1.8.3"
 
 group :development do
   # To make running puma and the webpack dev server together easier
