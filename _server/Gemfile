@@ -40,4 +40,4 @@ group :production do
 end
 
 # Deployment
-gem "puma", "3.12.1"
+gem "puma", "4.3.5"
