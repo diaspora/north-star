@@ -26,11 +26,11 @@ namespace :assets do
 
   desc "Installes Node.js packages"
   task prepare: %i[check_setup] do
-    sh "npm install --loglevel error"
+    sh "npm install --loglevel error", verbose: false
   end
 
   desc "Precompiles assets for production"
   task precompile: %i[prepare] do
-    sh "npm run build"
+    sh "npm run build", verbose: false
   end
 end
