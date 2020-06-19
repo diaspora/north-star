@@ -18,7 +18,7 @@ gem "sinatra-contrib", "2.0.7"
 gem "rack-protection", "2.0.7"
 
 # Content parsing
-gem "kramdown", "2.1.0"
+gem "kramdown", "2.2.1"
 
 # I18n fun
 gem "http_accept_language", "2.1.1"
