@@ -1,26 +1,19 @@
-# Imported from https://github.com/diaspora/diaspora/blob/21f9a9d134a7869260cb8fa08f474cf1706c6037/.rubocop.yml
+# Mostly imported from https://github.com/diaspora/diaspora/blob/44bbb44c81f6b79dcc7593402d7de34a1fea195d/.rubocop.yml
 
 AllCops:
-  TargetRubyVersion: 2.3
+  TargetRubyVersion: 2.6
   Exclude:
     - "bin/**/*"
     - "vendor/bundle/**/*"
 
-Rails:
-  Enabled: true
-
-# Disable for rails 4
-Rails/HttpPositionalArguments:
-  Enabled: false
-
 # Commonly used screens these days easily fit more than 80 characters.
-Metrics/LineLength:
+Layout/LineLength:
   Max: 120
 
 # Too short methods lead to extraction of single-use methods, which can make
 # the code easier to read (by naming things), but can also clutter the class
 Metrics/MethodLength:
-  Enabled: false
+  Max: 20
 
 # The guiding principle of classes is SRP, SRP can't be accurately measured by LoC
 Metrics/ClassLength:
@@ -28,16 +21,21 @@ Metrics/ClassLength:
 Metrics/ModuleLength:
   Max: 1500
 
-# Raise AbcSize from 15 to 20
+# Raise complexity metrics
 Metrics/AbcSize:
-  Enabled: false
+  Max: 20
+
+Metrics/CyclomaticComplexity:
+  Max: 20
+
+Metrics/PerceivedComplexity:
+  Max: 20
 
 # Some blocks are longer.
 Metrics/BlockLength:
   ExcludedMethods:
-    - "create_table"
-    - "helpers"
     - "namespace"
+    - "create_table"
   Exclude:
     - "config/**/*.rb"
     - "spec/**/*.rb"
@@ -59,7 +57,7 @@ Style/SymbolArray:
   Enabled: true
 
 # Most readable form.
-Layout/AlignHash:
+Layout/HashAlignment:
   EnforcedHashRocketStyle: table
   EnforcedColonStyle: table
 
@@ -81,7 +79,6 @@ Style/CollectionMethods:
     # inject seems more common in the community.
     reduce: "inject"
 
-
 # Either allow this style or don't. Marking it as safe with parenthesis
 # is silly. Let's try to live without them for now.
 Style/ParenthesesAroundCondition:
@@ -90,7 +87,7 @@ Lint/AssignmentInCondition:
   AllowSafeAssignment: false
 
 # A specialized exception class will take one or more arguments and construct the message from it.
-# So both variants make sense. 
+# So both variants make sense.
 Style/RaiseArgs:
   Enabled: false
 
@@ -108,7 +105,7 @@ Style/SignalException:
 # Suppressing exceptions can be perfectly fine, and be it to avoid to
 # explicitly type nil into the rescue since that's what you want to return,
 # or suppressing LoadError for optional dependencies
-Lint/HandleExceptions:
+Lint/SuppressedException:
   Enabled: false
 
 Layout/SpaceInsideBlockBraces:
@@ -153,11 +150,11 @@ Lint/ShadowingOuterLocalVariable:
 
 # Check with yard instead.
 Style/Documentation:
-  Enabled: false 
+  Enabled: false
 
 # This is just silly. Calling the argument `other` in all cases makes no sense.
 Naming/BinaryOperatorParameterName:
-  Enabled: false 
+  Enabled: false
 
 # There are valid cases, for example debugging Cucumber steps,
 # also they'll fail CI anyway
@@ -172,24 +169,12 @@ Style/NumericPredicate:
 Layout/DotPosition:
   EnforcedStyle: leading
 
-# Don't bother about unsafe YAML loading
-Security/YAMLLoad:
+# Not enabled by default but good
+Style/HashEachMethods:
+  Enabled: true
+
+# TODO: Enable with Ruby 2.5
+Style/HashTransformKeys:
   Enabled: false
-
-# We use Marshal for persisting parsed documents into redis. As we only ever
-# store our own documents, there is no risk here.
-Security/MarshalLoad:
+Style/HashTransformValues:
   Enabled: false
-
-# Sinatra sometimes requires method nesting (i.e. for helpers in namespaces)
-Lint/NestedMethodDefinition:
-  Enabled: false
-
-# Because Sintra defines routes and helpers inside modules inside functions inside
-# modules, the level can be quite deep, so let's increase the max level by 3.
-Metrics/CyclomaticComplexity:
-  Max: 20
-
-# Same as above, but for perceived complexity
-Metrics/PerceivedComplexity:
-  Max: 20

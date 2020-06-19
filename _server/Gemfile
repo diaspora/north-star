@@ -32,7 +32,7 @@ group :development do
   gem "pronto", "0.10.0", require: false
   gem "pronto-rubocop", "0.10.0", require: false
   gem "pronto-scss", "0.10.0", require: false
-  gem "rubocop", "0.67.2", require: false
+  gem "rubocop", "0.85.1", require: false
 end
 
 group :production do
