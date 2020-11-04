@@ -90,22 +90,22 @@ linux:
               - build-essential
               - cmake
               - curl
-              - ghostscript
+              - gsfonts
               - imagemagick
               - libcurl4-openssl-dev
               - libmagickwand-dev
               - libpq-dev
               - libssl-dev
               - libxml2-dev
-              - libxslt-dev
+              - libxslt1-dev
               - nodejs
               - postgresql
               - redis-server
       versions:
+        buster:
+          title: Debian 10 (Buster)
         stretch:
           title: Debian 9 (Stretch)
-        jessie:
-          title: Debian 8 (Jessie)
 
     fedora:
       title: Fedora
@@ -156,9 +156,9 @@ linux:
               - build-essential
               - cmake
               - curl
+              - gsfonts
               - imagemagick
               - libcurl4-openssl-dev
-              - libgmp-dev
               - libmagickwand-dev
               - libpq-dev
               - libssl-dev
@@ -168,8 +168,8 @@ linux:
               - postgresql
               - redis-server
       versions:
-        cosmic:
-          title: Ubuntu 18.10 (Cosmic Cuttlefish)
+        focal:
+          title: Ubuntu 20.04 (Focal Fossa)
         bionic:
           title: Ubuntu 18.04 (Bionic Beaver)
         xenial:
