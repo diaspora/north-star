@@ -63,7 +63,7 @@ linux:
               - make
               - net-tools
               - nodejs
-              - postgresql-devel
+              - libpq-devel
               - postgresql-server
               - redis
               - tar
@@ -72,8 +72,32 @@ linux:
               - cmake
               - libidn-devel
       versions:
+        v8:
+          title: CentOS 8
         v7:
           title: CentOS 7
+          overrides:
+            guide:
+              packaging:
+                lists:
+                  base:
+                    - automake
+                    - epel-release
+                    - gcc
+                    - gcc-c++
+                    - ImageMagick
+                    - libcurl-devel
+                    - libffi-devel
+                    - libxml2-devel
+                    - libxslt-devel
+                    - make
+                    - net-tools
+                    - nodejs
+                    - postgresql-devel
+                    - postgresql-server
+                    - redis
+                    - tar
+                    - wget
 
     debian:
       title: Debian
