@@ -93,7 +93,7 @@ module Sinatra
             def package_install_command(lists)
               packages = []
               lists.map do |list|
-                packages += @guide_data[:guide][:packaging][:lists][list]
+                packages += @guide_data[:guide][:packaging][:lists][list] || []
               end
 
               [

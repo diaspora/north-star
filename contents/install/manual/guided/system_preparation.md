@@ -10,7 +10,7 @@ These steps get your system ready for diaspora\* by installing required packages
 First, we need to install some packages. To do that, run the following **as root**:
 
 ~~~
-<%= package_install_command(%I[git base]) %>
+<%= package_install_command(%I[git base #{@guide_data[:params][:env]}]) %>
 ~~~
 
 ## Database setup

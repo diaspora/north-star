@@ -50,7 +50,6 @@ linux:
               - git
             base:
               - automake
-              - cmake
               - epel-release
               - gcc
               - gcc-c++
@@ -67,6 +66,8 @@ linux:
               - redis
               - tar
               - wget
+            development:
+              - cmake
       versions:
         v7:
           title: CentOS 7
@@ -88,7 +89,6 @@ linux:
               - git
             base:
               - build-essential
-              - cmake
               - curl
               - gsfonts
               - imagemagick
@@ -101,6 +101,8 @@ linux:
               - nodejs
               - postgresql
               - redis-server
+            development:
+              - cmake
       versions:
         buster:
           title: Debian 10 (Buster)
@@ -154,7 +156,6 @@ linux:
               - git
             base:
               - build-essential
-              - cmake
               - curl
               - gsfonts
               - imagemagick
@@ -167,6 +168,8 @@ linux:
               - nodejs
               - postgresql
               - redis-server
+            development:
+              - cmake
       versions:
         focal:
           title: Ubuntu 20.04 (Focal Fossa)
