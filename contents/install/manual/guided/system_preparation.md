@@ -7,7 +7,7 @@ These steps get your system ready for diaspora\* by installing required packages
 
 ## Install dependencies
 
-First, we need to install some packages. To do that, run the following **as root**:
+First, we need to install some packages. To do that, run the following<% unless @guide_data[:guide][:has_sudo] %> **as root**<% end %>:
 
 ~~~
 <%= package_install_command(%I[git base #{@guide_data[:params][:env]}]) %>
@@ -26,7 +26,11 @@ It is important that you **do not create a database manually**, as diaspora\* wi
 To achieve that, log in to your PostgreSQL server as `postgres`, usually this can be achieved using
 
 ~~~
+<% if @guide_data[:guide][:has_sudo] %>
 sudo -u postgres psql
+<% else %>
+su - postgres -c psql
+<% end %>
 ~~~
 
 Inside the PostgreSQL prompt, create a new user for diaspora\*:
@@ -40,13 +44,18 @@ CREATE USER diaspora WITH CREATEDB<% if @guide_data[:params][:env] == :developme
 Create a new user for diaspora\* by running
 
 ~~~
-sudo adduser --disabled-login diaspora
+<% if @guide_data[:guide][:has_sudo] %>sudo <% end %>adduser --disabled-login diaspora
 ~~~
 
-Unless otherwise noted, you should **use this user for the rest of this guide**, as well as for all future administrative operations, like updating the pod to a new release. You can usually switch to this user by using `sudo`:
+Unless otherwise noted, you should **use this user for the rest of this guide**, as well as for all future administrative operations, like updating the pod to a new release.
+You can usually switch to this user by using `<% if @guide_data[:guide][:has_sudo] %>sudo<% else %>su<% end %>`:
 
 ~~~
+<% if @guide_data[:guide][:has_sudo] %>
 sudo -iu diaspora
+<% else %>
+su - diaspora
+<% end %>
 ~~~
 
 <%= guided_only_content_start %>
