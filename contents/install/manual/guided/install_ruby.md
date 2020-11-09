@@ -32,7 +32,7 @@ Once you verified that the RVM config is in your shell's profile, reload the con
 Install the currently recommended Ruby version with
 
 ~~~
-rvm install 2.4
+rvm install 2.6
 ~~~
 
 RVM should download and install Ruby by itself.

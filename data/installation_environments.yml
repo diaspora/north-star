@@ -19,7 +19,7 @@ linux:
             Please check [the Arch Linux wiki](https://wiki.archlinux.org/index.php/PostgreSQL#Initial_configuration)
             for information on how to set up PostgreSQL.
         packaging:
-          install_command: sudo pacman -S
+          install_command: pacman -S
           lists:
             git:
               - git
@@ -33,6 +33,9 @@ linux:
               - postgresql
               - postgresql-libs
               - redis
+            development:
+              - libidn
+        has_sudo: false
       versions:
         rolling:
           title: Rolling release
@@ -50,7 +53,6 @@ linux:
               - git
             base:
               - automake
-              - cmake
               - epel-release
               - gcc
               - gcc-c++
@@ -62,14 +64,42 @@ linux:
               - make
               - net-tools
               - nodejs
-              - postgresql-devel
+              - libpq-devel
               - postgresql-server
               - redis
               - tar
               - wget
+            development:
+              - cmake
+              - libidn-devel
+        has_sudo: true
       versions:
+        v8:
+          title: CentOS 8
         v7:
           title: CentOS 7
+          overrides:
+            guide:
+              packaging:
+                lists:
+                  base:
+                    - automake
+                    - epel-release
+                    - gcc
+                    - gcc-c++
+                    - ImageMagick
+                    - libcurl-devel
+                    - libffi-devel
+                    - libxml2-devel
+                    - libxslt-devel
+                    - make
+                    - net-tools
+                    - nodejs
+                    - postgresql-devel
+                    - postgresql-server
+                    - redis
+                    - tar
+                    - wget
 
     debian:
       title: Debian
@@ -82,13 +112,12 @@ linux:
             Please check [the Debian wiki](https://wiki.debian.org/PostgreSql#Installation)
             for information on how to set up PostgreSQL.
         packaging:
-          install_command: sudo apt-get install
+          install_command: apt install
           lists:
             git:
               - git
             base:
               - build-essential
-              - cmake
               - curl
               - gsfonts
               - imagemagick
@@ -101,6 +130,10 @@ linux:
               - nodejs
               - postgresql
               - redis-server
+            development:
+              - cmake
+              - libidn11-dev
+        has_sudo: false
       versions:
         buster:
           title: Debian 10 (Buster)
@@ -135,6 +168,7 @@ linux:
               - redis
               - tar
               - wget
+        has_sudo: true
       versions:
         v29:
           title: Fedora 29
@@ -148,13 +182,12 @@ linux:
         docker:
           install_url: https://docs.docker.com/install/linux/docker-ce/ubuntu/
         packaging:
-          install_command: sudo apt-get install
+          install_command: sudo apt install
           lists:
             git:
               - git
             base:
               - build-essential
-              - cmake
               - curl
               - gsfonts
               - imagemagick
@@ -167,6 +200,10 @@ linux:
               - nodejs
               - postgresql
               - redis-server
+            development:
+              - cmake
+              - libidn11-dev
+        has_sudo: true
       versions:
         focal:
           title: Ubuntu 20.04 (Focal Fossa)
