@@ -25,8 +25,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "app.css",
-      path: path.resolve(__dirname, "..", "..", "statics", "assets"),
+      filename: "app.css"
     }),
   ]
 };
