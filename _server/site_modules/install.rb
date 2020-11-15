@@ -7,7 +7,7 @@ module Sinatra
 
       def self.registered(app)
         app.namespace "/install" do
-          get "/(index)?" do
+          get "(/)?(index)?" do
             mderb(settings.storage.load_document("install", "index"))
           end
         end
@@ -180,7 +180,18 @@ module Sinatra
         end
 
         app.namespace "/install/update" do
-          get "/(index)?" do
+          helpers do
+            def guide_url(guide)
+              url_to("install", guide[:path][:path])
+            end
+          end
+
+          get "(/)?(index)?" do
+            @major_guides = list_documents("install", "update/major")
+              .map {|item| load_document("install", item[:path]) }
+              .sort_by {|document| Gem::Version.new(document[:frontmatter][:target_version]) }
+              .reverse
+
             mderb(settings.storage.load_document("install", "update/index"))
           end
 
