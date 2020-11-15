@@ -65,5 +65,5 @@ In the next steps, we will take care of setting up RVM and Ruby...
 
 [Continue installation][next-step]{:class="install-button btn btn-success btn-lg btn-block"}
 
-[next-step]: <%= url_to "install", "manual/guided/install_ruby" %><%= install_url_params %>
+[next-step]: <%= url_to "install", "new_pod/manual/guided/install_ruby" %><%= install_url_params %>
 <%= guided_only_content_end %>

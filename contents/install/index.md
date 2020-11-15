@@ -1,5 +1,5 @@
 ---
-title: Install diaspora*
+title: diaspora* Pod Installation
 nav_title: Installation
 title_tag: ""
 subtitle: Take your data into your own hands!
@@ -7,19 +7,28 @@ subtitle: Take your data into your own hands!
 
 **Welcome to the world of diaspora\***! You have made your way into the world of our official installation guides. Before we can get started, please allow us to say some words in the beginning.
 
-**You do not need to install diaspora\* to use diaspora\***. Hosting a pod is one way to join the network, [but there are alternatives][join] for you if that is not an option for you.
+**You do not need to install diaspora\* to use diaspora\***. Hosting a pod is one way to join the network, [but there are alternatives][join] for you if that is not an option for you. If you are a user of an already existing diaspora\* pod, then these instructions do not apply to you. All the installation and update work is done by your podmin, so you can just sit back and relax.
 
-**This is a guide for server administrators or developers**, and while we do not want to scare you away, we mean that. If you want to set up a production-ready diaspora\* on a server, you should be a *somewhat* experiences server admin. There is only so much we can cover in this guides, and we will not get into setting up the server itself. This means that things like setting up firewalls, performing regular updates, and doing other things that keep your setup secure is beyond our scope, and you should be very comfortable taking care of that yourself. There is nothing worse than using diaspora\*, but having your data, or even worse - other people's data, leaked, because you ran an outdated OpenSSH version.
+<%= row_start("col-lg") %>
 
-**Following these guides will get you the most help, if you need it**. diaspora\* is a complex application, and so can be debugging it. These guides are written and maintained by the project's development team and result in setups that we understand, and can support in case something goes wrong. We are aware that there are other guides out there, and while we cannot stop you from giving those a try, you might find it hard to get help if you run into unexpected troubles.
+<%= partial "components/feature_fa_icon", icon: "far fa-home" %>
 
-**The setup is a bit complex, but we are here to help**. We know it can be overwhelming, but [we are here to help out][get-help] if you need us. If something goes wrong, or you have additional questions, please do not hesitate to reach out!
+#### Install a new pod
 
-Finally, you might be interested in looking at [the system requirements][system-requirements] to run diaspora\*.
+If you are new to the world of diaspora\* and want to set up your own pod, this is the way to go.
 
-[Okay, let's get started!][version-select]{:class="install-button btn btn-success btn-lg btn-block"}
+[Install a pod](<%= url_to("install", "new_pod") %>){: class="btn btn-success btn-block text-left"}
 
-[get-help]: <%= url_to("site", "get_help") %>
+<%= col_new("col-lg") %>
+
+<%= partial "components/feature_fa_icon", icon: "far fa-sync" %>
+
+#### Update an existing Pod
+
+If you already have a running pod and want to update to the latest diaspora\* version, check these instructions.
+
+[Update a pod](<%= url_to("install", "update") %>){: class="btn btn-success btn-block text-left"}
+
+<%= row_end %>
+
 [join]: <%= url_to "site", "join" %>
-[system-requirements]: <%= url_to "guides", "podmins/system_requirements" %>
-[version-select]: <%= url_to "install", "version_select" %>

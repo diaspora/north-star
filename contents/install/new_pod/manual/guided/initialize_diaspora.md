@@ -59,7 +59,7 @@ In the final steps, we will be looking at setting up the reverse proxy, as well 
 
 [Continue installation][next-step]{:class="install-button btn btn-success btn-lg btn-block"}
 
-[next-step]: <%= url_to "install", "manual/guided/finalize_server" %><%= install_url_params %>
+[next-step]: <%= url_to "install", "new_pod/manual/guided/finalize_server" %><%= install_url_params %>
 <%= guided_only_content_end %>
 
 <% when :development %>
