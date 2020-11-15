@@ -23,7 +23,7 @@ module Sinatra
 
     def page_edit_url(path)
       file_name = settings.storage.get_relative_document_file_name(path[:section], path[:path])
-      "#{settings.config[:github_repo_root]}/blob/develop#{file_name}"
+      "#{settings.config[:github_repo_root]}/blob/main#{file_name}"
     end
 
     def page_title(title=false)
@@ -49,7 +49,7 @@ module Sinatra
     end
 
     def translation_docs_url
-      "#{settings.config[:github_repo_root]}/blob/develop/_docs/contributing_translations.md"
+      "#{settings.config[:github_repo_root]}/blob/main/_docs/contributing_translations.md"
     end
 
     def url_for_nav_item(target)
