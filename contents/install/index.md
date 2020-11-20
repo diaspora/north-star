@@ -7,7 +7,7 @@ subtitle: Take your data into your own hands!
 
 **Welcome to the world of diaspora\***! You have made your way into the world of our official installation guides. Before we can get started, please allow us to say some words in the beginning.
 
-**You do not need to install diaspora\* to use diaspora\***. Hosting a pod is one way to join the network, [but there are alternatives][join] for you if that is not an option for you. If you are a user of an already existing diaspora\* pod, then these instructions do not apply to you. All the installation and update work is done by your podmin, so you can just sit back and relax.
+**You do not need to install diaspora\* to be part of diaspora\***. Hosting a pod is one way to join the network, the other is [joining an existing pod][join]. If you are a user of an already existing diaspora\* pod, then these instructions do not apply to you. All the installation and update work is done by your podmin, so you can just sit back and relax.
 
 <%= row_start("col-lg") %>
 

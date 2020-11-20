@@ -39,7 +39,9 @@ script/configure_bundler
 bin/bundle --full-index
 ~~~
 
-{{Note|Ignore any migration notes this command gives you, they're already done for you or explicitly advised in our changelog!}}
+<%= warning_box_start("info") %>
+Ignore any migration notes this command gives you, they're already done for you or explicitly advised in our changelog!
+<%= warning_box_end %>
 
 Then we apply updates to the database schema, attention this might take some time if you have a big database already:
 
@@ -53,8 +55,8 @@ Update the static content, which is also likely to take a several minutes and ma
 RAILS_ENV=production bin/rake assets:precompile
 ~~~
 
-Make sure to check new configuration options in `diaspora.yml.example`. Tools like `diff` and `vimdiff` can help transfering new sections.
+Make sure to check new configuration options in `diaspora.toml.example`. Tools like `diff` and `vimdiff` can help transfering new sections.
 
-Now you need to restart Diaspora. To do this with the standard startup method you need to get to the place where you run `./script/server`, hit `Ctrl+C`, open a new shell, and run it again.
+Now you need to restart diaspora\*. To do this with the standard startup method you need to get to the place where you run `./script/server`, hit `Ctrl+C`, open a new shell, and run it again.
 
 [rvm-keys]: https://rvm.io/rvm/security#install-our-keys

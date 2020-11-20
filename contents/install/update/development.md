@@ -14,3 +14,5 @@ cd .. && cd -
 bin/bundle --full-index
 bin/rake db:migrate
 ~~~
+
+Read the `Changelog.md` for any additional steps you may need to take.
