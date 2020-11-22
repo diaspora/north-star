@@ -7,6 +7,12 @@ module Sinatra
 
       def self.registered(app)
         app.namespace "/install" do
+          get "(/)?(index)?" do
+            mderb(settings.storage.load_document("install", "index"))
+          end
+        end
+
+        app.namespace "/install/new_pod" do
           helpers do
             def get_keys_from_hash(hash, keys)
               hash.select {|key, _| keys.include? key }
@@ -125,12 +131,12 @@ module Sinatra
           end
 
           get "/(index)?" do
-            mderb(settings.storage.load_document("install", "index"))
+            mderb(settings.storage.load_document("install", "new_pod/index"))
           end
 
           get "/version_select" do
             @available_environments = available_environments
-            mderb(settings.storage.load_document("install", "version_select"))
+            mderb(settings.storage.load_document("install", "new_pod/version_select"))
           end
 
           get "/docker" do
@@ -142,11 +148,11 @@ module Sinatra
 
             @guide_data = guide_data(@install_params)
 
-            mderb(settings.storage.load_document("install", "docker"))
+            mderb(settings.storage.load_document("install", "new_pod/docker"))
           end
 
           get "/manual/full" do
-            document = settings.storage.load_document("install", "manual/full")
+            document = settings.storage.load_document("install", "new_pod/manual/full")
 
             halt 404 unless valid_env?(@install_params)
             halt 404 unless supported?(@install_params)
@@ -155,13 +161,13 @@ module Sinatra
 
             steps = %w[system_preparation install_ruby get_diaspora initialize_diaspora]
             steps.push("finalize_server") if @guide_data[:params][:env] == :production
-            @step_contents = steps.map {|step| load_document("install", "manual/guided/#{step}") }
+            @step_contents = steps.map {|step| load_document("install", "new_pod/manual/guided/#{step}") }
 
             mderb(document)
           end
 
           get "/*" do |document_path|
-            document = settings.storage.load_document("install", document_path)
+            document = settings.storage.load_document("install", "new_pod/#{document_path}")
 
             halt 404 unless document
             halt 404 unless valid_env?(@install_params)
@@ -169,6 +175,29 @@ module Sinatra
 
             @guide_data = guide_data(@install_params)
 
+            mderb(document)
+          end
+        end
+
+        app.namespace "/install/update" do
+          helpers do
+            def guide_url(guide)
+              url_to("install", guide[:path][:path])
+            end
+          end
+
+          get "(/)?(index)?" do
+            @major_guides = list_documents("install", "update/major")
+              .map {|item| load_document("install", item[:path]) }
+              .sort_by {|document| Gem::Version.new(document[:frontmatter][:target_version]) }
+              .reverse
+
+            mderb(settings.storage.load_document("install", "update/index"))
+          end
+
+          get "/*" do |document_path|
+            document = settings.storage.load_document("install", "update/#{document_path}")
+            halt 404 unless document
             mderb(document)
           end
         end

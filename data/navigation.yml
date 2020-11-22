@@ -68,6 +68,13 @@ guides:
     - *project_info_link
   footer: *footer
 install:
+  header:
+    - target:
+        section: install
+        path: new_pod
+    - target:
+        section: install
+        path: update
   header_crosslinks: *site_crosslinks
   header_buttons:
     - *project_info_link

@@ -54,7 +54,7 @@ In the next steps, we will take care downloading the diaspora\* source, and sett
 
 [Continue installation][next-step]{:class="install-button btn btn-success btn-lg btn-block"}
 
-[next-step]: <%= url_to "install", "manual/guided/get_diaspora" %><%= install_url_params %>
+[next-step]: <%= url_to "install", "new_pod/manual/guided/get_diaspora" %><%= install_url_params %>
 <%= guided_only_content_end %>
 
 [rvm]: https://rvm.io

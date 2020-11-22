@@ -134,7 +134,7 @@ Glad to see you want to give installing diaspora\* a try! Follow these guides to
   <div class="col-md">
     <a
       class="install-button btn btn-success btn-lg btn-block"
-      href="<%= url_to "install", "docker" %>{{params}}"
+      href="<%= url_to "install", "new_pod/docker" %>{{params}}"
     >
       Install diaspora*
     </a>
@@ -145,12 +145,12 @@ Glad to see you want to give installing diaspora\* a try! Follow these guides to
   <div class="col-md">
     <a
       class="install-button btn btn-success btn-lg btn-block"
-      href="<%= url_to "install", "manual/guided/system_preparation" %>{{params}}"
+      href="<%= url_to "install", "new_pod/manual/guided/system_preparation" %>{{params}}"
     >
       Install diaspora*
     </a>
     <p class="text-center">
-      <a href="<%= url_to "install", "manual/full" %>{{params}}">Show all instructions on a single page</a>.
+      <a href="<%= url_to "install", "new_pod/manual/full" %>{{params}}">Show all instructions on a single page</a>.
     </p>
   </div>
 </script>
