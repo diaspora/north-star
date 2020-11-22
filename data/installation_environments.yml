@@ -36,6 +36,7 @@ linux:
             development:
               - libidn
         has_sudo: false
+        adduser_command: useradd -m diaspora
       versions:
         rolling:
           title: Rolling release
@@ -73,6 +74,7 @@ linux:
               - cmake
               - libidn-devel
         has_sudo: true
+        adduser_command: useradd -m diaspora
       versions:
         v8:
           title: CentOS 8
@@ -134,6 +136,7 @@ linux:
               - cmake
               - libidn11-dev
         has_sudo: false
+        adduser_command: adduser --disabled-login diaspora
       versions:
         buster:
           title: Debian 10 (Buster)
@@ -169,6 +172,7 @@ linux:
               - tar
               - wget
         has_sudo: true
+        adduser_command: useradd -m diaspora
       versions:
         v29:
           title: Fedora 29
@@ -204,6 +208,7 @@ linux:
               - cmake
               - libidn11-dev
         has_sudo: true
+        adduser_command: adduser --disabled-login diaspora
       versions:
         focal:
           title: Ubuntu 20.04 (Focal Fossa)
