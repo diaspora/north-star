@@ -44,7 +44,9 @@ CREATE USER diaspora WITH CREATEDB<% if @guide_data[:params][:env] == :developme
 Create a new user for diaspora\* by running
 
 ~~~
-<% if @guide_data[:guide][:has_sudo] %>sudo <% end %>adduser --disabled-login diaspora
+<% if @guide_data[:guide][:has_sudo] %>sudo <% else %>su
+<% end %><%= @guide_data[:guide][:adduser_command] %>
+
 ~~~
 
 Unless otherwise noted, you should **use this user for the rest of this guide**, as well as for all future administrative operations, like updating the pod to a new release.
