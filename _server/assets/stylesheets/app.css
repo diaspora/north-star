@@ -3,4 +3,6 @@
 @tailwind utilities;
 
 @import "_fonts";
+
 @import "_header";
+@import "_content"

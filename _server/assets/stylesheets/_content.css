@@ -1,0 +1,19 @@
+.masthead {
+  @apply bg-gray-700;
+
+  .container {
+    @apply
+      max-w-7xl mx-auto py-16 px-4 sm:py-12
+      sm:px-6 lg:px-8
+      text-white text-center;
+  }
+
+  h1 {
+    @apply text-5xl font-medium;
+    text-shadow: 0 3px 3px #0000004d;
+  }
+
+  h2 {
+    @apply text-2xl text-gray-100 font-light mt-4;
+  }
+}
