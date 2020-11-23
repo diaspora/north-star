@@ -1,6 +1,6 @@
 ---
 title: diaspora* Pod Installation
-nav_title: Installation
+nav_title: Installation and Updates
 title_tag: ""
 subtitle: Take your data into your own hands!
 ---

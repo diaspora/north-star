@@ -1,0 +1,58 @@
+<section id="header">
+  <div class="header-container">
+    <!-- first navigation line, contains branding, cross-sections, and the CTAs -->
+    <div class="global-header">
+      <!-- large logo, which links to the section's root -->
+      <div class="logo">
+        <a href="<%= url_to(@section, "") %>">
+          diaspora*<%= section_title %>
+        </a>
+      </div>
+
+      <!-- cross-links to other sections -->
+      <% if data("navigation")[@section] && data("navigation")[@section][:header_crosslinks] %>
+        <nav class="navigation">
+          <% data("navigation")[@section][:header_crosslinks].each do |nav_item| %>
+            <a href="<%= url_for_nav_item(nav_item[:target]) %>" <% if url_targets_current_section(nav_item[:target]) %>class="active"<% end %>>
+              <%= link_title(nav_item) %>
+            </a>
+          <% end %>
+        </nav>
+      <% end %>
+
+      <!-- big CTA button -->
+      <% if data("navigation")[@section] && data("navigation")[@section][:header_buttons] %>
+        <div class="cta-container">
+          <% data("navigation")[@section][:header_buttons].each do |nav_item| %>
+            <a href="<%= url_for_nav_item(nav_item[:target]) %>">
+              <span><%= link_title(nav_item) %></span>
+            </a>
+          <% end %>
+        </div>
+      <% end %>
+
+      <!-- toggler for the mobile menu -->
+      <div class="mobile-menu-toggler">
+        <button>
+          <span class="sr-only">Open main menu</span>
+          <!-- TODO: js -->
+          <i class="toggler-open fas fa-bars"></i>
+          <i class="toggler-close far fa-times"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- second navigation line, containing in-section targets -->
+    <% if data("navigation")[@section] && data("navigation")[@section][:header] %>
+      <div class="section-header">
+        <nav class="navigation">
+          <% data("navigation")[@section][:header].each do |nav_item| %>
+            <a href="<%= url_for_nav_item(nav_item[:target]) %>" class="navlink">
+              <%= link_title(nav_item) %>
+            </a>
+          <% end %>
+        </nav>
+      </div>
+    <% end %>
+  </div>
+</section>

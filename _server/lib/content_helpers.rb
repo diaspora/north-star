@@ -67,6 +67,10 @@ module Sinatra
 
       "#{protocol}://#{domain}/#{path}"
     end
+
+    def url_targets_current_section(target)
+      target[:section].to_sym == @section.to_sym
+    end
   end
 
   helpers ContentHelpers

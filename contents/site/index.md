@@ -1,5 +1,6 @@
 ---
 title: Welcome to diaspora*
+nav_title: About
 title_tag: ""
 subtitle: The online social world where you are in control
 ---
