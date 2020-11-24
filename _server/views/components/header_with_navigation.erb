@@ -13,7 +13,7 @@
       <% if data("navigation")[@section] && data("navigation")[@section][:header_crosslinks] %>
         <nav class="navigation">
           <% data("navigation")[@section][:header_crosslinks].each do |nav_item| %>
-            <a href="<%= url_for_nav_item(nav_item[:target]) %>" <% if url_targets_current_section(nav_item[:target]) %>class="active"<% end %>>
+            <a href="<%= url_for_nav_item(nav_item[:target]) %>" <% if url_targets_current_page(current_path, nav_item[:target], only_section: true) %>class="active"<% end %>>
               <%= link_title(nav_item) %>
             </a>
           <% end %>
@@ -47,7 +47,7 @@
       <div class="section-header">
         <nav class="navigation">
           <% data("navigation")[@section][:header].each do |nav_item| %>
-            <a href="<%= url_for_nav_item(nav_item[:target]) %>" class="navlink">
+            <a href="<%= url_for_nav_item(nav_item[:target]) %>" <% if url_targets_current_page(current_path, nav_item[:target], match_beginning: true) %>class="active"<% end %>>
               <%= link_title(nav_item) %>
             </a>
           <% end %>

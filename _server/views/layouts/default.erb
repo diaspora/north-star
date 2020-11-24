@@ -15,7 +15,7 @@
     <title><%= page_title(page[:title_tag] || page[:title]) %></title>
   </head>
   <body <% if page[:bodyclass] %>class="<%= page[:bodyclass] %>"<%end%>>
-    <%= partial "components/header_with_navigation" %>
+    <%= partial "components/header_with_navigation", current_path: current_path %>
 
     <header class="masthead">
       <div class="container">
