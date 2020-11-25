@@ -47,7 +47,7 @@ class Server < Sinatra::Base
   end
 
   get "/" do
-    document = settings.storage.load_document("meta", "dev_index")
+    document = settings.storage.load_document("meta", "index")
     mderb(document)
   end
 end
