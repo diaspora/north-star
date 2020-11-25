@@ -8,7 +8,9 @@
   }
 
   .global-header {
-    @apply flex justify-between h-16;
+    @apply
+      flex justify-between h-16
+      px-5 md:px-0;
   }
 
   .section-header {
@@ -91,6 +93,47 @@
           @apply block;
         }
       }
+    }
+  }
+
+  .mobile-nav {
+    @apply hidden md:hidden;
+
+    a {
+      @apply
+        block
+        py-2 px-3
+        rounded-md
+        text-base text-white font-medium
+        hover:bg-gray-900 hover:text-white;
+
+      &.active {
+        @apply bg-gray-900;
+      }
+    }
+
+    .global-links, .section-links {
+      @apply pt-2 pb-3 px-2 space-y-1;
+    }
+
+    .section-links  {
+      @apply border-t border-gray-700 pt-4;
+    }
+  }
+
+  &.mobile-menu-open {
+    .mobile-menu-toggler {
+      .toggler-open {
+        @apply hidden;
+      }
+
+      .toggler-close {
+        @apply block;
+      }
+    }
+
+    .mobile-nav {
+      @apply block;
     }
   }
 }

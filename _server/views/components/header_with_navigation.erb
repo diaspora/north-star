@@ -35,12 +35,33 @@
       <div class="mobile-menu-toggler">
         <button>
           <span class="sr-only">Open main menu</span>
-          <!-- TODO: js -->
           <i class="toggler-open fas fa-bars"></i>
           <i class="toggler-close far fa-times"></i>
         </button>
       </div>
     </div>
+
+    <!-- mobile-only navigation -->
+    <nav class="mobile-nav">
+      <% if data("navigation")[@section] && data("navigation")[@section][:header_crosslinks] %>
+        <div class="global-links">
+          <% data("navigation")[@section][:header_crosslinks].each do |nav_item| %>
+            <a href="<%= url_for_nav_item(nav_item[:target]) %>" <% if url_targets_current_page(current_path, nav_item[:target], only_section: true) %>class="active"<% end %>">
+              <%= link_title(nav_item) %>
+            </a>
+          <% end %>
+        </div>
+      <% end %>
+      <% if data("navigation")[@section] && data("navigation")[@section][:header] %>
+        <div class="section-links">
+          <% data("navigation")[@section][:header].each do |nav_item| %>
+            <a href="<%= url_for_nav_item(nav_item[:target]) %>" <% if url_targets_current_page(current_path, nav_item[:target], match_beginning: true) %>class="active"<% end %>>
+              <%= link_title(nav_item) %>
+            </a>
+          <% end %>
+        </div>
+      <% end %>
+    </nav>
 
     <!-- second navigation line, containing in-section targets -->
     <% if data("navigation")[@section] && data("navigation")[@section][:header] %>
