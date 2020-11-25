@@ -62,11 +62,15 @@ end
 4. and sometimes surprisingly long (because denschub is not able to write short sentences you know, so sometimes things have to deal with a lot more content than anyone would expect but thats fine)
 5. list!
 
+Lorem! Ipsum!
+
 - This is
 - another classic
 - unordered
 - and sometimes surprisingly long (because denschub is not able to write short sentences you know, so sometimes things have to deal with a lot more content than anyone would expect but thats fine)
 - list!
+
+Lorem! Ipsum!
 
 1. Oh, have I told you
    - not sure
@@ -90,27 +94,33 @@ end
 
 ## Warning/info boxes
 
+<%= warning_box_start %>
+
+**Default**! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae sapien erat. Nullam fringilla metus justo..?
+
+<%= warning_box_end %>
+
 <%= warning_box_start("success") %>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae sapien erat. Nullam fringilla metus justo, quis volutpat enim feugiat id.
+**Success**! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae sapien erat. Nullam fringilla metus justo..?
 
 <%= warning_box_end %>
 
 <%= warning_box_start("info") %>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae sapien erat. Nullam fringilla metus justo, quis volutpat enim feugiat id.
+**Info**! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae sapien erat. Nullam fringilla metus justo..?
 
 <%= warning_box_end %>
 
 <%= warning_box_start("warning") %>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae sapien erat. Nullam fringilla metus justo, quis volutpat enim feugiat id.
+**Warning**! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae sapien erat. Nullam fringilla metus justo..?
 
 <%= warning_box_end %>
 
 <%= warning_box_start("critical") %>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae sapien erat. Nullam fringilla metus justo, quis volutpat enim feugiat id.
+**Critical**! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae sapien erat. Nullam fringilla metus justo..?
 
 <%= warning_box_end %>
 

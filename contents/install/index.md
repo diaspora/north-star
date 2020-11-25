@@ -9,7 +9,7 @@ subtitle: Take your data into your own hands!
 
 **You do not need to install diaspora\* to be part of diaspora\***. Hosting a pod is one way to join the network, the other is [joining an existing pod][join]. If you are a user of an already existing diaspora\* pod, then these instructions do not apply to you. All the installation and update work is done by your podmin, so you can just sit back and relax.
 
-<%= row_start("col-lg") %>
+<%= row_start %>
 
 <%= partial "components/feature_fa_icon", icon: "far fa-home" %>
 
@@ -19,7 +19,7 @@ If you are new to the world of diaspora\* and want to set up your own pod, this 
 
 [Install a pod](<%= url_to("install", "new_pod") %>){: class="btn btn-success btn-block text-left"}
 
-<%= col_new("col-lg") %>
+<%= col_new %>
 
 <%= partial "components/feature_fa_icon", icon: "far fa-sync" %>
 

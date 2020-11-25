@@ -17,3 +17,53 @@
     @apply text-2xl text-gray-100 font-light mt-4;
   }
 }
+
+.content-container.prose {
+  @apply max-w-7xl mx-auto p-8;
+
+  pre code::after,
+  pre code::before {
+    display: none;
+  }
+
+  .multicol {
+    &.row {
+      @apply flex flex-col md:flex-row md:gap-8;
+    }
+
+    &.col {
+      @apply flex-1;
+    }
+  }
+
+  .markdown-warning-box {
+    @apply
+      border border-transparent rounded-md
+      bg-gray-200
+      my-3 px-3 py-2;
+
+    p {
+      @apply m-0;
+
+      strong {
+        color: inherit;
+      }
+    }
+
+    &.success {
+      @apply bg-green-200 text-green-900;
+    }
+
+    &.info {
+      @apply bg-blue-200 text-blue-900;
+    }
+
+    &.warning {
+      @apply bg-yellow-200 text-yellow-900;
+    }
+
+    &.critical {
+      @apply bg-red-200 text-red-900;
+    }
+  }
+}
