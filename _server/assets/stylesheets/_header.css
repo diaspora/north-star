@@ -3,8 +3,8 @@
 
   .header-container {
     @apply
-      max-w-7xl mx-auto px-2
-      sm:px-4 md:divide-y md:divide-gray-700 md:px-8;
+      max-w-7xl mx-auto px-4
+      md:divide-y md:divide-gray-700 md:px-8;
   }
 
   .global-header {
