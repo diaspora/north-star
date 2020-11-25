@@ -3,6 +3,7 @@ const colors = require("tailwindcss/colors");
 module.exports = {
   purge: {
     content: ["./views/**/*.erb"],
+    mode: "all",
   },
   darkMode: false,
   theme: {
