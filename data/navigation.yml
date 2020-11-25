@@ -79,6 +79,21 @@ install:
   header_buttons:
     - *project_info_link
   footer: *footer
+meta:
+  header:
+    - target:
+        section: meta
+        path: index
+    - target:
+        section: meta
+        path: format_library
+    - target:
+        section: meta
+        path: "404"
+  header_crosslinks: *site_crosslinks
+  header_buttons:
+    - *project_info_link
+  footer: *footer
 site:
   header:
     - target:
