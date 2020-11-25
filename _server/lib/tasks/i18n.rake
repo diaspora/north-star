@@ -11,6 +11,7 @@ class NorthStarI18n
     ) do |list|
       list.exclude("contents/install/**/*")
       list.exclude("contents/blog/**/*")
+      list.exclude("contents/meta/format_library.md")
       list.exclude("contents/meta/index.md")
     end
   end
