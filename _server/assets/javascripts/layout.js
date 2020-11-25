@@ -1,7 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
-  let headerContainer = document.getElementById("header");
-  document.querySelector(".mobile-menu-toggler button").addEventListener("click", (ev) => {
+  // simple, no-transition mobile header menu
+  document.getElementById("mobile-menu-toggler").addEventListener("click", (ev) => {
     ev.preventDefault();
-    headerContainer.classList.toggle("mobile-menu-open");
+    document.getElementById("header").classList.toggle("mobile-menu-open");
+  });
+
+  // responsible for redirecting the user after using the language selector
+  document.getElementById("language").addEventListener("change", (ev) => {
+    ev.preventDefault();
+    window.location.replace(ev.target.value);
   });
 });
