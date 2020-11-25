@@ -123,43 +123,45 @@
         <% end %>
 
         <!-- language selector, and edit/translate buttons (if available) -->
-        <div class="content-meta">
-          <div>
-            <% if @section_config[:translateable] %>
-              <!-- TODO: write js -->
-              <h3><%= I18n.t("select_language") %></h3>
-              <form>
-                <fieldset>
-                  <div class="selectbox-container">
-                    <select id="language">
-                      <% data("languages")[:available].each do |code, label| %>
-                        <option
-                          <% if I18n.locale == code %>selected="selected"<% end %>
-                          value="<%= url_to(@section, "force_locale/#{code}")%>"
-                        ><%= label %></option>
-                      <% end %>
-                    </select>
-                    <div class="chevron"><i class="fas fa-chevron-down"></i></div>
-                  </div>
-                </fieldset>
-              </form>
-            <% end %>
-          </div>
-          <div class="edit-buttons">
-            <% if @section_config[:community_editable] %>
-              <a href="<%= page_edit_url(current_path) %>">
-                <i class="fas fa-pen-square"></i>
-                <%= I18n.t("community_edit.edit") %>
-              </a>
+        <% if @section_config[:translateable] || @section_config[:community_editable] %>
+          <div class="content-meta">
+            <div>
               <% if @section_config[:translateable] %>
-                <a href="<%= translation_docs_url %>">
-                  <i class="fas fa-language"></i>
-                  <%= I18n.t("community_edit.translate") %>
-                </a>
+                <!-- TODO: write js -->
+                <h3><%= I18n.t("select_language") %></h3>
+                <form>
+                  <fieldset>
+                    <div class="selectbox-container">
+                      <select id="language">
+                        <% data("languages")[:available].each do |code, label| %>
+                          <option
+                            <% if I18n.locale == code %>selected="selected"<% end %>
+                            value="<%= url_to(@section, "force_locale/#{code}")%>"
+                          ><%= label %></option>
+                        <% end %>
+                      </select>
+                      <div class="chevron"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                  </fieldset>
+                </form>
               <% end %>
-            <% end %>
+            </div>
+            <div class="edit-buttons">
+              <% if @section_config[:community_editable] %>
+                <a href="<%= page_edit_url(current_path) %>">
+                  <i class="fas fa-pen-square"></i>
+                  <%= I18n.t("community_edit.edit") %>
+                </a>
+                <% if @section_config[:translateable] %>
+                  <a href="<%= translation_docs_url %>">
+                    <i class="fas fa-language"></i>
+                    <%= I18n.t("community_edit.translate") %>
+                  </a>
+                <% end %>
+              <% end %>
+            </div>
           </div>
-        </div>
+        <% end %>
 
         <!-- copyright notice, and link to the license -->
         <div class="copyright">
