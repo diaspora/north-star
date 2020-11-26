@@ -4,6 +4,7 @@ module.exports = {
   purge: {
     content: [
       "../contents/**/*.md",
+      "./assets/javascripts/**/*.js",
       "./lib/layout_helpers.rb",
       "./views/**/*.erb",
     ],
