@@ -13,7 +13,7 @@ diaspora\*, as a decentralized system, works across multiple servers. Just like 
 
 There are a lot of pods already out there. Pick one that suits your needs, and get started immediately!
 
-[Help me pick a pod!][find-a-pod]{: class="btn btn-success"}
+[Help me pick a pod!][find-a-pod]{: class="btn btn-primary"}
 
 <%= col_new %>
 
@@ -23,7 +23,7 @@ There are a lot of pods already out there. Pick one that suits your needs, and g
 
 If you have a Linux server with some free ressources running, basic administration skills, and a little bit of time, running your own pod is not too hard.
 
-[Bring me to the installation guides!][install-guides]{: class="btn btn-success"}
+[Bring me to the installation guides!][install-guides]{: class="btn btn-primary"}
 
 <%= row_end %>
 

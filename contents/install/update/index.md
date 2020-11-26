@@ -16,18 +16,24 @@ subtitle: Get the latest diaspora* changes.
 
 For major versions of diaspora\*, manual steps are neccessary. If you skipped a major version and want to update now, for example from 0.5 to 0.7, please follow each of the major update steps one after another.
 
-<%= partial "components/major_updates_list", items: @major_guides %>
+<div class="btn-list">
+  <% @major_guides.each do |item| %>
+    <a href="<%= guide_url(item) %>" class="btn btn-block">
+      <%= item[:frontmatter][:title] %>
+    </a>
+  <% end %>
+</div>
 
 ## Regular minor updates
 
 Minor updates are released in a regular interval and are designed to be quick and easy. These updates do not contain any long-running operations and podmins should be able to complete them within a couple of monites.
 
-[Update to a new minor version](<%= url_to("install", "update/minor") %>){: class="btn btn-light btn-block text-left"}
+[Update to a new minor version](<%= url_to("install", "update/minor") %>){: class="btn btn-block"}
 
 ## Local development setup
 
 To update a local development system, where data integrety and continuity is not a real concerns, a simplified version of the update guide can be used.
 
-[Update your development setup](<%= url_to("install", "update/development") %>){: class="btn btn-light btn-block text-left"}
+[Update your development setup](<%= url_to("install", "update/development") %>){: class="btn btn-block"}
 
 [get-help]: <%= url_to("site", "get_help") %>

@@ -25,6 +25,28 @@
     display: none;
   }
 
+  .btn {
+    @apply
+      inline-block
+      border border-transparent rounded-md
+      px-4 py-2
+      bg-gray-300
+      text-gray-700
+      hover:bg-gray-400 hover:text-gray-900;
+
+    &.btn-block {
+      @apply block my-3;
+    }
+
+    &.btn-primary {
+      @apply bg-green-600 text-white hover:bg-green-700;
+    }
+  }
+
+  .btn-list {
+    @apply my-4;
+  }
+
   .multicol {
     &.row {
       @apply flex flex-col md:flex-row md:gap-8;

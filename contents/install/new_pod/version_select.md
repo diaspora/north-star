@@ -27,7 +27,7 @@ Glad to see you want to give installing diaspora\* a try! Follow these guides to
 <script id="tpl-system-entry" type="text/x-handlebars-template">
   <div class="col-md">
     <button
-      class="install-button btn btn-{{color}} btn-lg btn-block"
+      class="install-button btn btn-{{color}} btn-block"
       data-system="{{key}}"
       type="button"
     >
@@ -89,7 +89,7 @@ Glad to see you want to give installing diaspora\* a try! Follow these guides to
 <script id="tpl-env-entry" type="text/x-handlebars-template">
   <div class="col-md">
     <button
-      class="install-button btn btn-{{color}} btn-lg btn-block"
+      class="install-button btn btn-{{color}} btn-block"
       data-env="{{key}}"
       type="button"
     >
@@ -102,7 +102,7 @@ Glad to see you want to give installing diaspora\* a try! Follow these guides to
 <script id="tpl-database-entry" type="text/x-handlebars-template">
   <div class="col-md">
     <button
-      class="install-button btn btn-{{color}} btn-lg btn-block"
+      class="install-button btn btn-{{color}} btn-block"
       data-database="{{key}}"
       type="button"
     >
@@ -121,7 +121,7 @@ Glad to see you want to give installing diaspora\* a try! Follow these guides to
 <script id="tpl-proxy-entry" type="text/x-handlebars-template">
   <div class="col-md">
     <button
-      class="install-button btn btn-{{color}} btn-lg btn-block"
+      class="install-button btn btn-{{color}} btn-block"
       data-proxy="{{key}}"
       type="button"
     >
@@ -133,7 +133,7 @@ Glad to see you want to give installing diaspora\* a try! Follow these guides to
 <script id="tpl-docker-guide" type="text/x-handlebars-template">
   <div class="col-md">
     <a
-      class="install-button btn btn-success btn-lg btn-block"
+      class="install-button btn btn-primary btn-block"
       href="<%= url_to "install", "new_pod/docker" %>{{params}}"
     >
       Install diaspora*
@@ -144,7 +144,7 @@ Glad to see you want to give installing diaspora\* a try! Follow these guides to
 <script id="tpl-manual-guide" type="text/x-handlebars-template">
   <div class="col-md">
     <a
-      class="install-button btn btn-success btn-lg btn-block"
+      class="install-button btn btn-primary btn-block"
       href="<%= url_to "install", "new_pod/manual/guided/system_preparation" %>{{params}}"
     >
       Install diaspora*

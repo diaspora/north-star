@@ -17,7 +17,7 @@ subtitle: Take your data into your own hands!
 
 If you are new to the world of diaspora\* and want to set up your own pod, this is the way to go.
 
-[Install a pod](<%= url_to("install", "new_pod") %>){: class="btn btn-success btn-block text-left"}
+[Install a pod](<%= url_to("install", "new_pod") %>){: class="btn btn-primary btn-block"}
 
 <%= col_new %>
 
@@ -27,7 +27,7 @@ If you are new to the world of diaspora\* and want to set up your own pod, this 
 
 If you already have a running pod and want to update to the latest diaspora\* version, check these instructions.
 
-[Update a pod](<%= url_to("install", "update") %>){: class="btn btn-success btn-block text-left"}
+[Update a pod](<%= url_to("install", "update") %>){: class="btn btn-primary btn-block"}
 
 <%= row_end %>
 

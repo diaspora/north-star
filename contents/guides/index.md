@@ -10,7 +10,7 @@ diaspora\* is different, and can be quite difficult or confusing sometimes. We a
 <%= row_start %>
 
 <%= partial "components/guide_list", items: @top_guides[:users] %>
-[See all](<%= url_to("guides", "users") %>){: class="btn btn-success btn-block text-left"}
+[See all](<%= url_to("guides", "users") %>){: class="btn btn-primary btn-block"}
 
 <%= row_end %>
 
@@ -23,14 +23,14 @@ Even working on diaspora\* can be hard sometimes. Here are some resources, we ho
 #### Podmins
 
 <%= partial "components/guide_list", items: @top_guides[:podmins] %>
-[See all](<%= url_to("guides", "podmins") %>){: class="btn btn-success btn-block text-left"}
+[See all](<%= url_to("guides", "podmins") %>){: class="btn btn-primary btn-block"}
 
 <%= col_new %>
 
 #### Developers
 
 <%= partial "components/guide_list", items: @top_guides[:developers] %>
-[See all](<%= url_to("guides", "developers") %>){: class="btn btn-success btn-block text-left"}
+[See all](<%= url_to("guides", "developers") %>){: class="btn btn-primary btn-block"}
 
 <%= row_end %>
 

@@ -1,6 +1,6 @@
 <div class="guide-list mt-4 mb-4">
   <% items.each do |item| %>
-    <a href="<%= guide_url(item) %>" class="btn btn-light btn-block text-left guide-button">
+    <a href="<%= guide_url(item) %>" class="btn btn-block">
       <%= item[:frontmatter][:title] %>
     </a>
   <% end %>

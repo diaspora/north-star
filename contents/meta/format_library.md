@@ -82,6 +82,33 @@ Lorem! Ipsum!
 
 ---
 
+## Button links
+
+For highlighting important actions, links can be formatted as a button.
+
+<%= row_start %>
+
+The default `btn` class is inline, and does not take up any specific amount of space:
+
+[Example](#){:class="btn"}
+
+<%= col_new %>
+
+Using the two classes `btn btn-block` makes the button take up all available space:
+
+[Example](#){:class="btn btn-block"}
+
+<%= col_new %>
+
+Additional colors are available:
+
+[btn](#){:class="btn btn-block"}
+[btn-primary](#){:class="btn btn-block btn-primary"}
+
+<%= row_end %>
+
+---
+
 ## Tables
 
 | Heading        | Heading        | Heading        |

@@ -12,7 +12,7 @@ subtitle: Build your own home.
 
 Finally, you might be interested in looking at [the system requirements][system-requirements] to run diaspora\*.
 
-[Okay, let's get started!][version-select]{:class="install-button btn btn-success btn-lg btn-block"}
+[Okay, let's get started!][version-select]{:class="install-button btn btn-primary btn-block"}
 
 [get-help]: <%= url_to("site", "get_help") %>
 [system-requirements]: <%= url_to "guides", "podmins/system_requirements" %>
