@@ -118,11 +118,10 @@
   }
 
   .feature-icon {
-    @apply my-5 p-5 bg-gradient-to-br from-green-400 to-green-700 text-transparent;
-    background-clip: text;
+    @apply my-5 p-5;
 
     p {
-      @apply m-0 p-0 text-center text-8xl;
+      @apply m-0 p-0 text-center text-8xl text-green-600;
     }
   }
 }
