@@ -126,6 +126,30 @@ Lorem! Ipsum!
 
 ---
 
+## Feature icon boxes
+
+[Font Awesome Pro icons](https://fontawesome.com/icons?d=gallery) can be used as a large teaser to highlight certain areas.
+
+<%= row_start %>
+
+<%= partial "components/feature_fa_icon", icon: "fab fa-diaspora" %>
+
+<%= col_new %>
+
+<%= partial "components/feature_fa_icon", icon: "fas fa-cat" %>
+
+<%= col_new %>
+
+<%= partial "components/feature_fa_icon", icon: "fas fa-heart" %>
+
+<%= col_new %>
+
+<%= partial "components/feature_fa_icon", icon: "fas fa-cookie-bite" %>
+
+<%= row_end %>
+
+---
+
 ## Multi-column contents
 
 Please use those only when absolutely needed. :)
