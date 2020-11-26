@@ -65,4 +65,20 @@
       @apply bg-red-200 text-red-900;
     }
   }
+
+  .headline-divider {
+    @apply
+      flex flex-wrap flex-col items-baseline
+      mt-2 pt-4 pb-2
+      border-b border-gray-200
+      md:flex-row;
+
+    h2 {
+      @apply m-0 text-2xl text-gray-900 font-medium;
+    }
+
+    p {
+      @apply mx-0 mb-0 mt-4 text-lg text-gray-500 md:mx-3 md:mt-0;
+    }
+  }
 }
