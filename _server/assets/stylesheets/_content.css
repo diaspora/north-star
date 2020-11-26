@@ -81,4 +81,17 @@
       @apply mx-0 mb-0 mt-4 text-lg text-gray-500 md:mx-3 md:mt-0;
     }
   }
+
+  .blog-list-teaser {
+    @apply pt-2;
+
+    .teaser-item {
+      @apply flex flex-row mb-2;
+
+      .date {
+        @apply flex-shrink-0;
+        width: 110px;
+      }
+    }
+  }
 }
