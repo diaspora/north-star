@@ -30,7 +30,7 @@ Glad to see you want to give installing diaspora\* a try! Follow these guides to
       data-system="{{key}}"
       type="button"
     >
-      <i class="fab fa-{{icon}}"></i><br>
+      <i class="{{icon}}"></i><br>
       {{title}}
     </button>
   </div>

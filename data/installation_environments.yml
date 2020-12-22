@@ -1,6 +1,6 @@
 linux:
   title: Linux
-  icon: linux
+  icon: fab fa-linux
   supports:
     development:
       docker: true
@@ -219,7 +219,7 @@ linux:
 
 mac:
   title: macOS
-  icon: apple
+  icon: fab fa-apple
   supports:
     development:
       docker: true
