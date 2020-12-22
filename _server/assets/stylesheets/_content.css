@@ -35,11 +35,15 @@
       hover:bg-gray-400 hover:text-gray-900;
 
     &.btn-block {
-      @apply block my-3;
+      @apply block my-3 w-full;
     }
 
     &.btn-primary {
       @apply bg-green-600 text-white hover:bg-green-700;
+    }
+
+    &.giant-go-button {
+      @apply text-center text-3xl mt-8 py-4;
     }
   }
 
