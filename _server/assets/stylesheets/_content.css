@@ -47,6 +47,10 @@
     }
   }
 
+  a.btn {
+    @apply no-underline;
+  }
+
   .btn-list {
     @apply my-4;
   }
