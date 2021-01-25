@@ -67,6 +67,16 @@ module Sinatra
 
       "#{protocol}://#{domain}/#{path}"
     end
+
+    def url_targets_current_page(current, target, only_section: false, match_beginning: false)
+      targets_same_section = current[:section] == target[:section]
+
+      return true if current == target
+      return true if only_section && targets_same_section
+      return true if match_beginning && targets_same_section && current[:path].start_with?(target[:path])
+
+      false
+    end
   end
 
   helpers ContentHelpers

@@ -1,6 +1,6 @@
 ---
 title: diaspora* Pod Installation
-nav_title: Installation
+nav_title: Installation and Updates
 title_tag: ""
 subtitle: Take your data into your own hands!
 ---
@@ -9,7 +9,7 @@ subtitle: Take your data into your own hands!
 
 **You do not need to install diaspora\* to be part of diaspora\***. Hosting a pod is one way to join the network, the other is [joining an existing pod][join]. If you are a user of an already existing diaspora\* pod, then these instructions do not apply to you. All the installation and update work is done by your podmin, so you can just sit back and relax.
 
-<%= row_start("col-lg") %>
+<%= row_start %>
 
 <%= partial "components/feature_fa_icon", icon: "far fa-home" %>
 
@@ -17,9 +17,9 @@ subtitle: Take your data into your own hands!
 
 If you are new to the world of diaspora\* and want to set up your own pod, this is the way to go.
 
-[Install a pod](<%= url_to("install", "new_pod") %>){: class="btn btn-success btn-block text-left"}
+[Install a pod](<%= url_to("install", "new_pod") %>){: class="btn btn-primary btn-block"}
 
-<%= col_new("col-lg") %>
+<%= col_new %>
 
 <%= partial "components/feature_fa_icon", icon: "far fa-sync" %>
 
@@ -27,7 +27,7 @@ If you are new to the world of diaspora\* and want to set up your own pod, this 
 
 If you already have a running pod and want to update to the latest diaspora\* version, check these instructions.
 
-[Update a pod](<%= url_to("install", "update") %>){: class="btn btn-success btn-block text-left"}
+[Update a pod](<%= url_to("install", "update") %>){: class="btn btn-primary btn-block"}
 
 <%= row_end %>
 

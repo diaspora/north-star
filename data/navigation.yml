@@ -22,6 +22,9 @@ _templates:
         path: users
   site_crosslinks: &site_crosslinks
     - target:
+        section: site
+        path: ""
+    - target:
         section: blog
         path: ""
     - target:
@@ -30,9 +33,6 @@ _templates:
     - target:
         section: install
         path: ""
-    - target:
-        section: site
-        path: get_help
   project_info_link:
     - &project_info_link
       title: navigation.get_project_information
@@ -79,11 +79,29 @@ install:
   header_buttons:
     - *project_info_link
   footer: *footer
+meta:
+  header:
+    - target:
+        section: meta
+        path: index
+    - target:
+        section: meta
+        path: format_library
+    - target:
+        section: meta
+        path: "404"
+  header_crosslinks: *site_crosslinks
+  header_buttons:
+    - *project_info_link
+  footer: *footer
 site:
   header:
     - target:
         section: site
         path: get_involved
+    - target:
+        section: site
+        path: get_help
   header_crosslinks: *site_crosslinks
   header_buttons:
     - target:

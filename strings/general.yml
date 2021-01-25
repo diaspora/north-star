@@ -15,6 +15,7 @@ en:
       blog: blog
       guides: guides
       install: install
+      meta: meta
   navigation:
     get_project_information: More about diaspora*
     support: Support

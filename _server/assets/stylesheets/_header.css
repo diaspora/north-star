@@ -1,0 +1,139 @@
+#header {
+  @apply bg-gray-800;
+
+  .header-container {
+    @apply
+      max-w-7xl mx-auto px-4
+      md:divide-y md:divide-gray-700 md:px-8;
+  }
+
+  .global-header {
+    @apply
+      flex justify-between h-16
+      px-5 md:px-0;
+  }
+
+  .section-header {
+    @apply md:h-12 md:flex;
+  }
+
+  .navigation {
+    @apply hidden md:flex md:flex-1 md:space-x-4;
+
+    a {
+      @apply
+        inline-flex items-center
+        px-1 pt-1
+        border-b-2 border-transparent
+        text-sm font-medium text-gray-300
+        hover:text-white hover:border-green-600;
+
+      &.active {
+        @apply text-white border-green-400;
+      }
+    }
+  }
+
+  .global-header .navigation {
+    @apply md:justify-center md:mx-3;
+  }
+
+  .logo {
+    @apply flex justify-start items-center;
+
+    a {
+      @apply text-3xl font-medium text-white;
+    }
+
+    span.section {
+      @apply text-green-400;
+    }
+  }
+
+  .cta-container {
+    @apply hidden md:flex md:items-center md:justify-end flex-shrink-0;
+
+    a {
+      @apply
+        relative inline-flex items-center
+        px-4 py-2
+        bg-green-600
+        border border-transparent rounded-md shadow-sm
+        font-medium text-sm text-white
+        hover:bg-green-700;
+    }
+  }
+
+  .mobile-menu-toggler {
+    @apply flex items-center justify-end md:hidden;
+
+    button {
+      @apply
+        inline-flex items-center justify-center
+        p-2
+        rounded-md
+        text-gray-400
+        focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white
+        hover:bg-gray-700 hover:text-white;
+
+      .toggler-open {
+        @apply block text-xl;
+      }
+
+      .toggler-close {
+        @apply hidden text-2xl;
+      }
+
+      &.active {
+        .toggler-open {
+          @apply hidden;
+        }
+
+        .toggler-close {
+          @apply block;
+        }
+      }
+    }
+  }
+
+  .mobile-nav {
+    @apply hidden md:hidden;
+
+    a {
+      @apply
+        block
+        py-2 px-3
+        rounded-md
+        text-base text-white font-medium
+        hover:bg-gray-900 hover:text-white;
+
+      &.active {
+        @apply bg-gray-900;
+      }
+    }
+
+    .global-links, .section-links {
+      @apply pt-2 pb-3 px-2 space-y-1;
+    }
+
+    .section-links  {
+      @apply border-t border-gray-700 pt-4;
+    }
+  }
+
+  &.mobile-menu-open {
+    .mobile-menu-toggler {
+      .toggler-open {
+        @apply hidden;
+      }
+
+      .toggler-close {
+        @apply block;
+      }
+    }
+
+    .mobile-nav {
+      @apply block;
+    }
+  }
+}

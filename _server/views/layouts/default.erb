@@ -15,49 +15,177 @@
     <title><%= page_title(page[:title_tag] || page[:title]) %></title>
   </head>
   <body <% if page[:bodyclass] %>class="<%= page[:bodyclass] %>"<%end%>>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-      <div class="container">
-        <a class="navbar-brand" href="<%= url_to(@section, "") %>">diaspora*<%= section_title %></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".collapse-nav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <section id="header">
+      <div class="header-container">
+        <!-- first navigation line, contains branding, cross-sections, and the CTAs -->
+        <div class="global-header">
+          <!-- large logo, which links to the section's root -->
+          <div class="logo">
+            <a href="<%= url_to(@section, "") %>">
+              diaspora*<%= section_title %>
+            </a>
+          </div>
 
-        <%= partial "components/nav_header_main" %>
-        <%= partial "components/nav_header_additional" %>
+          <!-- cross-links to other sections -->
+          <% if data("navigation")[@section] && data("navigation")[@section][:header_crosslinks] %>
+            <nav class="navigation">
+              <% data("navigation")[@section][:header_crosslinks].each do |nav_item| %>
+                <a href="<%= url_for_nav_item(nav_item[:target]) %>" <% if url_targets_current_page(current_path, nav_item[:target], only_section: true) %>class="active"<% end %>>
+                  <%= link_title(nav_item) %>
+                </a>
+              <% end %>
+            </nav>
+          <% end %>
+
+          <!-- big CTA button -->
+          <% if data("navigation")[@section] && data("navigation")[@section][:header_buttons] %>
+            <div class="cta-container">
+              <% data("navigation")[@section][:header_buttons].each do |nav_item| %>
+                <a href="<%= url_for_nav_item(nav_item[:target]) %>">
+                  <span><%= link_title(nav_item) %></span>
+                </a>
+              <% end %>
+            </div>
+          <% end %>
+
+          <!-- toggler for the mobile menu -->
+          <div class="mobile-menu-toggler">
+            <button id="mobile-menu-toggler">
+              <span class="sr-only">Open main menu</span>
+              <i class="toggler-open fas fa-bars"></i>
+              <i class="toggler-close far fa-times"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- mobile-only navigation -->
+        <nav class="mobile-nav">
+          <% if data("navigation")[@section] && data("navigation")[@section][:header_crosslinks] %>
+            <div class="global-links">
+              <% data("navigation")[@section][:header_crosslinks].each do |nav_item| %>
+                <a href="<%= url_for_nav_item(nav_item[:target]) %>" <% if url_targets_current_page(current_path, nav_item[:target], only_section: true) %>class="active"<% end %>">
+                  <%= link_title(nav_item) %>
+                </a>
+              <% end %>
+            </div>
+          <% end %>
+          <% if data("navigation")[@section] && data("navigation")[@section][:header] %>
+            <div class="section-links">
+              <% data("navigation")[@section][:header].each do |nav_item| %>
+                <a href="<%= url_for_nav_item(nav_item[:target]) %>" <% if url_targets_current_page(current_path, nav_item[:target], match_beginning: true) %>class="active"<% end %>>
+                  <%= link_title(nav_item) %>
+                </a>
+              <% end %>
+            </div>
+          <% end %>
+        </nav>
+
+        <!-- second navigation line, containing in-section targets -->
+        <% if data("navigation")[@section] && data("navigation")[@section][:header] %>
+          <div class="section-header">
+            <nav class="navigation">
+              <% data("navigation")[@section][:header].each do |nav_item| %>
+                <a href="<%= url_for_nav_item(nav_item[:target]) %>" <% if url_targets_current_page(current_path, nav_item[:target], match_beginning: true) %>class="active"<% end %>>
+                  <%= link_title(nav_item) %>
+                </a>
+              <% end %>
+            </nav>
+          </div>
+        <% end %>
       </div>
-    </nav>
+    </section>
 
-    <header id="masthead" class="hero">
+    <header class="masthead">
       <div class="container">
         <h1><%= page[:title] %></h1>
         <% if page[:subtitle] || page[:date] %>
-          <h2 class="lead"><%= page[:subtitle] || (page[:date] ? format_date(page[:date]) : "") %></h2>
+          <h2><%= page[:subtitle] || (page[:date] ? format_date(page[:date]) : "") %></h2>
         <% end %>
       </div>
     </header>
 
-    <main role="main" class="container">
+    <main role="main" class="prose prose-lg content-container">
       <%= yield %>
     </main>
 
     <footer>
-      <div class="container">
-        <%= partial "components/nav_footer" %>
-        <div class="row">
-          <div class="col">
-            <%= partial "components/language_select" %>
+      <div class="footer-container">
+        <!-- footer navigation, containing some pointers to things otherwise hard to find. -->
+        <% if data("navigation")[@section] && data("navigation")[@section][:footer] %>
+          <nav>
+            <h3><%= I18n.t("navigation.useful_links") %></h3>
+            <ul>
+              <% data("navigation")[@section][:footer].each do |nav_item| %>
+                <li><a href="<%= url_for_nav_item(nav_item[:target]) %>"><%= link_title(nav_item) %></a></li>
+              <% end %>
+            </ul>
+          </nav>
+        <% end %>
+
+        <!-- language selector, and edit/translate buttons (if available) -->
+        <% if @section_config[:translateable] || @section_config[:community_editable] %>
+          <div class="content-meta">
+            <div>
+              <% if @section_config[:translateable] %>
+                <h3><%= I18n.t("select_language") %></h3>
+                <form>
+                  <fieldset>
+                    <div class="selectbox-container">
+                      <select id="language">
+                        <% data("languages")[:available].each do |code, label| %>
+                          <option
+                            <% if I18n.locale == code %>selected="selected"<% end %>
+                            value="<%= url_to(@section, "force_locale/#{code}")%>"
+                          ><%= label %></option>
+                        <% end %>
+                      </select>
+                      <div class="chevron"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                  </fieldset>
+                </form>
+              <% end %>
+            </div>
+            <div class="edit-buttons">
+              <% if @section_config[:community_editable] %>
+                <a href="<%= page_edit_url(current_path) %>">
+                  <i class="fas fa-pen-square"></i>
+                  <%= I18n.t("community_edit.edit") %>
+                </a>
+                <% if @section_config[:translateable] %>
+                  <a href="<%= translation_docs_url %>">
+                    <i class="fas fa-language"></i>
+                    <%= I18n.t("community_edit.translate") %>
+                  </a>
+                <% end %>
+              <% end %>
+            </div>
           </div>
-          <div class="col text-right">
-            <%= partial "components/edit_site_link", path: current_path %>
+        <% end %>
+
+        <!-- copyright notice, and link to the license -->
+        <div class="copyright">
+          <div class="icons">
+            <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
+              <i class="fab fa-creative-commons"></i>
+              <i class="fab fa-creative-commons-by"></i>
+            </a>
           </div>
+          <p class="text">
+            <i class="fab fa-creative-commons"></i> The diaspora* Project Team.
+          </p>
         </div>
-        <p class="content-license">
-          <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
-            <i class="fab fa-creative-commons"></i>
-            <i class="fab fa-creative-commons-by"></i>
-          </a>
-        </p>
       </div>
+
+      <!-- be excellent to each other. ♥ -->
+      <svg preserveaspectratio="none" class="rainbow" viewbox="0 0 6 1">
+        <style>rect { width: 1px; height: 1px; }</style>
+        <rect x="0" style="fill: #991b1b;"/>
+        <rect x="1" style="fill: #d97706;"/>
+        <rect x="2" style="fill: #fbbf24;"/>
+        <rect x="3" style="fill: #65a30d;"/>
+        <rect x="4" style="fill: #2563eb;"/>
+        <rect x="5" style="fill: #7e22ce;"/>
+      </svg>
     </footer>
   </body>
 </html>

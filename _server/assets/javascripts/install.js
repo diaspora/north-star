@@ -161,7 +161,7 @@ window.DiasporaInstallSelector = (() => {
         entryMap: (distribution) => {
           return {
             key: distribution,
-            activeClass: distribution == this._state.distribution ? "list-group-item-primary" : "",
+            color: distribution == this._state.distribution ? "primary" : "light",
             icon: distributions[distribution].icon,
             title: distributions[distribution].title
           };
@@ -187,7 +187,7 @@ window.DiasporaInstallSelector = (() => {
         entryMap: (version) => {
           return {
             key: version,
-            activeClass: version == this._state.version ? "list-group-item-primary" : "",
+            color: version == this._state.version ? "primary" : "light",
             icon: versions[version].icon,
             title: versions[version].title
           };

@@ -1,5 +1,6 @@
 ---
 title: Welcome to diaspora*
+nav_title: About
 title_tag: ""
 subtitle: The online social world where you are in control
 ---
@@ -11,7 +12,7 @@ subtitle: The online social world where you are in control
   headline: "diaspora* is based on three key principles"
 %>
 
-<%= row_start("col-lg") %>
+<%= row_start %>
 
 <%= partial "components/feature_fa_icon", icon: "far fa-globe" %>
 
@@ -21,7 +22,7 @@ Instead of everyoneâ€™s data being held on huge central servers owned by a large
 
 [Find out more][get-involved]{: class="btn btn-primary"}
 
-<%= col_new("col-lg") %>
+<%= col_new %>
 
 <%= partial "components/feature_fa_icon", icon: "far fa-lock-open" %>
 
@@ -31,7 +32,7 @@ You can be whoever you want to be in diaspora\*. Unlike some networks, you donâ€
 
 [Find out more][get-involved]{: class="btn btn-primary"}
 
-<%= col_new("col-lg") %>
+<%= col_new %>
 
 <%= partial "components/feature_fa_icon", icon: "far fa-eye-slash" %>
 

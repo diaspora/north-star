@@ -45,7 +45,7 @@ This file sets up the database connection, so be sure to provide the correct cre
 
 In the next steps, we will install diaspora\*'s internal dependencies, set up the database, and prepare some other components.
 
-[Continue installation][next-step]{:class="install-button btn btn-success btn-lg btn-block"}
+[Continue installation][next-step]{:class="install-button btn btn-primary btn-block"}
 
 [next-step]: <%= url_to "install", "new_pod/manual/guided/initialize_diaspora" %><%= install_url_params %>
 <%= guided_only_content_end %>

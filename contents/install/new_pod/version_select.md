@@ -12,26 +12,25 @@ Glad to see you want to give installing diaspora\* a try! Follow these guides to
   <div id="distribution"></div>
   <div id="version"></div>
   <div id="env"></div>
-  <div id="database"></div>
   <div id="proxy"></div>
   <div id="guides"></div>
 </div>
 
 <script id="tpl-systems" type="text/x-handlebars-template">
   <h2>Select your operating system</h2>
-  <div class="row">
+  <div class="multicol row">
     {{{items}}}
   </div>
 </script>
 
 <script id="tpl-system-entry" type="text/x-handlebars-template">
-  <div class="col-md">
+ <div class="multicol col">
     <button
-      class="install-button btn btn-{{color}} btn-lg btn-block"
+      class="install-button btn btn-{{color}} btn-block"
       data-system="{{key}}"
       type="button"
     >
-      <i class="fab fa-{{icon}}"></i><br>
+      <i class="{{icon}}"></i><br>
       {{title}}
     </button>
   </div>
@@ -39,18 +38,16 @@ Glad to see you want to give installing diaspora\* a try! Follow these guides to
 
 <script id="tpl-distributions" type="text/x-handlebars-template">
   <h2>Select your distribution</h2>
-  <div class="row">
-    <div class="col-md">
-      <div class="list-group">
-        {{{items}}}
-      </div>
+  <div class="multicol row">
+    <div class="multicol col">
+      {{{items}}}
     </div>
   </div>
 </script>
 
 <script id="tpl-distribution-entry" type="text/x-handlebars-template">
   <button
-    class="install-button list-group-item list-group-item-action {{activeClass}}"
+    class="install-button btn btn-{{color}} btn-block"
     data-distribution="{{key}}"
     type="button"
   >
@@ -60,18 +57,16 @@ Glad to see you want to give installing diaspora\* a try! Follow these guides to
 
 <script id="tpl-versions" type="text/x-handlebars-template">
   <h2>Select the OS version</h2>
-  <div class="row">
-    <div class="col-md">
-      <div class="list-group">
-        {{{items}}}
-      </div>
+  <div class="multicol row">
+    <div class="multicol col">
+      {{{items}}}
     </div>
   </div>
 </script>
 
 <script id="tpl-version-entry" type="text/x-handlebars-template">
   <button
-    class="install-button list-group-item list-group-item-action {{activeClass}}"
+    class="install-button btn btn-{{color}} btn-block"
     data-version="{{key}}"
     type="button"
   >
@@ -81,15 +76,15 @@ Glad to see you want to give installing diaspora\* a try! Follow these guides to
 
 <script id="tpl-envs" type="text/x-handlebars-template">
   <h2>Select your goal</h2>
-  <div class="row">
+  <div class="multicol row">
     {{{items}}}
   </div>
 </script>
 
 <script id="tpl-env-entry" type="text/x-handlebars-template">
-  <div class="col-md">
+ <div class="multicol col">
     <button
-      class="install-button btn btn-{{color}} btn-lg btn-block"
+      class="install-button btn btn-{{color}} btn-block"
       data-env="{{key}}"
       type="button"
     >
@@ -99,29 +94,17 @@ Glad to see you want to give installing diaspora\* a try! Follow these guides to
   </div>
 </script>
 
-<script id="tpl-database-entry" type="text/x-handlebars-template">
-  <div class="col-md">
-    <button
-      class="install-button btn btn-{{color}} btn-lg btn-block"
-      data-database="{{key}}"
-      type="button"
-    >
-      {{title}}
-    </button>
-  </div>
-</script>
-
 <script id="tpl-proxies" type="text/x-handlebars-template">
   <h2>Select your reverse proxy</h2>
-  <div class="row">
+  <div class="multicol row">
     {{{items}}}
   </div>
 </script>
 
 <script id="tpl-proxy-entry" type="text/x-handlebars-template">
-  <div class="col-md">
+ <div class="multicol col">
     <button
-      class="install-button btn btn-{{color}} btn-lg btn-block"
+      class="install-button btn btn-{{color}} btn-block"
       data-proxy="{{key}}"
       type="button"
     >
@@ -131,9 +114,9 @@ Glad to see you want to give installing diaspora\* a try! Follow these guides to
 </script>
 
 <script id="tpl-docker-guide" type="text/x-handlebars-template">
-  <div class="col-md">
+ <div class="multicol col">
     <a
-      class="install-button btn btn-success btn-lg btn-block"
+      class="install-button btn btn-primary btn-block"
       href="<%= url_to "install", "new_pod/docker" %>{{params}}"
     >
       Install diaspora*
@@ -142,9 +125,9 @@ Glad to see you want to give installing diaspora\* a try! Follow these guides to
 </script>
 
 <script id="tpl-manual-guide" type="text/x-handlebars-template">
-  <div class="col-md">
+ <div class="multicol col">
     <a
-      class="install-button btn btn-success btn-lg btn-block"
+      class="install-button giant-go-button btn btn-primary btn-block"
       href="<%= url_to "install", "new_pod/manual/guided/system_preparation" %>{{params}}"
     >
       Install diaspora*
@@ -159,7 +142,6 @@ Glad to see you want to give installing diaspora\* a try! Follow these guides to
   window.installSelector = new DiasporaInstallSelector({
     available: <%= @available_environments.to_json %>,
     elements: {
-      database: "database",
       distribution: "distribution",
       env: "env",
       guides: "guides",
@@ -168,7 +150,6 @@ Glad to see you want to give installing diaspora\* a try! Follow these guides to
       version: "version"
     },
     templates: {
-      databaseEntry: "database-entry",
       distributions: "distributions",
       distributionsEntry: "distribution-entry",
       dockerGuide: "docker-guide",

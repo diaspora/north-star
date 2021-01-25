@@ -1,0 +1,144 @@
+.masthead {
+  @apply bg-gray-700;
+
+  .container {
+    @apply
+      max-w-7xl mx-auto px-6 py-12
+      text-white text-center;
+  }
+
+  h1 {
+    @apply text-5xl font-medium;
+    text-shadow: 0 3px 3px #0000004d;
+  }
+
+  h2 {
+    @apply text-2xl text-gray-100 font-light mt-4;
+  }
+}
+
+.content-container.prose {
+  @apply max-w-7xl mx-auto p-8;
+
+  pre code::after,
+  pre code::before {
+    display: none;
+  }
+
+  .btn {
+    @apply
+      inline-block
+      border border-transparent rounded-md
+      px-4 py-2
+      bg-gray-300
+      text-gray-700
+      hover:bg-gray-400 hover:text-gray-900;
+
+    &.btn-block {
+      @apply block my-3 w-full;
+    }
+
+    &.btn-primary {
+      @apply bg-green-600 text-white hover:bg-green-700;
+    }
+
+    &.giant-go-button {
+      @apply text-center text-3xl mt-8 py-4;
+    }
+  }
+
+  a.btn {
+    @apply no-underline;
+  }
+
+  .btn-list {
+    @apply my-4;
+  }
+
+  .multicol {
+    &.row {
+      @apply flex flex-col md:flex-row md:gap-8;
+    }
+
+    &.col {
+      @apply flex-1;
+    }
+  }
+
+  .markdown-warning-box {
+    @apply
+      border border-transparent rounded-md
+      bg-gray-200
+      my-3 px-3 py-2;
+
+    p {
+      @apply m-0;
+
+      strong {
+        color: inherit;
+      }
+    }
+
+    &.success {
+      @apply bg-green-200 text-green-900;
+    }
+
+    &.info {
+      @apply bg-blue-200 text-blue-900;
+    }
+
+    &.warning {
+      @apply bg-yellow-200 text-yellow-900;
+    }
+
+    &.critical {
+      @apply bg-red-200 text-red-900;
+    }
+  }
+
+  .headline-divider {
+    @apply
+      flex flex-wrap flex-col items-baseline
+      mt-2 pt-4 pb-2
+      border-b border-gray-200
+      md:flex-row;
+
+    h2 {
+      @apply m-0 text-2xl text-gray-900 font-medium;
+    }
+
+    p {
+      @apply mx-0 mb-0 mt-4 text-lg text-gray-500 md:mx-3 md:mt-0;
+    }
+  }
+
+  .blog-list-teaser {
+    @apply pt-2;
+
+    .teaser-item {
+      @apply flex flex-row mb-2;
+
+      .date {
+        @apply flex-shrink-0;
+        width: 110px;
+      }
+    }
+  }
+
+  .feature-icon {
+    @apply my-5 p-5 bg-gradient-to-br from-green-400 to-green-700 text-transparent;
+    background-clip: text;
+
+    /*
+     * This is for Safari - it otherwise would not show the icon.
+     * See https://bugs.webkit.org/show_bug.cgi?id=169125
+     */
+    i {
+      display: inline;
+    }
+
+    p {
+      @apply m-0 p-0 text-center text-8xl;
+    }
+  }
+}
