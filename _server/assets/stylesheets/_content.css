@@ -126,10 +126,19 @@
   }
 
   .feature-icon {
-    @apply my-5 p-5;
+    @apply my-5 p-5 bg-gradient-to-br from-green-400 to-green-700 text-transparent;
+    background-clip: text;
+
+    /*
+     * This is for Safari - it otherwise would not show the icon.
+     * See https://bugs.webkit.org/show_bug.cgi?id=169125
+     */
+    i {
+      display: inline;
+    }
 
     p {
-      @apply m-0 p-0 text-center text-8xl text-green-600;
+      @apply m-0 p-0 text-center text-8xl;
     }
   }
 }
