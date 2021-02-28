@@ -117,11 +117,21 @@
       md:flex-row;
 
     h2 {
-      @apply m-0 text-2xl text-gray-900 font-medium;
+      @apply m-0 text-4xl text-gray-900 font-medium;
     }
 
     p {
-      @apply mx-0 mb-0 mt-4 text-lg text-gray-500 md:mx-3 md:mt-0;
+      @apply mx-0 mb-0 mt-4 text-2xl text-gray-500 md:mx-3 md:mt-0;
+    }
+
+    &.blog-divider {
+      h2 {
+        @apply text-2xl;
+      }
+
+      p {
+        @apply text-lg;
+      }
     }
   }
 
