@@ -20,6 +20,18 @@
 .content-container.prose {
   @apply max-w-7xl mx-auto p-8;
 
+  img {
+    &.img-thumbnail {
+      &.float-right {
+        @apply ml-4;
+      }
+
+      &.float-left {
+        @apply mr-4;
+      }
+    }
+  }
+
   pre code::after,
   pre code::before {
     display: none;
@@ -101,6 +113,7 @@
       flex flex-wrap flex-col items-baseline
       mt-2 pt-4 pb-2
       border-b border-gray-200
+      clear-both
       md:flex-row;
 
     h2 {
